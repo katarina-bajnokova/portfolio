@@ -1,0 +1,122 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/tokens/typography" as *;
+
+.home-hero {
+  width: 100%;
+  margin-inline: auto;
+  max-width: $container-2xl;
+  padding: 48px 16px;
+  h1 {
+    font-family: $font-heading;
+    font-size: $h1-size;
+    line-height: $heading-line;
+    letter-spacing: $heading-tracking;
+    font-weight: 700;
+    color: $brand-secondary-700;
+    margin: 0;
+  }
+}
+
+.home-work-grid {
+  width: 100%;
+  margin-inline: auto;
+  max-width: $container-2xl;
+  padding: 24px 16px 64px;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.home-feature {
+  background: $brand-secondary-500;
+  color: $neutral-50;
+  padding-block: 80px;
+
+  .feature__wrap {
+    width: 100%;
+    margin-inline: auto;
+    max-width: $container-4k;
+    padding-inline: 16px;
+    text-align: center;
+    img {
+      width: 100%;
+      max-width: 2000px;
+      margin-inline: auto;
+      display: block;
+    }
+    h2 {
+      margin-top: 5px;
+      font-size: $h2-size;
+      color: $neutral-50;
+    }
+    p {
+      margin-top: 4px;
+      color: $neutral-100;
+    }
+  }
+}
+
+.home-book {
+  width: 100%;
+  margin-inline: auto;
+  max-width: $container-4k;
+  padding: 80px 16px;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: clamp(520px, 52vw, 980px);
+    height: auto;
+    display: block;
+    margin-inline: auto;
+  }
+
+  .book__video {
+    width: 100%;
+    max-width: clamp(720px, 78vw, 1400px);
+    height: auto;
+    display: block;
+    margin-inline: auto;
+    object-fit: contain;
+  }
+
+  h3 {
+    margin-top: 24px;
+    font-size: $h3-size;
+    color: $brand-secondary-700;
+  }
+  p {
+    margin-top: 4px;
+    color: $neutral-600;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .home-book .book__video {
+    max-width: 1500px;
+  }
+}
+
+@media (min-width: $breakpoint-4k) {
+  .home-book .book__video {
+    max-width: 1800px;
+  }
+}
+
+.site-footer {
+  width: 100%;
+  margin-inline: auto;
+  max-width: $container-2xl;
+  padding: 24px 16px 48px;
+  text-align: center;
+  color: $neutral-600;
+  font-size: 12px;
+}

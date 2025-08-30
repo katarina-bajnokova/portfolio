@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
         scss: {
           additionalData: `
             @use "sass:math";
-            @use "@/styles/variables.scss" as *;
+
             @use "@/styles/mixins.scss" as *;
           `,
         },

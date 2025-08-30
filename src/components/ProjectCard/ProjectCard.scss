@@ -1,0 +1,90 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/tokens/typography" as *;
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  padding: 0;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &__media {
+    display: block;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    width: 100%;
+    max-width: clamp(280px, 40vw, 560px);
+    margin-inline: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &--laptop .project-card__media {
+    aspect-ratio: 16 / 10;
+    max-width: clamp(680px, 60vw, 1080px);
+  }
+
+  &--book .project-card__media {
+    aspect-ratio: 3 / 4;
+    max-width: clamp(300px, 42vw, 560px);
+  }
+
+  &__title {
+    margin: 8px 0 0;
+    font-family: $font-heading;
+    font-size: $h2-size;
+    line-height: $heading-line;
+    letter-spacing: $heading-tracking;
+    font-weight: 600;
+    color: $brand-secondary-700;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-top: 2px;
+    font-family: $font-body;
+    font-size: $body-small-size;
+    line-height: 20px;
+    color: $neutral-600;
+    text-align: center;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .project-card__media {
+    max-width: 540px;
+  }
+  .project-card--laptop .project-card__media {
+    max-width: 1000px;
+  }
+  .project-card--book .project-card__media {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: $breakpoint-4k) {
+  .project-card__media {
+    max-width: 740px;
+  }
+  .project-card--laptop .project-card__media {
+    max-width: 1600px;
+  }
+  .project-card--book .project-card__media {
+    max-width: 740px;
+  }
+}

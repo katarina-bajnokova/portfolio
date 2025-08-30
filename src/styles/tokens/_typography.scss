@@ -1,0 +1,88 @@
+$font-heading: "League Spartan", sans-serif;
+$font-body: Arial, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+$h1-size: 48px;
+$h2-size: 36px;
+$h3-size: 28px;
+$h4-size: 22px;
+
+$body-large-size: 18px;
+$body-base-size: 16px;
+$body-small-size: 14px;
+$caption-size: 12px;
+$button-size: 16px;
+
+$heading-line: 120%;
+$body-line: 150%;
+
+$heading-tracking: -0.01em;
+$button-tracking: 0.02em;
+
+.h1 {
+  font-family: $font-heading;
+  font-size: $h1-size;
+  line-height: $heading-line;
+  letter-spacing: $heading-tracking;
+  font-weight: 700;
+}
+
+.h2 {
+  font-family: $font-heading;
+  font-size: $h2-size;
+  line-height: $heading-line;
+  letter-spacing: $heading-tracking;
+  font-weight: 600;
+}
+
+.h3 {
+  font-family: $font-heading;
+  font-size: $h3-size;
+  line-height: $heading-line;
+  letter-spacing: $heading-tracking;
+  font-weight: 600;
+}
+
+.h4 {
+  font-family: $font-heading;
+  font-size: $h4-size;
+  line-height: $heading-line;
+  letter-spacing: $heading-tracking;
+  font-weight: 500;
+}
+
+.body-large {
+  font-family: $font-body;
+  font-size: $body-large-size;
+  line-height: $body-line;
+  font-weight: 400;
+}
+
+.body-base {
+  font-family: $font-body;
+  font-size: $body-base-size;
+  line-height: $body-line;
+  font-weight: 400;
+}
+
+.body-small {
+  font-family: $font-body;
+  font-size: $body-small-size;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.caption {
+  font-family: $font-body;
+  font-size: $caption-size;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.button-label {
+  font-family: $font-heading;
+  font-size: $button-size;
+  line-height: 20px;
+  letter-spacing: $button-tracking;
+  font-weight: 600;
+  text-transform: uppercase;
+}

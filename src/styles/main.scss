@@ -1,32 +1,86 @@
 @use "./tokens/colors" as *;
+@use "./tokens/layout" as *;
+@use "./tokens/typography" as *;
 @use "./mixins" as *;
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Nunito, Arial,
-    sans-serif;
-  background: $neutral-50;
+  font-family: $font-body;
+  background: $neutral-100;
   color: $neutral-900;
+  line-height: $body-line;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-heading;
+  letter-spacing: $heading-tracking;
+  line-height: $heading-line;
+  margin: 0;
 }
 
 .header {
-  padding: 1rem;
+  @include container;
+  padding-block: $space-4;
   color: $brand-secondary-500;
+
+  h2 {
+    font-size: $h2-size;
+    font-weight: 600;
+  }
 }
 
 .hero {
-  margin: 2rem;
+  @include container;
+  @include section-padding;
   @include soft-card(2rem);
 
   h1 {
+    font-size: $h1-size;
+    font-weight: 700;
     color: $brand-secondary-700;
+    margin-bottom: $space-4;
   }
+
   p {
+    font-size: $body-base-size;
     color: $neutral-600;
+    margin-bottom: $space-6;
+    max-width: 60ch;
   }
 
   .cta {
     @include button($brand-primary-500, $neutral-900);
-    margin-top: 1rem;
+    @extend .button-label;
+    margin-top: $space-6;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
   }
 }

@@ -1,0 +1,63 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/tokens/typography" as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid $neutral-200;
+
+  .site-header__inner {
+    width: 100%;
+    margin-inline: auto;
+    max-width: $container-2xl;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header__brand {
+    font-family: $font-heading;
+    font-weight: 600;
+    color: $brand-secondary-700;
+    text-decoration: none;
+  }
+
+  .site-nav a {
+    position: relative;
+    color: $brand-secondary-500;
+    text-decoration: none;
+    margin-left: 32px;
+    padding: 6px 2px;
+    display: inline-block;
+
+    &:hover {
+      color: $brand-secondary-700;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -8px;
+      width: 0;
+      height: 3px;
+      background: $brand-secondary-700;
+      border-radius: 2px;
+      transition: width 0.18s ease;
+    }
+
+    &.is-active {
+      color: $brand-secondary-700;
+
+      &::after {
+        width: 64%;
+      }
+    }
+  }
+}
