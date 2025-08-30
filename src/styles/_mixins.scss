@@ -1,0 +1,27 @@
+@use "./tokens/colors" as *;
+
+@mixin soft-card($padding: 1rem) {
+  background: $neutral-100;
+  border: 1px solid $neutral-200;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px $shadow-soft;
+  padding: $padding;
+}
+
+@mixin button($bg, $color: $neutral-900) {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  background: $bg;
+  color: $color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 0.8;
+  }
+}
