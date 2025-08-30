@@ -1,6 +1,8 @@
 import "./About.scss";
 import Header from "@/components/layout/Header/Header";
-import portrait from "@/assets/images/about.png"; // update path if needed
+import Footer from "@/components/layout/Footer/Footer";
+import portrait from "@/assets/images/about.png"; // keep as poster + fallback
+import aboutVideo from "@/assets/videos/about.mp4";
 
 export default function About() {
   return (
@@ -11,7 +13,28 @@ export default function About() {
           {/* Top row: Photo + Intro */}
           <div className="about__grid">
             <figure className="about__photo">
-              <img src={portrait} alt="Katarina smiling" loading="lazy" />
+              {/* VIDEO (active) */}
+              <video
+                className="about__media"
+                src={aboutVideo}
+                poster={portrait}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Katarina short intro"
+              />
+
+              {/* IMAGE (kept for reference) */}
+              {/*
+              <img
+                src={portrait}
+                alt="Katarina smiling"
+                loading="lazy"
+                className="about__media"
+              />
+              */}
             </figure>
 
             <header className="about__intro">
@@ -211,6 +234,7 @@ export default function About() {
           </div>
         </section>
       </main>
+      <Footer linkedin="https://www.linkedin.com/in/katarina-bajnokova/" />
     </>
   );
 }

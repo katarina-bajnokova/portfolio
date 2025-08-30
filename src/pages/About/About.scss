@@ -5,7 +5,8 @@
 
 .about__container {
   @include container(1100px);
-  padding-block: 64px 96px;
+
+  padding-block: 64px 120px;
 }
 
 .about__grid {
@@ -27,6 +28,16 @@
   display: block;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+.about__photo .about__media {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  background: $neutral-200;
+  object-fit: contain; /* show full video without cropping */
 }
 
 .about__intro {
