@@ -1,0 +1,196 @@
+/* C:\Katarina\Projects\portfolio\src\pages\Projects\GuessJeans\GuessJeans.scss */
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/tokens/typography" as *;
+@use "@/styles/mixins" as *;
+
+/* ---------- Page shell ---------- */
+.project-page {
+  background: $neutral-100;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-wrap: pretty;
+  overflow-x: hidden;
+}
+
+.project__container {
+  @include container(1100px);
+  padding-block: $space-16 $space-24;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $space-12 $space-20;
+  }
+}
+
+/* ---------- Sections & base type ---------- */
+.project-section {
+  margin-block: $space-6 $space-8;
+
+  > * + * {
+    margin-top: $space-2;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: $h3-size;
+    line-height: $heading-line;
+    letter-spacing: $heading-tracking;
+    color: $brand-secondary-700;
+    margin: 0 0 $space-2 0;
+  }
+
+  p,
+  li {
+    font-family: $font-body;
+    font-size: $body-base-size;
+    line-height: $body-line;
+    color: $neutral-800;
+  }
+
+  ul,
+  ol {
+    padding-left: $space-6;
+  }
+
+  .gallery__note {
+    font-family: $font-body;
+    font-size: $body-small-size;
+    line-height: 20px;
+    color: $neutral-600;
+  }
+}
+
+/* ---------- Page header ---------- */
+.project__header {
+  text-align: center;
+  margin-bottom: $space-6;
+
+  h1 {
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: $h2-size;
+    line-height: $heading-line;
+    letter-spacing: $heading-tracking;
+    color: $brand-secondary-700;
+    margin: 0 0 $space-3 0;
+  }
+
+  .project__summary,
+  .project__meta {
+    margin: $space-2 auto 0;
+    max-width: 860px;
+    font-family: $font-body;
+    font-size: $body-base-size;
+    line-height: $body-line;
+    color: $neutral-800;
+  }
+}
+
+/* ---------- Hero video ---------- */
+.project-hero {
+  display: grid;
+  place-items: center;
+  margin: $space-6 0 $space-8;
+
+  &__media {
+    width: clamp(320px, 42vw, 420px);
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+/* ---------- Gallery component ---------- */
+.gallery {
+  .gallery__grid {
+    --min: 540px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min, 540px), 1fr));
+    gap: $space-3;
+
+    /* explicit column overrides via data attribute */
+    &[data-cols="1"] {
+      grid-template-columns: 1fr;
+    }
+    &[data-cols="2"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    &[data-cols="3"] {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      gap: $space-2;
+
+      &[data-cols="2"],
+      &[data-cols="3"] {
+        grid-template-columns: 1fr; /* stack on smaller screens */
+      }
+    }
+  }
+
+  .gallery__item {
+    position: relative;
+    overflow: hidden;
+
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px $shadow-hard;
+    }
+
+    img,
+    video.gallery__video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  .gallery__video {
+    outline: none;
+  }
+}
+
+/* ---------- Size overrides per section ---------- */
+/* Research image larger */
+.gallery.gallery--research .gallery__grid {
+  --min: 900px;
+}
+
+/* Personas larger */
+.gallery.gallery--personas .gallery__grid {
+  --min: 420px;
+}
+
+/* Navigation larger */
+.gallery.gallery--navigation .gallery__grid {
+  --min: 420px;
+}
+
+/* Branding larger */
+.gallery.gallery--branding .gallery__grid {
+  --min: 420px;
+}
+
+/* Lo-fi wireframes larger */
+.gallery.gallery--lofi .gallery__grid {
+  --min: 900px;
+}
+
+/* Hi-fi prototype videos smaller */
+.hifi-prototype .gallery__video {
+  max-width: 480px;
+  margin-inline: auto;
+  border-radius: $space-2;
+}
+
+/* ---------- Motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .gallery .gallery__item {
+    transition: none;
+  }
+}
