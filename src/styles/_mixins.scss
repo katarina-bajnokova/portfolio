@@ -1,6 +1,7 @@
 @use "./tokens/colors" as *;
 @use "./tokens/layout" as *;
 
+/* ---- Surface card ---- */
 @mixin soft-card($padding: 1rem) {
   background: $neutral-100;
   border: 1px solid $neutral-200;
@@ -9,6 +10,7 @@
   padding: $padding;
 }
 
+/* ---- Button ---- */
 @mixin button($bg, $color: $neutral-900) {
   display: inline-block;
   padding: 0.75rem 1.25rem;
@@ -27,17 +29,32 @@
   }
 }
 
-@mixin container {
+/* ---- Container (adjustable) ----
+   Usage:
+     @include container();            // default wide (max $container-2xl)
+     @include container(1100px);      // narrower: bigger side margins on laptop
+     @include container(1200px);      // tweak as needed
+*/
+@mixin container(
+  $max: $container-2xl,
+  $padMin: 16px,
+  $padVW: 4vw,
+  $padMax: 48px
+) {
   width: 100%;
   margin-inline: auto;
-  padding-inline: $space-4;
-  max-width: $container-2xl;
+  padding-inline: clamp($padMin, $padVW, $padMax);
+  max-width: $max;
 
-  @media (min-width: $breakpoint-4k) {
-    max-width: $container-4k;
+  // Only expand to 4K cap when using the default wide container
+  @if $max == $container-2xl {
+    @media (min-width: $breakpoint-4k) {
+      max-width: $container-4k;
+    }
   }
 }
 
+/* ---- Vertical section spacing ---- */
 @mixin section-padding {
   padding-block: $space-16;
 

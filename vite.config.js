@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    base: "/portfolio/",
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),

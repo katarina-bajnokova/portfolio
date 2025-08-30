@@ -3,11 +3,14 @@
 @use "@/styles/mixins" as *;
 @use "@/styles/tokens/typography" as *;
 
+/* =========================
+   HERO
+   ========================= */
 .home-hero {
-  width: 100%;
-  margin-inline: auto;
-  max-width: $container-2xl;
-  padding: 48px 16px;
+  /* narrower container → generous margins on laptop */
+  @include container(1100px);
+  padding-block: 48px;
+
   h1 {
     font-family: $font-heading;
     font-size: $h1-size;
@@ -16,47 +19,55 @@
     font-weight: 700;
     color: $brand-secondary-700;
     margin: 0;
+    text-align: center;
   }
 }
 
+/* =========================
+   WORK GRID
+   ========================= */
 .home-work-grid {
-  width: 100%;
-  margin-inline: auto;
-  max-width: $container-2xl;
-  padding: 24px 16px 64px;
+  @include container(1100px);
+  padding-block: 24px 64px;
 
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
+
     @media (max-width: $breakpoint-tablet) {
       grid-template-columns: 1fr;
+      gap: 24px;
     }
   }
 }
 
+/* =========================
+   FEATURE BANNER (stay wide)
+   ========================= */
 .home-feature {
   background: $brand-secondary-500;
   color: $neutral-50;
   padding-block: 80px;
 
   .feature__wrap {
-    width: 100%;
-    margin-inline: auto;
-    max-width: $container-4k;
-    padding-inline: 16px;
+    /* keep wide section; default container() = $container-2xl (+4k cap) */
+    @include container();
     text-align: center;
+
     img {
       width: 100%;
       max-width: 2000px;
       margin-inline: auto;
       display: block;
     }
+
     h2 {
       margin-top: 5px;
       font-size: $h2-size;
       color: $neutral-50;
     }
+
     p {
       margin-top: 4px;
       color: $neutral-100;
@@ -64,10 +75,12 @@
   }
 }
 
+/* =========================
+   BOOK SECTION (stay wide)
+   ========================= */
 .home-book {
-  width: 100%;
-  margin-inline: auto;
-  max-width: $container-4k;
+  /* allow wide visual while keeping page centered */
+  @include container($container-4k);
   padding: 80px 16px;
   text-align: center;
 
@@ -93,6 +106,7 @@
     font-size: $h3-size;
     color: $brand-secondary-700;
   }
+
   p {
     margin-top: 4px;
     color: $neutral-600;
@@ -111,11 +125,12 @@
   }
 }
 
+/* =========================
+   FOOTER
+   ========================= */
 .site-footer {
-  width: 100%;
-  margin-inline: auto;
-  max-width: $container-2xl;
-  padding: 24px 16px 48px;
+  @include container(1100px);
+  padding-block: 24px 48px;
   text-align: center;
   color: $neutral-600;
   font-size: 12px;

@@ -1,32 +1,27 @@
-import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 export default function Header() {
-  const [active, setActive] = useState("work");
-
-  useEffect(() => {
-    const update = () => {
-      const hash = window.location.hash.replace("#", "");
-      setActive(hash === "about" ? "about" : "work");
-    };
-    update();
-    window.addEventListener("hashchange", update);
-    return () => window.removeEventListener("hashchange", update);
-  }, []);
-
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <a className="site-header__brand" href="/">
+        <NavLink className="site-header__brand" to="/">
           Katarina Bajnoková
-        </a>
+        </NavLink>
         <nav className="site-nav">
-          <a href="#work" className={active === "work" ? "is-active" : ""}>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => (isActive ? "is-active" : "")}
+          >
             Work
-          </a>
-          <a href="#about" className={active === "about" ? "is-active" : ""}>
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "is-active" : "")}
+          >
             About
-          </a>
+          </NavLink>
         </nav>
       </div>
     </header>
