@@ -1,22 +1,15 @@
 @use "@/styles/tokens/colors" as *;
 @use "@/styles/tokens/layout" as *;
-@use "@/styles/tokens/typography" as *;
 @use "@/styles/mixins" as *;
+@use "@/styles/tokens/typography" as *;
 
-.project-page {
-  background: repeating-linear-gradient(
-      90deg,
-      rgba($brand-primary-300, 0.35) 0 12px,
-      transparent 12px 44px
-    ),
-    $neutral-50;
-}
-
+/* ---------- CONTAINER ---------- */
 .project__container {
   @include container(1100px);
-  padding-block: 64px 140px; /* space for fixed footer */
+  padding-block: 64px 140px; // space for fixed footer
 }
 
+/* ---------- HEADER ---------- */
 .project__header {
   text-align: center;
   margin-bottom: 28px;
@@ -25,68 +18,153 @@
     font-family: $font-heading;
     font-weight: 700;
     font-size: 36px;
-    line-height: $heading-line;
-    letter-spacing: $heading-tracking;
     color: $brand-secondary-700;
-    margin: 0 0 12px 0;
-  }
-
-  .project__summary,
-  .project__meta {
-    margin: 8px auto 0;
-    max-width: 860px;
-    color: $neutral-800;
-    font-size: $body-base-size;
-    line-height: $body-line;
+    margin: 0 0 12px;
   }
 }
 
+/* ---------- SUMMARY BOX ---------- */
+.project__summarybox {
+  background: $neutral-50;
+  border: 1px solid $neutral-200;
+  border-radius: 14px;
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .summary-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: $brand-secondary-700;
+    text-align: center;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: $neutral-800;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: $neutral-600;
+    }
+  }
+
+  .summary-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: space-between;
+    border-top: 1px solid $neutral-200;
+    padding-top: 20px;
+
+    div {
+      flex: 1;
+      min-width: 200px;
+
+      h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: $neutral-800;
+        margin-bottom: 6px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: $neutral-600;
+      }
+    }
+  }
+}
+
+/* ---------- TABS ---------- */
+.design-cycle-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 48px 0 32px;
+  flex-wrap: wrap;
+
+  button {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: $neutral-800;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &.active {
+      color: $brand-secondary-700;
+      border-bottom: 2px solid $brand-secondary-700;
+    }
+
+    &:hover:not(.active) {
+      color: $brand-secondary-500;
+    }
+  }
+}
+
+/* ---------- TAB CONTENT ---------- */
+.tab-content {
+  max-width: 920px;
+  margin: 0 auto 64px;
+  padding: 28px 32px;
+
+  h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: $brand-secondary-700;
+    margin-bottom: 14px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: $neutral-800;
+    margin: 20px 0 10px;
+  }
+
+  p,
+  li {
+    font-size: 15px;
+    line-height: 1.65;
+    color: $neutral-800;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style: disc;
+  }
+}
+
+/* ---------- HERO VIDEO ---------- */
 .project-hero {
   display: grid;
   place-items: center;
   margin: 24px 0 36px;
 
   &__media {
-    width: clamp(320px, 44vw, 420px); /* phone visual */
+    width: clamp(320px, 44vw, 420px);
     height: auto;
     border-radius: 12px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-    background: $neutral-200;
     object-fit: contain;
     display: block;
-  }
-}
-
-.project-section {
-  margin-top: 28px;
-
-  h2 {
-    font-family: $font-heading;
-    font-weight: 800;
-    color: $brand-secondary-700;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    font-size: 18px;
-    margin: 0 0 10px 0;
-  }
-
-  h3 {
-    font-family: $font-heading;
-    font-weight: 600;
-    color: $brand-secondary-700;
-    margin: 12px 0 8px;
-    font-size: 16px;
-  }
-
-  p,
-  li {
-    color: $neutral-800;
-    font-size: $body-base-size;
-    line-height: $body-line;
-  }
-
-  ul {
-    padding-left: 18px;
-    margin: 0;
   }
 }

@@ -1,14 +1,13 @@
 import Gallery from "./Gallery";
 
-/* Research board: larger */
 export function ResearchBoard({ images }) {
   return (
     <Gallery
       className="gallery--research"
-      title="Research Board"
+      title="" // remove heading
       images={images}
       note="Sticky-note clustering, interview notes, and a quick heuristic review."
-      min={800} /* baseline; CSS override will upsize */
+      min={800}
     />
   );
 }

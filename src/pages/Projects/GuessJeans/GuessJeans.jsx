@@ -1,41 +1,22 @@
+import { useState } from "react";
 import "./GuessJeans.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
-import {
-  videos,
-  personas,
-  research,
-  branding,
-  navigation,
-  userJourney,
-  jm,
-  lofi,
-} from "./guessAssets";
 
-import {
-  GoalsVision,
-  PersonasIntro,
-  JourneyMapsIntro,
-  UserJourneysText,
-  NavigationText,
-  BrandingText,
-  WireframesText,
-  AfterThoughts,
-  FutureImprovements,
-} from "./SectionsText";
+// NEW: Separated phases
+import Empathize from "./Empathize";
+import Define from "./Define";
+import Ideate from "./Ideate";
+import Prototype from "./Prototype";
+import Test from "./Test"; // ✅ import new Test component
 
-import {
-  ResearchBoard,
-  PersonasGallery,
-  JourneyMapsGallery,
-  UserJourneyGallery,
-  NavigationGallery,
-  BrandingGallery,
-  WireframesGallery,
-  HiFiPrototype,
-} from "./MediaSections";
+import { AfterThoughts, FutureImprovements } from "./SectionsText";
 
 export default function GuessJeans() {
+  const [activeTab, setActiveTab] = useState("Empathize");
+
+  const tabs = ["Empathize", "Define", "Ideate", "Prototype", "Test"];
+
   return (
     <>
       <Header />
@@ -44,67 +25,97 @@ export default function GuessJeans() {
           {/* HEADER */}
           <header className="project__header">
             <h1>Guess Jeans – Digital Shopping Experience Redesign</h1>
-            <p className="project__summary">
-              <strong>Challenge:</strong> Shopping for jeans online is often
-              frustrating—sizes are inconsistent, fit details are unclear, and
-              most imagery doesn’t reflect real body types. Although Guess is
-              strong in denim, its current digital journey doesn’t fully support
-              inclusive fit guidance or confidence. This project rethinks that
-              experience to make finding the right pair simple and reassuring.
-            </p>
 
-            <p className="project__meta">
-              <strong>Deliverables:</strong> Market research, personas, journey
-              mapping, wireframes, UI design, interactive prototype. <br />
-              <strong>Role:</strong> End-to-End Product Designer (solo)
-            </p>
+            <div className="project__summarybox">
+              <h2 className="summary-title">Project Overview</h2>
+
+              <div className="summary-grid">
+                <div>
+                  <h3>Context</h3>
+                  <p>
+                    Guess is a strong denim brand, but its online shopping
+                    journey lacked inclusivity and fit confidence.
+                  </p>
+                </div>
+                <div>
+                  <h3>Problem</h3>
+                  <p>
+                    Sizes were inconsistent, fit details unclear, and imagery
+                    excluded real body types. Customers felt uncertain—leading
+                    to abandoned carts and high returns.
+                  </p>
+                </div>
+                <div>
+                  <h3>Solution</h3>
+                  <p>
+                    A redesigned digital journey with{" "}
+                    <strong>fit guidance</strong>,{" "}
+                    <strong>inclusive imagery</strong>, and{" "}
+                    <strong>interactive tools</strong> (Fit Profile, Lookbook,
+                    Fit Guide).
+                  </p>
+                </div>
+              </div>
+
+              <div className="summary-meta">
+                <div>
+                  <h3>Tools</h3>
+                  <p>Figma, AI, Design Thinking & Research</p>
+                </div>
+                <div>
+                  <h3>Impact</h3>
+                  <p>
+                    Improves confidence, reduces return rates, builds
+                    inclusivity.
+                  </p>
+                </div>
+                <div>
+                  <h3>Role</h3>
+                  <p>
+                    End-to-End UX Designer — research, personas, journey
+                    mapping, wireframes, prototypes, testing.
+                  </p>
+                </div>
+              </div>
+            </div>
           </header>
 
-          {/* HERO PHONE VIDEO */}
-          <div className="project-hero">
-            <video
-              className="project-hero__media"
-              src={videos.hero}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            />
+          {/* TABS */}
+          <nav className="design-cycle-tabs">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={activeTab === tab ? "active" : ""}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
+
+          {/* TAB CONTENT */}
+          <div className="tab-content">
+            {/* EMPATHIZE */}
+            {activeTab === "Empathize" && <Empathize />}
+
+            {/* DEFINE */}
+            {activeTab === "Define" && <Define />}
+
+            {/* IDEATE */}
+            {activeTab === "Ideate" && <Ideate />}
+
+            {/* PROTOTYPE */}
+            {activeTab === "Prototype" && <Prototype />}
+
+            {/* TEST */}
+            {activeTab === "Test" && (
+              <>
+                <Test />
+                <AfterThoughts />
+                <FutureImprovements />
+              </>
+            )}
           </div>
-
-          {/* TEXT SECTIONS */}
-          <GoalsVision />
-
-          {/* MEDIA: Research & Personas */}
-          <ResearchBoard images={research} />
-          <PersonasIntro />
-          <PersonasGallery images={personas} />
-
-          {/* Journeys */}
-          <JourneyMapsIntro />
-          <JourneyMapsGallery images={jm} />
-          <UserJourneysText />
-          <UserJourneyGallery images={userJourney} />
-
-          {/* Navigation */}
-          <NavigationText />
-          <NavigationGallery images={navigation} />
-
-          {/* Branding */}
-          <BrandingText />
-          <BrandingGallery images={branding} />
-
-          {/* Wireframes */}
-          <WireframesText />
-          <WireframesGallery images={lofi} />
-
-          {/* Hi-Fi prototype videos */}
-          <HiFiPrototype videos={videos} />
-
-          {/* After thoughts & Future work */}
-          <AfterThoughts />
-          <FutureImprovements />
         </section>
       </main>
       <Footer linkedin="https://www.linkedin.com/in/katarina-bajnokova/" />

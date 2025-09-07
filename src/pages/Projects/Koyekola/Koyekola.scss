@@ -3,16 +3,6 @@
 @use "@/styles/tokens/typography" as *;
 @use "@/styles/mixins" as *;
 
-/* same soft stripes as other project pages */
-.project-page {
-  background: repeating-linear-gradient(
-      90deg,
-      rgba($brand-primary-300, 0.35) 0 12px,
-      transparent 12px 44px
-    ),
-    $neutral-50;
-}
-
 .project__container {
   @include container(1100px);
   padding-block: 64px 140px; /* leave room for fixed footer */

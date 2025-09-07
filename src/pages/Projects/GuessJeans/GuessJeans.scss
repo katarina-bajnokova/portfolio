@@ -1,123 +1,150 @@
-/* C:\Katarina\Projects\portfolio\src\pages\Projects\GuessJeans\GuessJeans.scss */
 @use "@/styles/tokens/colors" as *;
 @use "@/styles/tokens/layout" as *;
-@use "@/styles/tokens/typography" as *;
 @use "@/styles/mixins" as *;
+@use "@/styles/tokens/typography" as *;
 
-/* ---------- Page shell ---------- */
-.project-page {
-  background: $neutral-100;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  text-wrap: pretty;
-  overflow-x: hidden;
-}
+.project__summarybox {
+  background: $brand-secondary-700; // ✅ dark background
+  border: none; // cleaner, border not needed on dark
+  border-radius: 14px;
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 960px;
 
-.project__container {
-  @include container(1100px);
-  padding-block: $space-16 $space-24;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  color: $neutral-100; // ✅ all text inside defaults to light
 
-  @media (max-width: $breakpoint-tablet) {
-    padding-block: $space-12 $space-20;
+  .summary-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: $neutral-100; // ✅ light text
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: $neutral-100; // ✅ light text
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: $neutral-100; // ✅ light text
+    }
+  }
+
+  .summary-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: space-between;
+    border-top: 1px solid rgba(249, 246, 242, 0.3); // ✅ subtle divider using neutral-100 with transparency
+    padding-top: 20px;
+
+    div {
+      flex: 1;
+      min-width: 200px;
+
+      h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: $neutral-100;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: $neutral-100;
+      }
+    }
   }
 }
 
-/* ---------- Sections & base type ---------- */
-.project-section {
-  margin-block: $space-6 $space-8;
+/* ---------- DESIGN CYCLE TABS ---------- */
+.design-cycle-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 48px 0 32px;
+  flex-wrap: wrap;
 
-  > * + * {
-    margin-top: $space-2;
+  button {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: $neutral-800;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &.active {
+      color: $brand-secondary-700;
+      border-bottom: 2px solid $brand-secondary-700;
+    }
+
+    &:hover:not(.active) {
+      color: $brand-secondary-500;
+    }
   }
+}
+
+/* ---------- TAB CONTENT ---------- */
+.tab-content {
+  max-width: 920px;
+  margin: 0 auto 64px;
+  padding: 28px 32px;
 
   h2 {
-    font-family: $font-heading;
+    font-size: 21px;
     font-weight: 700;
-    font-size: $h3-size;
-    line-height: $heading-line;
-    letter-spacing: $heading-tracking;
     color: $brand-secondary-700;
-    margin: 0 0 $space-2 0;
+    margin-bottom: 14px;
   }
 
   p,
   li {
-    font-family: $font-body;
-    font-size: $body-base-size;
-    line-height: $body-line;
+    font-size: 15px;
+    line-height: 1.65;
     color: $neutral-800;
+    margin-bottom: 10px;
   }
 
-  ul,
-  ol {
-    padding-left: $space-6;
-  }
-
-  .gallery__note {
-    font-family: $font-body;
-    font-size: $body-small-size;
-    line-height: 20px;
-    color: $neutral-600;
-  }
-}
-
-/* ---------- Page header ---------- */
-.project__header {
-  text-align: center;
-  margin-bottom: $space-6;
-
-  h1 {
-    font-family: $font-heading;
-    font-weight: 700;
-    font-size: $h2-size;
-    line-height: $heading-line;
-    letter-spacing: $heading-tracking;
-    color: $brand-secondary-700;
-    margin: 0 0 $space-3 0;
-  }
-
-  .project__summary,
-  .project__meta {
-    margin: $space-2 auto 0;
-    max-width: 860px;
-    font-family: $font-body;
-    font-size: $body-base-size;
-    line-height: $body-line;
+  ul {
+    padding-left: 20px;
+    list-style: disc;
     color: $neutral-800;
   }
 }
 
-/* ---------- Hero video ---------- */
-.project-hero {
-  display: grid;
-  place-items: center;
-  margin: $space-6 0 $space-8;
-
-  &__media {
-    width: clamp(320px, 42vw, 420px);
-    height: auto;
-    object-fit: contain;
-    display: block;
-  }
-}
-
-/* ---------- Gallery component ---------- */
+/* ---------- GENERAL GALLERY ---------- */
 .gallery {
   .gallery__grid {
-    --min: 540px;
+    --min: 260px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--min, 540px), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--min, 260px), 1fr));
     gap: $space-3;
 
-    /* explicit column overrides via data attribute */
     &[data-cols="1"] {
       grid-template-columns: 1fr;
     }
     &[data-cols="2"] {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
     }
     &[data-cols="3"] {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @media (max-width: $breakpoint-tablet) {
@@ -125,72 +152,27 @@
 
       &[data-cols="2"],
       &[data-cols="3"] {
-        grid-template-columns: 1fr; /* stack on smaller screens */
+        grid-template-columns: 1fr;
       }
     }
   }
 
   .gallery__item {
     position: relative;
-    overflow: hidden;
-
+    border-radius: 10px;
     transition: transform 200ms ease-out, box-shadow 200ms ease-out;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px $shadow-hard;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
     }
 
     img,
     video.gallery__video {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
-      object-fit: cover;
+      object-fit: contain;
     }
-  }
-
-  .gallery__video {
-    outline: none;
-  }
-}
-
-/* ---------- Size overrides per section ---------- */
-/* Research image larger */
-.gallery.gallery--research .gallery__grid {
-  --min: 900px;
-}
-
-/* Personas larger */
-.gallery.gallery--personas .gallery__grid {
-  --min: 420px;
-}
-
-/* Navigation larger */
-.gallery.gallery--navigation .gallery__grid {
-  --min: 420px;
-}
-
-/* Branding larger */
-.gallery.gallery--branding .gallery__grid {
-  --min: 420px;
-}
-
-/* Lo-fi wireframes larger */
-.gallery.gallery--lofi .gallery__grid {
-  --min: 900px;
-}
-
-/* Hi-fi prototype videos smaller */
-.hifi-prototype .gallery__video {
-  max-width: 480px;
-  margin-inline: auto;
-  border-radius: $space-2;
-}
-
-/* ---------- Motion preferences ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .gallery .gallery__item {
-    transition: none;
   }
 }
