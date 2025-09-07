@@ -84,3 +84,13 @@ h4 {
     font-size: 18px;
   }
 }
+
+#root {
+  min-height: 100vh; /* make the app fill full viewport height */
+  display: flex; /* flexbox for vertical stacking */
+  flex-direction: column; /* header → main → footer */
+}
+
+main {
+  flex: 1; /* main grows to push footer down */
+}

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+
 import "./Home.scss";
 import Header from "@/components/layout/Header/Header";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
-
+import Footer from "@/components/layout/Footer/Footer";
 import guessjeansVideo from "@/assets/videos/guessjeans.mp4";
 import rougeVideo from "@/assets/videos/rouge.mp4";
 import bookVideo from "@/assets/videos/book.mp4";
@@ -15,30 +15,77 @@ export default function Home() {
       <main>
         {/* HERO */}
         <section className="home-hero" id="work">
-          <h1>Your Next UX Design & Development Intern</h1>
+          <section className="home-hero" id="work">
+            <h1>UX Design & Development Student</h1>
+            <p>(Your next intern starting in February 2026)</p>
+          </section>
         </section>
 
-        {/* TWO TOP CARDS */}
+        {/* PROJECT GRID – Guess Jeans + Rouge */}
         <section className="home-work-grid">
           <div className="grid">
-            <ProjectCard
-              title="End-to-end Product Design"
-              subtitle="Tools: Figma, UX Research, Branding, Prototyping"
-              src={guessjeansVideo}
-              variant="phone"
+            {/* Guess Jeans */}
+            <Link
               to="/project/guess-jeans"
-            />
-            <ProjectCard
-              title="Full-Stack Development"
-              subtitle="Tech: React, Sass, Mantine, PHP, SQLite"
-              src={rougeVideo}
-              variant="phone"
+              className="project"
+              aria-label="Open Guess Jeans project"
+              title="Open project"
+            >
+              <video
+                src={guessjeansVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+              <h2>Guess Jeans (UX Designer)</h2>
+              <p>
+                <strong>Focus:</strong> Jeans shopping made simple
+              </p>
+              <p>
+                <strong>Tools:</strong> Figma, AI, Design Thinking & Research
+              </p>
+              <div className="badges">
+                <span>Fit Confidence</span>
+                <span>Denim Focus</span>
+                <span>Seamless Journey</span>
+              </div>
+            </Link>
+
+            {/* Rouge */}
+            <Link
               to="/project/rouge"
-            />
+              className="project"
+              aria-label="Open Rouge project"
+              title="Open project"
+            >
+              <video
+                src={rougeVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+              <h2>Rouge (Full-Stack Developer)</h2>
+              <p>
+                <strong>Focus:</strong> Ready-to-wear makeup looks
+              </p>
+              <p>
+                <strong>Tools:</strong> React, Sass, PHP, SQLite, Mantine,
+                GitHub, Notion
+              </p>
+              <div className="badges">
+                <span>Ready-to-Use</span>
+                <span>Stress-Free Choices</span>
+                <span>Smooth App Performance</span>
+              </div>
+            </Link>
           </div>
         </section>
 
-        {/* FEATURE BANNER → click to open Koyekola page */}
+        {/* FEATURE BANNER – Koyekola */}
         <section className="home-feature">
           <div className="feature__wrap">
             <Link
@@ -53,12 +100,22 @@ export default function Home() {
                 loading="lazy"
               />
             </Link>
-            <h2>Landing Page Design & Development</h2>
-            <p>Tools: Figma, React, Sass</p>
+            <h2>Koyekola (UX Designer & Developer)</h2>
+            <p>
+              <strong>Focus:</strong> Playful Lingala learning for kids
+            </p>
+            <p>
+              <strong>Tools:</strong> Figma, React, Sass, HTML, AI, GitHub
+            </p>
+            <div className="badges">
+              <span>Diaspora Roots</span>
+              <span>Creative Expression</span>
+              <span>Seamless Journey</span>
+            </div>
           </div>
         </section>
 
-        {/* BOOK SECTION → click video to open the project page */}
+        {/* BOOK PROJECT – Ba Mbuma */}
         <section className="home-book">
           <div className="book__wrap">
             <Link
@@ -77,19 +134,25 @@ export default function Home() {
                 preload="metadata"
               />
             </Link>
-            <h3>Illustration & Book Design</h3>
-            <p>Tools: Adobe Illustrator, Canva</p>
+            <h2>Ba Mbuma (Author & Illustrator)</h2>
+            <p>
+              <strong>Focus:</strong> Language and culture, reimagined for the
+              diaspora
+            </p>
+            <p>
+              <strong>Tools:</strong> Adobe Illustrator, Canva
+            </p>
+            <div className="badges">
+              <span>Diaspora Roots</span>
+              <span>Creative Expression</span>
+              <span>Seamless Journey</span>
+            </div>
           </div>
         </section>
-
-        {/* SIMPLE FOOTER (home) */}
-        <footer className="site-footer" id="about">
-          <p>
-            © Katarina Bajnokova {new Date().getFullYear()} |
-            katarinabajnokovaofficial@gmail.com | +32 472 21 50 14
-          </p>
-        </footer>
       </main>
+
+      {/* FOOTER (always visible, fixed at bottom) */}
+      <Footer linkedin="https://www.linkedin.com/in/katarina-bajnokova/" />
     </>
   );
 }
