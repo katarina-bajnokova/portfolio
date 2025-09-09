@@ -7,7 +7,7 @@ export default function BaMbuma() {
   return (
     <>
       <Header />
-      <main className="project-page">
+      <main className="project-page bambuma-page">
         <section className="project__container">
           <header className="project__header">
             <h1>Ba Mbuma – Lingala Fruits Colouring Book</h1>

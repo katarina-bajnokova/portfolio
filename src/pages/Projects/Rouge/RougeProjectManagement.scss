@@ -1,0 +1,198 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/tokens/typography" as *;
+
+.project-management {
+  .project-section {
+    margin-bottom: $space-16;
+    max-width: 960px;
+    margin-inline: auto;
+
+    h2 {
+      font-family: $font-heading;
+      font-size: $h2-size;
+      font-weight: 700;
+      color: $brand-primary-700;
+      margin-bottom: $space-6;
+    }
+
+    h3 {
+      font-family: $font-heading;
+      font-size: $h3-size;
+      font-weight: 600;
+      color: $brand-secondary-700;
+      margin: $space-8 0 $space-4;
+    }
+
+    p {
+      font-family: $font-body;
+      font-size: $body-base-size;
+      line-height: $body-line;
+      color: $neutral-800;
+      margin-bottom: $space-4;
+    }
+
+    ul {
+      margin: $space-3 0 $space-6;
+      padding-left: $space-6;
+      list-style: disc;
+
+      li {
+        font-size: $body-small-size;
+        line-height: $body-line;
+        color: $neutral-800;
+        margin-bottom: $space-2;
+
+        strong {
+          color: $brand-secondary-700;
+        }
+
+        em {
+          color: $neutral-600;
+        }
+      }
+    }
+  }
+
+  .cta-link {
+    font-weight: 600;
+    color: $brand-primary-700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $brand-primary-500;
+    }
+  }
+
+  .repo-links {
+    margin: $space-10 0;
+    text-align: center;
+
+    h3 {
+      font-size: $h3-size;
+      font-weight: 700;
+      margin-bottom: $space-6;
+      color: $brand-primary-700;
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $space-6;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .repo-card {
+      @include soft-card($space-6);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      h4 {
+        font-family: $font-heading;
+        font-size: $h4-size;
+        font-weight: 700;
+        color: $brand-primary-700;
+        margin-bottom: $space-2;
+      }
+
+      p {
+        font-size: $body-small-size;
+        color: $neutral-600;
+        margin: 0;
+      }
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px $shadow-soft;
+      }
+    }
+  }
+
+  .pm-image {
+    display: block;
+    max-width: 720px;
+    width: 100%;
+    margin: $space-6 auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  }
+}
+
+.role-sharing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-6;
+  margin: $space-8 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+  }
+
+  .role-card {
+    @include soft-card($space-5);
+
+    h4 {
+      font-family: $font-heading;
+      font-size: $h4-size;
+      font-weight: 700;
+      margin-bottom: $space-3;
+      text-transform: uppercase;
+      color: $brand-secondary-700;
+    }
+
+    ul {
+      padding-left: $space-5;
+      list-style: disc;
+
+      li {
+        font-size: $body-small-size;
+        line-height: $body-line;
+        color: $neutral-800;
+        margin-bottom: $space-2;
+      }
+    }
+
+    &.andrea {
+      border-left: 4px solid $brand-primary-300;
+    }
+
+    &.katarina {
+      border-left: 4px solid $brand-primary-700;
+    }
+  }
+}
+
+.role-sharing-shared {
+  margin-top: $space-6;
+  background: $neutral-50;
+  border-left: 4px solid $brand-primary-500;
+  padding: $space-5;
+  border-radius: 10px;
+
+  h4 {
+    font-size: $h4-size;
+    font-weight: 700;
+    margin-bottom: $space-3;
+    color: $brand-primary-700;
+  }
+
+  ul {
+    padding-left: $space-5;
+    list-style: disc;
+
+    li {
+      font-size: $body-small-size;
+      line-height: $body-line;
+      color: $neutral-800;
+      margin-bottom: $space-2;
+    }
+  }
+}

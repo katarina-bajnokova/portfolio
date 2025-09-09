@@ -3,86 +3,88 @@
 @use "@/styles/tokens/typography" as *;
 @use "@/styles/mixins" as *;
 
-.project__container {
-  @include container(1100px);
-  padding-block: 64px 140px; /* leave room for fixed footer */
-}
-
-.project__header {
-  text-align: center;
-  margin-bottom: 28px;
-
-  h1 {
-    font-family: $font-heading;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: $heading-line;
-    letter-spacing: $heading-tracking;
-    color: $brand-secondary-700;
-    margin: 0 0 12px 0;
+.koyekola-page {
+  .project__container {
+    @include container(1100px);
+    padding-block: 64px 140px; /* leave room for fixed footer */
   }
 
-  .project__summary,
-  .project__meta {
-    margin: 8px auto 0;
-    max-width: 860px;
-    color: $neutral-800;
-    font-size: $body-base-size;
-    line-height: $body-line;
-  }
-}
+  .project__header {
+    text-align: center;
+    margin-bottom: 28px;
 
-/* laptop-style hero */
-.project-hero {
-  display: grid;
-  place-items: center;
-  margin: 24px 0 36px;
+    h1 {
+      font-family: $font-heading;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: $heading-line;
+      letter-spacing: $heading-tracking;
+      color: $brand-secondary-700;
+      margin: 0 0 12px 0;
+    }
 
-  &__media {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-    background: $neutral-200;
-    object-fit: contain;
-
-    &--laptop {
-      width: clamp(600px, 72vw, 1100px); /* nice, wide laptop feel */
+    .project__summary,
+    .project__meta {
+      margin: 8px auto 0;
+      max-width: 860px;
+      color: $neutral-800;
+      font-size: $body-base-size;
+      line-height: $body-line;
     }
   }
-}
 
-.project-section {
-  margin-top: 28px;
+  /* laptop-style hero */
+  .project-hero {
+    display: grid;
+    place-items: center;
+    margin: 24px 0 36px;
 
-  h2 {
-    font-family: $font-heading;
-    font-weight: 800;
-    color: $brand-secondary-700;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    font-size: 18px;
-    margin: 0 0 10px 0;
+    &__media {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+      background: $neutral-200;
+      object-fit: contain;
+
+      &--laptop {
+        width: clamp(600px, 72vw, 1100px); /* nice, wide laptop feel */
+      }
+    }
   }
 
-  h3 {
-    font-family: $font-heading;
-    font-weight: 600;
-    color: $brand-secondary-700;
-    margin: 12px 0 8px;
-    font-size: 16px;
-  }
+  .project-section {
+    margin-top: 28px;
 
-  p,
-  li {
-    color: $neutral-800;
-    font-size: $body-base-size;
-    line-height: $body-line;
-  }
+    h2 {
+      font-family: $font-heading;
+      font-weight: 800;
+      color: $brand-secondary-700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
 
-  ul {
-    padding-left: 18px;
-    margin: 0;
+    h3 {
+      font-family: $font-heading;
+      font-weight: 600;
+      color: $brand-secondary-700;
+      margin: 12px 0 8px;
+      font-size: 16px;
+    }
+
+    p,
+    li {
+      color: $neutral-800;
+      font-size: $body-base-size;
+      line-height: $body-line;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 0;
+    }
   }
 }

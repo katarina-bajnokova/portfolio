@@ -7,7 +7,7 @@ export default function Koyekola() {
   return (
     <>
       <Header />
-      <main className="project-page">
+      <main className="project-page koyekola-page">
         <section className="project__container">
           <header className="project__header">
             <h1>Koyekola – Educational Language App</h1>

@@ -1,0 +1,78 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/tokens/typography" as *;
+
+.rouge-challenges {
+  .project-section {
+    margin-bottom: $space-16;
+    max-width: 960px;
+    margin-inline: auto;
+
+    h2 {
+      font-size: $h2-size;
+      font-weight: 700;
+      color: $brand-primary-700;
+      margin-bottom: $space-6;
+    }
+
+    h3 {
+      font-size: $h3-size;
+      font-weight: 600;
+      color: $brand-secondary-700;
+      margin: $space-8 0 $space-4;
+    }
+
+    p {
+      font-size: $body-base-size;
+      line-height: $body-line;
+      color: $neutral-800;
+      margin-bottom: $space-4;
+    }
+
+    ul {
+      margin: $space-3 0 $space-6;
+      padding-left: $space-6;
+      list-style: disc;
+
+      li {
+        font-size: $body-small-size;
+        line-height: $body-line;
+        color: $neutral-800;
+        margin-bottom: $space-2;
+
+        strong {
+          color: $brand-secondary-700;
+        }
+      }
+    }
+
+    strong {
+      color: $brand-primary-700;
+    }
+
+    em {
+      color: $neutral-600;
+    }
+  }
+
+  .challenge-block {
+    margin-bottom: $space-10;
+    padding-bottom: $space-6;
+    border-bottom: 1px solid $neutral-200;
+  }
+  .highlight-box {
+    background: $brand-primary-300;
+    border-left: 4px solid $brand-primary-500;
+    padding: $space-5 $space-6;
+    border-radius: 10px;
+    margin: $space-6 0;
+
+    p {
+      font-size: $body-base-size;
+      line-height: $body-line;
+      margin-bottom: 0;
+      color: $neutral-900;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/tokens/typography" as *;
+
+.rouge-process {
+  .project-section {
+    margin-bottom: $space-16;
+    max-width: 960px;
+    margin-inline: auto;
+
+    h2 {
+      font-family: $font-heading;
+      font-size: $h2-size;
+      font-weight: 700;
+      color: $brand-primary-700; // 🔸 warm accent
+      margin-bottom: $space-6;
+    }
+
+    h3 {
+      font-family: $font-heading;
+      font-size: $h3-size;
+      font-weight: 600;
+      color: $brand-secondary-700;
+      margin: $space-8 0 $space-4;
+    }
+
+    p {
+      font-family: $font-body;
+      font-size: $body-base-size;
+      line-height: $body-line;
+      color: $neutral-800;
+      margin-bottom: $space-4;
+    }
+
+    strong {
+      color: $brand-primary-700; // 🔸 highlights in orange
+    }
+
+    em {
+      color: $neutral-600;
+    }
+  }
+
+  .tech-snapshot {
+    margin: $space-8 0 $space-12;
+    text-align: center;
+
+    h3 {
+      font-size: $h3-size;
+      font-weight: 700;
+      margin-bottom: $space-6;
+      color: $brand-primary-700; // 🔸 warm accent
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: $space-6;
+    }
+
+    .tech-card {
+      @include soft-card($space-5);
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      h4 {
+        font-family: $font-heading;
+        font-size: $h4-size;
+        font-weight: 700;
+        margin-bottom: $space-2;
+        color: $brand-primary-700; // 🔸 tool title accent
+      }
+
+      p {
+        font-size: $body-small-size;
+        color: $neutral-600;
+        margin: 0;
+      }
+    }
+  }
+
+  .feature-demo {
+    display: grid;
+    place-items: center;
+    margin: $space-6 0 $space-8;
+
+    &__media {
+      width: clamp(320px, 60vw, 520px);
+      border-radius: 16px;
+      box-shadow: 0 16px 48px $shadow-soft;
+      display: block;
+    }
+  }
+
+  .highlight-box {
+    background: $brand-primary-300;
+    border-left: 4px solid $brand-primary-500;
+    padding: $space-5 $space-6;
+    border-radius: 10px;
+    margin: $space-8 0;
+
+    p {
+      font-size: $body-base-size;
+      margin-bottom: $space-3;
+      color: $neutral-900;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: $space-5;
+
+      li {
+        font-size: $body-small-size;
+        color: $neutral-800;
+        margin-bottom: $space-2;
+      }
+    }
+  }
+}
