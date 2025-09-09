@@ -159,7 +159,7 @@ export default function Empathize() {
           kept me focused on <strong>designing for value, not vanity</strong>.
         </p>
 
-        <div className="gallery__grid" data-cols={2}>
+        <div className="gallery__grid" data-cols={1}>
           <figure className="gallery__item">
             <img src={US1} alt="User Story 1" loading="lazy" />
             <figcaption>

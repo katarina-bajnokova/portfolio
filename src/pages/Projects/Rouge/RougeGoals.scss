@@ -13,7 +13,7 @@
     h2 {
       font-size: $h2-size;
       font-weight: 700;
-      color: $brand-primary-700; // 🔸 warm orange highlight
+      color: $rouge-accent-red; // 🔹 headline in Rouge red
       margin-bottom: $space-5;
       line-height: $heading-line;
     }
@@ -21,12 +21,12 @@
     p {
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $neutral-800;
+      color: $rouge-primary-700; // 🔹 body text in mid grey
       margin-bottom: $space-4;
     }
 
     strong {
-      color: $brand-primary-700; // 🔸 highlight in text
+      color: $rouge-accent-magenta; // 🔹 emphasis in magenta
       font-weight: 600;
     }
 
@@ -51,7 +51,7 @@
       p {
         font-size: $body-base-size;
         line-height: $body-line;
-        color: $neutral-800;
+        color: $rouge-primary-700;
         margin-bottom: $space-4;
       }
     }
@@ -95,7 +95,7 @@
   }
 
   .goal-card {
-    background: $neutral-50;
+    background: $rouge-secondary-100; // 🔹 soft light grey
     border: 1px solid $neutral-200;
     border-radius: 12px;
     padding: $space-5;
@@ -105,14 +105,14 @@
     h4 {
       font-size: $h4-size;
       font-weight: 600;
-      color: $brand-primary-700; // 🔸 goal headers stand out
+      color: $rouge-accent-red; // 🔹 headers in Rouge red
       margin-bottom: $space-3;
     }
 
     p {
       font-size: $body-small-size;
       line-height: $body-line;
-      color: $neutral-800;
+      color: $rouge-primary-700;
       margin: 0;
     }
 

@@ -12,21 +12,21 @@
     h2 {
       font-size: $h2-size;
       font-weight: 700;
-      color: $brand-primary-700;
+      color: $rouge-accent-red; // 🔹 big section title in red
       margin-bottom: $space-6;
     }
 
     h3 {
       font-size: $h3-size;
       font-weight: 600;
-      color: $brand-secondary-700;
+      color: $rouge-primary-900; // 🔹 strong dark grey
       margin: $space-8 0 $space-4;
     }
 
     p {
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $neutral-800;
+      color: $rouge-primary-700; // 🔹 mid grey body text
       margin-bottom: $space-4;
     }
 
@@ -38,17 +38,17 @@
       li {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $neutral-800;
+        color: $rouge-primary-700;
         margin-bottom: $space-2;
 
         strong {
-          color: $brand-secondary-700;
+          color: $rouge-accent-magenta; // 🔹 emphasize with magenta
         }
       }
     }
 
     strong {
-      color: $brand-primary-700;
+      color: $rouge-accent-red;
     }
 
     em {
@@ -61,9 +61,10 @@
     padding-bottom: $space-6;
     border-bottom: 1px solid $neutral-200;
   }
+
   .highlight-box {
-    background: $brand-primary-300;
-    border-left: 4px solid $brand-primary-500;
+    background: $rouge-secondary-100; // 🔹 soft light grey
+    border-left: 4px solid $rouge-accent-red; // 🔹 red border
     padding: $space-5 $space-6;
     border-radius: 10px;
     margin: $space-6 0;
@@ -72,7 +73,7 @@
       font-size: $body-base-size;
       line-height: $body-line;
       margin-bottom: 0;
-      color: $neutral-900;
+      color: $rouge-primary-900; // 🔹 deep grey text
     }
   }
 }

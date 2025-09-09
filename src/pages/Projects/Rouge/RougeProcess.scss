@@ -13,7 +13,7 @@
       font-family: $font-heading;
       font-size: $h2-size;
       font-weight: 700;
-      color: $brand-primary-700; // 🔸 warm accent
+      color: $rouge-accent-red; // 🔹 main section title in Rouge red
       margin-bottom: $space-6;
     }
 
@@ -21,7 +21,7 @@
       font-family: $font-heading;
       font-size: $h3-size;
       font-weight: 600;
-      color: $brand-secondary-700;
+      color: $rouge-primary-900; // 🔹 deep wine red for subheaders
       margin: $space-8 0 $space-4;
     }
 
@@ -29,12 +29,12 @@
       font-family: $font-body;
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $neutral-800;
+      color: $rouge-primary-700; // 🔹 charcoal grey for body text
       margin-bottom: $space-4;
     }
 
     strong {
-      color: $brand-primary-700; // 🔸 highlights in orange
+      color: $rouge-accent-magenta; // 🔹 magenta highlight
     }
 
     em {
@@ -50,7 +50,7 @@
       font-size: $h3-size;
       font-weight: 700;
       margin-bottom: $space-6;
-      color: $brand-primary-700; // 🔸 warm accent
+      color: $rouge-accent-red; // 🔹 accent headline
     }
 
     .tech-grid {
@@ -69,12 +69,12 @@
         font-size: $h4-size;
         font-weight: 700;
         margin-bottom: $space-2;
-        color: $brand-primary-700; // 🔸 tool title accent
+        color: $rouge-accent-magenta; // 🔹 tool headers in magenta
       }
 
       p {
         font-size: $body-small-size;
-        color: $neutral-600;
+        color: $rouge-primary-700; // 🔹 charcoal grey for descriptions
         margin: 0;
       }
     }
@@ -94,8 +94,8 @@
   }
 
   .highlight-box {
-    background: $brand-primary-300;
-    border-left: 4px solid $brand-primary-500;
+    background: $rouge-secondary-100; // 🔹 subtle light grey background
+    border-left: 4px solid $rouge-accent-red; // 🔹 red border accent
     padding: $space-5 $space-6;
     border-radius: 10px;
     margin: $space-8 0;
@@ -103,7 +103,7 @@
     p {
       font-size: $body-base-size;
       margin-bottom: $space-3;
-      color: $neutral-900;
+      color: $rouge-primary-900; // 🔹 deep grey for clarity
     }
 
     ul {
@@ -112,7 +112,7 @@
 
       li {
         font-size: $body-small-size;
-        color: $neutral-800;
+        color: $rouge-primary-700;
         margin-bottom: $space-2;
       }
     }

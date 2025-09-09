@@ -14,7 +14,7 @@
     h2 {
       font-size: 28px;
       font-weight: 700;
-      color: $brand-secondary-700;
+      color: $guess-primary-900; // 🔹 deep navy
       margin-bottom: 20px;
       line-height: 1.3;
     }
@@ -22,7 +22,7 @@
     h3 {
       font-size: 20px;
       font-weight: 600;
-      color: $brand-secondary-700;
+      color: $guess-primary-900; // 🔹 navy subheadings
       margin: 32px 0 14px;
       line-height: 1.4;
     }
@@ -46,14 +46,14 @@
         margin-bottom: 10px;
 
         strong {
-          color: $brand-secondary-700;
+          color: $guess-primary-900; // 🔹 navy emphasis
           font-weight: 600;
         }
       }
     }
 
     strong {
-      color: $brand-secondary-700;
+      color: $guess-primary-900; // 🔹 navy emphasis
       font-weight: 600;
     }
 
@@ -67,7 +67,7 @@
 /* ---------- HIGHLIGHT BOXES ---------- */
 .test .highlight-box {
   background: $neutral-50;
-  border-left: 4px solid $brand-secondary-700;
+  border-left: 4px solid $guess-tertiary-red-700; // 🔹 red accent
   padding: 18px 20px;
   border-radius: 8px;
   margin: 20px 0;
@@ -76,7 +76,7 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: $brand-secondary-700;
+    color: $guess-primary-900; // 🔹 navy heading
   }
 
   ul {
@@ -97,7 +97,7 @@
   font-style: italic;
   font-weight: 500;
   color: $neutral-800;
-  border-left: 4px solid $brand-secondary-700;
+  border-left: 4px solid $guess-tertiary-red-700; // 🔹 red accent
   margin: 24px 0;
   padding: 10px 16px;
   background: $neutral-50;
@@ -111,11 +111,13 @@
   border-radius: 12px;
   margin-top: 40px;
   text-align: center;
+  background: $neutral-50;
 
   h4 {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: $guess-primary-900; // 🔹 navy heading
   }
 
   p {

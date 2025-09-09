@@ -1,6 +1,7 @@
 import "./Ideate.scss";
 import ideaDump from "@/assets/images/Guess/ideaDUMP.jpg";
 import crazy8 from "@/assets/images/Guess/crazy8.jpg";
+import branding from "@/assets/images/Guess/branding.svg";
 
 export default function Ideate() {
   return (
@@ -89,9 +90,28 @@ export default function Ideate() {
         </ul>
       </section>
 
+      {/* BRANDING */}
+      <section className="project-section">
+        <h3>Step 4 – Branding Foundation</h3>
+        <p>
+          Before generating solutions, I created a{" "}
+          <strong>branding system for the Guess redesign</strong>. This ensured
+          that every idea was not only functional but also{" "}
+          <em>aligned with a consistent visual identity</em>. The branding
+          highlights inclusivity, boldness, and confidence — values that guided
+          all creative exploration.
+        </p>
+        <figure className="gallery__item">
+          <img src={branding} alt="Guess Branding" loading="lazy" />
+          <figcaption>
+            Branding system created for Guess Jeans redesign
+          </figcaption>
+        </figure>
+      </section>
+
       {/* IDEA DUMP */}
       <section className="project-section">
-        <h3>Step 4 – Idea Dump</h3>
+        <h3>Step 5 – Idea Dump</h3>
         <p>
           To push creativity further, I ran an <strong>idea dump</strong> — a
           process of writing down as many potential solutions as possible
@@ -118,7 +138,7 @@ export default function Ideate() {
 
       {/* CRAZY 8 */}
       <section className="project-section">
-        <h3>Step 5 – Crazy 8</h3>
+        <h3>Step 6 – Crazy 8</h3>
         <p>
           From the idea dump, I moved into a <strong>Crazy 8</strong> session, a
           design sprint activity. I sketched{" "}

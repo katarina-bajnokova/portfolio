@@ -6,85 +6,198 @@
 .koyekola-page {
   .project__container {
     @include container(1100px);
-    padding-block: 64px 140px; /* leave room for fixed footer */
+    padding-block: $space-16 140px;
   }
 
   .project__header {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: $space-8;
 
     h1 {
       font-family: $font-heading;
       font-weight: 700;
-      font-size: 36px;
+      font-size: $h2-size;
       line-height: $heading-line;
-      letter-spacing: $heading-tracking;
-      color: $brand-secondary-700;
-      margin: 0 0 12px 0;
-    }
-
-    .project__summary,
-    .project__meta {
-      margin: 8px auto 0;
-      max-width: 860px;
-      color: $neutral-800;
-      font-size: $body-base-size;
-      line-height: $body-line;
+      color: $brand-primary-700;
+      margin-bottom: $space-4;
     }
   }
 
-  /* laptop-style hero */
-  .project-hero {
-    display: grid;
-    place-items: center;
-    margin: 24px 0 36px;
+  .project__summarybox {
+    background: $brand-secondary-700;
+    border-radius: 14px;
+    padding: $space-8;
+    margin: $space-8 auto;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: $space-6;
+    color: $neutral-100;
 
-    &__media {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-      background: $neutral-200;
-      object-fit: contain;
+    .summary-title {
+      font-size: $h4-size;
+      font-weight: 700;
+      text-align: center;
+      color: $neutral-100;
+    }
 
-      &--laptop {
-        width: clamp(600px, 72vw, 1100px); /* nice, wide laptop feel */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: $space-6;
+
+      h3 {
+        font-size: $body-base-size;
+        font-weight: 600;
+        margin-bottom: $space-2;
+        color: $neutral-100;
+      }
+
+      p {
+        font-size: $body-small-size;
+        line-height: $body-line;
+        color: $neutral-100;
+      }
+    }
+
+    .summary-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-6;
+      justify-content: space-between;
+      border-top: 1px solid rgba(249, 246, 242, 0.3);
+      padding-top: $space-5;
+
+      div {
+        flex: 1;
+        min-width: 220px;
+
+        h3 {
+          font-size: $body-base-size;
+          font-weight: 600;
+          margin-bottom: $space-2;
+          color: $neutral-100;
+        }
+
+        p {
+          font-size: $body-small-size;
+          line-height: $body-line;
+          color: $neutral-100;
+        }
       }
     }
   }
 
-  .project-section {
-    margin-top: 28px;
+  .project-hero {
+    display: grid;
+    place-items: center;
+    margin: $space-8 0 $space-10;
 
-    h2 {
-      font-family: $font-heading;
-      font-weight: 800;
-      color: $brand-secondary-700;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      font-size: 18px;
-      margin: 0 0 10px 0;
+    &__media {
+      width: 100%;
+      max-width: 1100px;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+      background: $neutral-200;
+      object-fit: contain;
     }
+  }
+
+  .goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: $space-6;
+    margin: $space-6 0 $space-8;
+  }
+
+  .goal-card {
+    background: $neutral-50;
+    border: 1px solid $neutral-200;
+    border-radius: 12px;
+    padding: $space-5;
+    box-shadow: 0 4px 12px $shadow-soft;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    h4 {
+      font-size: $h4-size;
+      font-weight: 600;
+      color: $brand-primary-700;
+      margin-bottom: $space-2;
+    }
+
+    p {
+      font-size: $body-small-size;
+      line-height: $body-line;
+      color: $neutral-800;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px $shadow-soft;
+    }
+  }
+
+  .process-block {
+    margin-bottom: $space-8;
 
     h3 {
-      font-family: $font-heading;
+      font-size: $h3-size;
       font-weight: 600;
+      margin-bottom: $space-3;
       color: $brand-secondary-700;
-      margin: 12px 0 8px;
-      font-size: 16px;
-    }
-
-    p,
-    li {
-      color: $neutral-800;
-      font-size: $body-base-size;
-      line-height: $body-line;
     }
 
     ul {
-      padding-left: 18px;
-      margin: 0;
+      padding-left: $space-6;
+
+      li {
+        font-size: $body-small-size;
+        line-height: $body-line;
+        color: $neutral-800;
+        margin-bottom: $space-2;
+      }
+    }
+  }
+
+  .reflection-box {
+    background: $brand-primary-300;
+    border-left: 4px solid $brand-primary-500;
+    padding: $space-6;
+    border-radius: 12px;
+    margin-top: $space-6;
+    box-shadow: 0 8px 28px $shadow-soft;
+
+    p {
+      font-size: $body-base-size;
+      line-height: $body-line;
+      font-style: italic;
+      color: $neutral-900;
+    }
+  }
+
+  .outcome-snapshot {
+    background: $brand-primary-300;
+    padding: $space-6 $space-7;
+    border-radius: 12px;
+    margin-top: $space-8;
+    box-shadow: 0 8px 28px $shadow-soft;
+
+    h4 {
+      font-size: $h4-size;
+      font-weight: 700;
+      margin-bottom: $space-3;
+      color: $brand-primary-700;
+    }
+
+    ul {
+      padding-left: $space-6;
+
+      li {
+        font-size: $body-small-size;
+        line-height: $body-line;
+        color: $neutral-900;
+        margin-bottom: $space-2;
+      }
     }
   }
 }

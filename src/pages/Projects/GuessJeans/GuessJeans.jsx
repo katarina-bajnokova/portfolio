@@ -3,12 +3,11 @@ import "./GuessJeans.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 
-// NEW: Separated phases
 import Empathize from "./Empathize";
 import Define from "./Define";
 import Ideate from "./Ideate";
 import Prototype from "./Prototype";
-import Test from "./Test"; // ✅ import new Test component
+import Test from "./Test";
 
 import { AfterThoughts, FutureImprovements } from "./SectionsText";
 
@@ -20,7 +19,7 @@ export default function GuessJeans() {
   return (
     <>
       <Header />
-      <main className="project-page">
+      <main className="project-page guessjeans-content">
         <section className="project__container">
           {/* HEADER */}
           <header className="project__header">
@@ -41,7 +40,7 @@ export default function GuessJeans() {
                   <h3>Problem</h3>
                   <p>
                     Sizes were inconsistent, fit details unclear, and imagery
-                    excluded real body types. Customers felt uncertain—leading
+                    excluded real body types. Customers felt uncertain — leading
                     to abandoned carts and high returns.
                   </p>
                 </div>
@@ -95,19 +94,10 @@ export default function GuessJeans() {
 
           {/* TAB CONTENT */}
           <div className="tab-content">
-            {/* EMPATHIZE */}
             {activeTab === "Empathize" && <Empathize />}
-
-            {/* DEFINE */}
             {activeTab === "Define" && <Define />}
-
-            {/* IDEATE */}
             {activeTab === "Ideate" && <Ideate />}
-
-            {/* PROTOTYPE */}
             {activeTab === "Prototype" && <Prototype />}
-
-            {/* TEST */}
             {activeTab === "Test" && (
               <>
                 <Test />

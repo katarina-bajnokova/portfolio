@@ -1,35 +1,88 @@
+import { useState } from "react";
 import "./Koyekola.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import koyekolaImg from "@/assets/images/koyekola.png";
 
 export default function Koyekola() {
+  const [activeTab, setActiveTab] = useState("Goals");
+
+  const tabs = ["Goals", "Process", "After Thoughts", "Future"];
+
   return (
     <>
       <Header />
       <main className="project-page koyekola-page">
         <section className="project__container">
+          {/* HEADER */}
           <header className="project__header">
             <h1>Koyekola – Educational Language App</h1>
 
-            <p className="project__summary">
-              <strong>Challenge:</strong> Koyekola is my personal project,
-              created to make learning Lingala fun and accessible for children
-              through games and interactive tools. The challenge was to
-              establish a strong brand identity and begin developing a digital
-              product from scratch, starting with a functional landing page to
-              introduce the app.
-            </p>
+            <div className="project__summarybox">
+              <h2 className="summary-title">Project Overview</h2>
 
-            <p className="project__meta">
-              <strong>Deliverables:</strong> Branding & visual identity, landing
-              page design in Figma, landing page coded in React + Sass. (In
-              progress) Game screens & full app design.
-              <br />
-              <strong>Role:</strong> End-to-End Product Designer & Front-End
-              Developer
-            </p>
+              <div className="summary-grid">
+                <div>
+                  <h3>Challenge</h3>
+                  <p>
+                    Koyekola is my personal project, created to make learning{" "}
+                    <strong>Lingala fun and accessible for children</strong>{" "}
+                    through games and interactive tools. The challenge was to
+                    establish a strong brand identity and begin developing a
+                    digital product from scratch, starting with a functional
+                    landing page.
+                  </p>
+                </div>
+                <div>
+                  <h3>Solution</h3>
+                  <p>
+                    A <strong>playful brand system</strong> combined with a{" "}
+                    <strong>React + Sass landing page</strong>. The landing page
+                    introduces the app, explains the value, and sets the
+                    foundation for future development of{" "}
+                    <strong>educational mini-games</strong>.
+                  </p>
+                </div>
+                <div>
+                  <h3>Role</h3>
+                  <p>
+                    End-to-End Product Designer & Front-End Developer —{" "}
+                    <em>branding, Figma design, coding in React/Sass</em>
+                  </p>
+                </div>
+              </div>
+
+              <div className="summary-meta">
+                <div>
+                  <h3>Deliverables</h3>
+                  <p>
+                    Branding & visual identity, landing page design in Figma,
+                    React + Sass coded landing page, (in progress) app designs &
+                    mini-games.
+                  </p>
+                </div>
+                <div>
+                  <h3>Impact</h3>
+                  <p>
+                    Demonstrates ability to{" "}
+                    <strong>create a product from concept to code</strong> while
+                    maintaining brand consistency and technical scalability.
+                  </p>
+                </div>
+              </div>
+            </div>
           </header>
+
+          {/* MISSION STATEMENT */}
+          <section className="mission-statement">
+            <p>
+              <strong>Koyekola is close to my heart.</strong> The goal is to
+              make Lingala accessible for children abroad, helping them learn
+              their <em>mother tongue</em> through play. This project is still
+              ongoing, but it represents my vision: building technology that
+              preserves culture, connects families, and makes education joyful.
+            </p>
+          </section>
 
           {/* HERO */}
           <div className="project-hero">
@@ -41,99 +94,133 @@ export default function Koyekola() {
             />
           </div>
 
-          {/* GOALS */}
-          <section className="project-section">
-            <h2>Goals</h2>
-            <ul>
-              <li>
-                Build a strong, playful brand that connects with children and
-                parents.
-              </li>
-              <li>
-                Design and develop a landing page that explains the app’s
-                purpose and invites users to explore.
-              </li>
-              <li>
-                Set the foundation for future mini-games and learning modules.
-              </li>
-              <li>
-                Practice a full design-to-code pipeline on a personal project.
-              </li>
-            </ul>
-          </section>
+          {/* TABS */}
+          <nav className="design-cycle-tabs">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={activeTab === tab ? "active" : ""}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
 
-          {/* PROCESS */}
-          <section className="project-section">
-            <h2>Process</h2>
+          {/* TAB CONTENT */}
+          <div className="tab-content">
+            {activeTab === "Goals" && (
+              <div className="goals-grid">
+                <div className="goal-card">
+                  <h4>Playful Brand</h4>
+                  <p>
+                    Build a strong, joyful identity that connects with children
+                    and parents.
+                  </p>
+                </div>
+                <div className="goal-card">
+                  <h4>Landing Page</h4>
+                  <p>
+                    Design and develop a clear landing page that explains the
+                    app’s purpose and invites users to explore.
+                  </p>
+                </div>
+                <div className="goal-card">
+                  <h4>Foundation</h4>
+                  <p>
+                    Set the base for interactive mini-games and learning
+                    modules.
+                  </p>
+                </div>
+                <div className="goal-card">
+                  <h4>Practice</h4>
+                  <p>
+                    Apply a full design-to-code pipeline on a personal project.
+                  </p>
+                </div>
+              </div>
+            )}
 
-            <h3>Branding</h3>
-            <ul>
-              <li>
-                Created logo, mascot, and color palette representing joy,
-                inclusivity, and cultural authenticity.
-              </li>
-              <li>
-                Defined typography and a friendly yet professional visual style.
-              </li>
-            </ul>
+            {activeTab === "Process" && (
+              <>
+                <div className="process-block">
+                  <h3>Branding</h3>
+                  <ul>
+                    <li>
+                      Created logo, mascot, and color palette representing joy,
+                      inclusivity, and cultural authenticity.
+                    </li>
+                    <li>
+                      Defined typography and a friendly yet professional style.
+                    </li>
+                  </ul>
+                </div>
 
-            <h3>Landing Page</h3>
-            <ul>
-              <li>
-                Designed a basic landing page in Figma to test brand
-                application.
-              </li>
-              <li>
-                Coded the landing page in React + Sass with responsive behavior
-                and interactivity.
-              </li>
-              <li>
-                Sections: hero (mascot + call to action), features, progress
-                tracking, and navigation.
-              </li>
-            </ul>
+                <div className="process-block">
+                  <h3>Landing Page</h3>
+                  <ul>
+                    <li>
+                      Designed a responsive landing page in Figma to test brand
+                      application.
+                    </li>
+                    <li>
+                      Developed the page in React + Sass with interactivity.
+                    </li>
+                    <li>
+                      Sections: hero (mascot + call to action), features,
+                      progress tracking, and navigation.
+                    </li>
+                  </ul>
+                </div>
 
-            <h3>Ongoing Development</h3>
-            <ul>
-              <li>
-                Currently designing the mini-games (Memory, Word Search, etc.).
-              </li>
-              <li>
-                Planning to develop and code the full app step by step after
-                finalizing designs.
-              </li>
-            </ul>
-          </section>
+                <div className="process-block">
+                  <h3>Ongoing Development</h3>
+                  <ul>
+                    <li>
+                      Currently designing mini-games (Memory, Word Search,
+                      etc.).
+                    </li>
+                    <li>
+                      Planning step-by-step full app build after finalizing
+                      designs.
+                    </li>
+                  </ul>
+                </div>
+              </>
+            )}
 
-          {/* AFTER THOUGHTS */}
-          <section className="project-section">
-            <h2>After Thoughts</h2>
-            <p>
-              With Koyekola, I took ownership from concept and branding to a
-              coded landing page. It demonstrates both design and front-end
-              skills, while showing my ability to structure and manage a
-              long-term personal product.
-            </p>
-          </section>
+            {activeTab === "After Thoughts" && (
+              <div className="reflection-box">
+                <p>
+                  With Koyekola, I took ownership from{" "}
+                  <strong>concept and branding to a coded landing page</strong>.
+                  It demonstrates both design and front-end skills, while
+                  showing my ability to structure and manage a{" "}
+                  <strong>long-term personal product</strong>.
+                </p>
+              </div>
+            )}
 
-          {/* FUTURE */}
-          <section className="project-section">
-            <h2>Future Improvements & Suggestions</h2>
-            <ul>
-              <li>Finalize and polish the interactive mini-games.</li>
-              <li>
-                Expand into a learning hub with categories (fruits, animals,
-                numbers, etc.).
-              </li>
-              <li>
-                Add progress tracking for learners and parent/teacher
-                dashboards.
-              </li>
-              <li>
-                Explore publishing educational materials alongside the app.
-              </li>
-            </ul>
-          </section>
+            {activeTab === "Future" && (
+              <div className="outcome-snapshot">
+                <h4>Next Steps</h4>
+                <ul>
+                  <li>Finalize and polish the interactive mini-games.</li>
+                  <li>
+                    Expand into a learning hub with categories (fruits, animals,
+                    numbers, etc.).
+                  </li>
+                  <li>
+                    Add progress tracking for learners and parent/teacher
+                    dashboards.
+                  </li>
+                  <li>
+                    Explore publishing educational materials alongside the app.
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         </section>
       </main>
       <Footer linkedin="https://www.linkedin.com/in/katarina-bajnokova/" />

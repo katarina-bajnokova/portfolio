@@ -17,13 +17,13 @@
       font-family: $font-heading;
       font-weight: 700;
       font-size: $h1-size;
-      color: $brand-secondary-700;
+      color: $rouge-primary-900; // 🔹 deep black/grey from Rouge
       margin: 0 0 $space-4;
     }
   }
 
   .project__summarybox {
-    background: $brand-secondary-700;
+    background: $rouge-primary-900; // 🔹 dark Rouge base
     border-radius: 18px;
     padding: $space-8;
     margin: $space-10 auto;
@@ -31,12 +31,12 @@
     display: flex;
     flex-direction: column;
     gap: $space-8;
-    color: $neutral-100;
+    color: $rouge-secondary-50; // 🔹 white text
 
     .summary-title {
       font-size: $h3-size;
       font-weight: 600;
-      color: $neutral-100;
+      color: $rouge-secondary-50;
       text-align: center;
       margin-bottom: $space-4;
     }
@@ -50,13 +50,13 @@
         font-size: $body-base-size;
         font-weight: 600;
         margin-bottom: $space-2;
-        color: $neutral-100;
+        color: $rouge-secondary-50;
       }
 
       p {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $neutral-100;
+        color: $rouge-secondary-50;
       }
     }
 
@@ -65,7 +65,7 @@
       flex-wrap: wrap;
       gap: $space-8;
       justify-content: space-between;
-      border-top: 1px solid rgba(249, 246, 242, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
       padding-top: $space-6;
 
       div {
@@ -76,13 +76,13 @@
           font-size: $body-base-size;
           font-weight: 600;
           margin-bottom: $space-2;
-          color: $neutral-100;
+          color: $rouge-secondary-50;
         }
 
         p {
           font-size: $body-small-size;
           line-height: $body-line;
-          color: $neutral-100;
+          color: $rouge-secondary-50;
         }
       }
     }
@@ -114,18 +114,18 @@
       font-size: $body-base-size;
       font-weight: 600;
       cursor: pointer;
-      color: $neutral-800;
+      color: $rouge-primary-700; // 🔹 dark grey
       padding: $space-2 $space-3;
       border-bottom: 2px solid transparent;
       transition: color 0.2s ease, border-color 0.2s ease;
 
       &.active {
-        color: $brand-secondary-700;
-        border-bottom: 2px solid $brand-secondary-700;
+        color: $rouge-accent-red; // 🔹 red highlight
+        border-bottom: 2px solid $rouge-accent-red;
       }
 
       &:hover:not(.active) {
-        color: $brand-secondary-500;
+        color: $rouge-accent-magenta; // 🔹 purple/magenta hover
       }
     }
   }
@@ -138,7 +138,7 @@
     h2 {
       font-size: $h3-size;
       font-weight: 700;
-      color: $brand-secondary-700;
+      color: $rouge-primary-900;
       margin-bottom: $space-4;
     }
 
@@ -146,14 +146,14 @@
     li {
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $neutral-800;
+      color: $rouge-primary-700;
       margin-bottom: $space-3;
     }
 
     ul {
       padding-left: $space-5;
       list-style: disc;
-      color: $neutral-800;
+      color: $rouge-primary-700;
     }
   }
 }

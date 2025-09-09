@@ -13,25 +13,25 @@
     font-size: $h2-size;
     font-weight: 700;
     margin-bottom: $space-6;
-    color: $brand-secondary-700;
+    color: $rouge-primary-900; // 🔹 title in deep black/grey
   }
 
   p {
     font-family: $font-body;
     font-size: $body-base-size;
     line-height: $body-line;
-    color: $neutral-800;
+    color: $rouge-primary-700; // 🔹 dark grey body text
     margin-bottom: $space-5;
 
     strong {
-      color: $brand-primary-700;
+      color: $rouge-accent-red; // 🔹 red highlight
       font-weight: 600;
     }
   }
 
   .reflection-box {
-    background: $brand-primary-300;
-    border-left: 4px solid $brand-primary-500;
+    background: $rouge-secondary-100; // 🔹 light grey background
+    border-left: 4px solid $rouge-accent-red; // 🔹 accent border
     padding: $space-6 $space-7;
     border-radius: 12px;
     margin-top: $space-10;
@@ -42,21 +42,21 @@
       font-size: $h3-size;
       font-weight: 700;
       margin-bottom: $space-4;
-      color: $brand-secondary-700;
+      color: $rouge-primary-900;
     }
 
     p {
       font-size: $body-base-size;
       font-style: italic;
-      color: $neutral-900;
+      color: $rouge-primary-900; // 🔹 keep strong contrast
       margin: 0;
 
       strong {
-        color: $brand-primary-700;
+        color: $rouge-accent-magenta; // 🔹 magenta pop for strong
       }
 
       em {
-        color: $neutral-600;
+        color: $neutral-600; // keep neutral for subtle emphasis
       }
     }
   }

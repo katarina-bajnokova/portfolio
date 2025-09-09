@@ -4,10 +4,9 @@
 @use "@/styles/tokens/typography" as *;
 
 .project-page {
-  background: $neutral-100; // clean flat background
+  background: $neutral-100;
 }
 
-/* ---------- EMPATHIZE SECTION ---------- */
 .empathize {
   .project-section {
     margin-bottom: 64px;
@@ -18,7 +17,7 @@
     h2 {
       font-size: 28px;
       font-weight: 700;
-      color: $brand-secondary-700;
+      color: $guess-primary-900; // deep navy headline
       margin-bottom: 20px;
       line-height: 1.3;
     }
@@ -26,12 +25,11 @@
     h3 {
       font-size: 20px;
       font-weight: 600;
-      color: $brand-secondary-700;
+      color: $guess-primary-900; // navy subheadline
       margin: 32px 0 14px;
       line-height: 1.4;
     }
 
-    /* Step label (no pill, just subtle prefix) */
     .step-label {
       font-size: 14px;
       font-weight: 600;
@@ -59,14 +57,14 @@
         margin-bottom: 10px;
 
         strong {
-          color: $brand-secondary-700;
+          color: $guess-primary-900; // highlight navy
           font-weight: 600;
         }
       }
     }
 
     strong {
-      color: $brand-secondary-700;
+      color: $guess-primary-900;
       font-weight: 600;
     }
 
@@ -77,10 +75,9 @@
   }
 }
 
-/* ---------- HIGHLIGHT BOXES ---------- */
 .empathize .highlight-box {
   background: $neutral-50;
-  border-left: 4px solid $brand-secondary-700;
+  border-left: 4px solid $guess-tertiary-red-700; // Guess red accent
   padding: 18px 20px;
   border-radius: 8px;
   margin: 20px 0;
@@ -89,7 +86,7 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: $brand-secondary-700;
+    color: $guess-primary-900;
   }
 
   ul {
@@ -104,20 +101,18 @@
   }
 }
 
-/* ---------- CALLOUT QUOTES ---------- */
 .empathize blockquote {
   font-size: 16px;
   font-style: italic;
   font-weight: 500;
   color: $neutral-800;
-  border-left: 4px solid $brand-secondary-700;
+  border-left: 4px solid $guess-tertiary-red-700; // branded red
   margin: 24px 0;
   padding: 10px 16px;
   background: $neutral-50;
   border-radius: 6px;
 }
 
-/* ---------- GALLERY ---------- */
 .empathize .gallery__grid {
   display: grid;
   gap: 20px;
@@ -142,17 +137,15 @@
 .empathize .gallery__item {
   text-align: center;
 
-  img,
-  video.gallery__video {
+  img {
     width: 100%;
-    max-width: 720px;
+    max-width: 1120px;
     height: auto;
     object-fit: contain;
     margin: 0 auto;
-
-    border-radius: 0; // flat look
-    box-shadow: none; // no shadows
-    background: none; // clean
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
     padding: 0;
   }
 
@@ -165,18 +158,19 @@
   }
 }
 
-/* ---------- OUTCOME SNAPSHOT ---------- */
 .empathize .outcome-snapshot {
   color: $neutral-800;
   padding: 24px;
   border-radius: 12px;
   margin-top: 40px;
   text-align: center;
+  background: $neutral-50;
 
   h4 {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: $guess-primary-900;
   }
 
   p {

@@ -3,176 +3,172 @@
 @use "@/styles/mixins" as *;
 @use "@/styles/tokens/typography" as *;
 
-.project__summarybox {
-  background: $brand-secondary-700; // ✅ dark background
-  border: none; // cleaner, border not needed on dark
-  border-radius: 14px;
-  padding: 32px;
-  margin: 40px auto;
-  max-width: 960px;
+.guessjeans-content {
+  .project__container {
+    @include container(1100px);
+    padding-block: $space-16 140px;
+  }
 
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  color: $neutral-100; // ✅ all text inside defaults to light
-
-  .summary-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: $neutral-100; // ✅ light text
-    margin-bottom: 12px;
+  .project__header {
     text-align: center;
-  }
+    margin-bottom: $space-6;
 
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-
-    h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: $neutral-100; // ✅ light text
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: $neutral-100; // ✅ light text
+    h1 {
+      font-family: $font-heading;
+      font-weight: 700;
+      font-size: $h1-size;
+      color: $guess-primary-900;
+      margin: 0 0 $space-4;
     }
   }
 
-  .summary-meta {
+  .project__summarybox {
+    background: $guess-primary-800;
+    border-radius: 18px;
+    padding: $space-8;
+    margin: $space-10 auto;
+    max-width: 1000px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
-    justify-content: space-between;
-    border-top: 1px solid rgba(249, 246, 242, 0.3); // ✅ subtle divider using neutral-100 with transparency
-    padding-top: 20px;
+    flex-direction: column;
+    gap: $space-8;
+    color: $neutral-50;
 
-    div {
-      flex: 1;
-      min-width: 200px;
+    .summary-title {
+      font-size: $h3-size;
+      font-weight: 600;
+      color: $neutral-50;
+      text-align: center;
+      margin-bottom: $space-4;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: $space-6;
 
       h3 {
-        font-size: 15px;
+        font-size: $body-base-size;
         font-weight: 600;
-        margin-bottom: 6px;
-        color: $neutral-100;
+        margin-bottom: $space-2;
+        color: $neutral-50;
       }
 
       p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: $neutral-100;
+        font-size: $body-small-size;
+        line-height: $body-line;
+        color: $neutral-50;
+      }
+    }
+
+    .summary-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-8;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: $space-6;
+
+      div {
+        flex: 1;
+        min-width: 220px;
+
+        h3 {
+          font-size: $body-base-size;
+          font-weight: 600;
+          margin-bottom: $space-2;
+          color: $neutral-50;
+        }
+
+        p {
+          font-size: $body-small-size;
+          line-height: $body-line;
+          color: $neutral-50;
+        }
       }
     }
   }
-}
 
-/* ---------- DESIGN CYCLE TABS ---------- */
-.design-cycle-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  margin: 48px 0 32px;
-  flex-wrap: wrap;
+  .design-cycle-tabs {
+    display: flex;
+    justify-content: center;
+    gap: $space-6;
+    margin: $space-10 0 $space-8;
+    flex-wrap: wrap;
 
-  button {
-    background: none;
-    border: none;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    color: $neutral-800;
-    padding: 6px 2px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    button {
+      background: none;
+      border: none;
+      font-size: $body-base-size;
+      font-weight: 600;
+      cursor: pointer;
+      color: $neutral-800;
+      padding: $space-2 $space-3;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
 
-    &.active {
-      color: $brand-secondary-700;
-      border-bottom: 2px solid $brand-secondary-700;
-    }
+      &.active {
+        color: $guess-tertiary-red-700; // 🔴 Guess red underline
+        border-bottom: 2px solid $guess-tertiary-red-700;
+      }
 
-    &:hover:not(.active) {
-      color: $brand-secondary-500;
+      &:hover:not(.active) {
+        color: $guess-primary-800; // 🔵 lighter navy hover
+      }
     }
   }
-}
 
-/* ---------- TAB CONTENT ---------- */
-.tab-content {
-  max-width: 920px;
-  margin: 0 auto 64px;
-  padding: 28px 32px;
+  .tab-content {
+    max-width: 960px;
+    margin: 0 auto $space-16;
+    padding: $space-6 $space-7;
 
-  h2 {
-    font-size: 21px;
-    font-weight: 700;
-    color: $brand-secondary-700;
-    margin-bottom: 14px;
-  }
-
-  p,
-  li {
-    font-size: 15px;
-    line-height: 1.65;
-    color: $neutral-800;
-    margin-bottom: 10px;
-  }
-
-  ul {
-    padding-left: 20px;
-    list-style: disc;
-    color: $neutral-800;
-  }
-}
-
-/* ---------- GENERAL GALLERY ---------- */
-.gallery {
-  .gallery__grid {
-    --min: 260px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--min, 260px), 1fr));
-    gap: $space-3;
-
-    &[data-cols="1"] {
-      grid-template-columns: 1fr;
-    }
-    &[data-cols="2"] {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    &[data-cols="3"] {
-      grid-template-columns: repeat(3, 1fr);
+    h2 {
+      font-size: $h3-size;
+      font-weight: 700;
+      color: $guess-primary-900;
+      margin-bottom: $space-4;
     }
 
-    @media (max-width: $breakpoint-tablet) {
-      gap: $space-2;
+    p,
+    li {
+      font-size: $body-base-size;
+      line-height: $body-line;
+      color: $neutral-800;
+      margin-bottom: $space-3;
+    }
 
-      &[data-cols="2"],
-      &[data-cols="3"] {
+    ul {
+      padding-left: $space-5;
+      list-style: disc;
+      color: $neutral-800;
+    }
+  }
+
+  .gallery {
+    .gallery__grid {
+      --min: 260px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--min, 260px), 1fr));
+      gap: $space-3;
+
+      &[data-cols="1"] {
         grid-template-columns: 1fr;
       }
-    }
-  }
+      &[data-cols="2"] {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      &[data-cols="3"] {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-  .gallery__item {
-    position: relative;
-    border-radius: 10px;
-    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+      @media (max-width: $breakpoint-tablet) {
+        gap: $space-2;
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-    }
-
-    img,
-    video.gallery__video {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
+        &[data-cols="2"],
+        &[data-cols="3"] {
+          grid-template-columns: 1fr;
+        }
+      }
     }
   }
 }
