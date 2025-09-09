@@ -3,13 +3,13 @@ import { research } from "./guessAssets";
 import "./Empathize.scss";
 
 // Import curated showcase images
-import emaPersona from "@/assets/images/Guess/emaPersona.png";
-import emaUJ from "@/assets/images/Guess/emaUJ.png";
+import emaPersona from "@/assets/images/Guess/emaPersona.webp";
+import emaUJ from "@/assets/images/Guess/emaUJ.webp";
 import emaEM from "@/assets/images/Guess/emmaEM.png";
-import US1 from "@/assets/images/Guess/US1.png";
-import US2 from "@/assets/images/Guess/US2.png";
-import US3 from "@/assets/images/Guess/US3.png";
-import US4 from "@/assets/images/Guess/US4.png";
+import US1 from "@/assets/images/Guess/US1.webp";
+import US2 from "@/assets/images/Guess/US2.webp";
+import US3 from "@/assets/images/Guess/US3.webp";
+import US4 from "@/assets/images/Guess/US4.webp";
 
 export default function Empathize() {
   return (

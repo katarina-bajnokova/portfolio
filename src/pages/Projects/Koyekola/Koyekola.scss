@@ -18,13 +18,13 @@
       font-weight: 700;
       font-size: $h2-size;
       line-height: $heading-line;
-      color: $brand-primary-700;
+      color: $koyekola-forest-green; // 🌿 main header in forest green
       margin-bottom: $space-4;
     }
   }
 
   .project__summarybox {
-    background: $brand-secondary-700;
+    background: $koyekola-river-clay-blue; // 🌊 softer dark background
     border-radius: 14px;
     padding: $space-8;
     margin: $space-8 auto;
@@ -32,13 +32,13 @@
     display: flex;
     flex-direction: column;
     gap: $space-6;
-    color: $neutral-100;
+    color: $koyekola-sand-ivory;
 
     .summary-title {
       font-size: $h4-size;
       font-weight: 700;
       text-align: center;
-      color: $neutral-100;
+      color: $koyekola-sand-ivory;
     }
 
     .summary-grid {
@@ -50,13 +50,13 @@
         font-size: $body-base-size;
         font-weight: 600;
         margin-bottom: $space-2;
-        color: $neutral-100;
+        color: $koyekola-sand-ivory;
       }
 
       p {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $neutral-100;
+        color: $koyekola-sand-ivory;
       }
     }
 
@@ -65,7 +65,7 @@
       flex-wrap: wrap;
       gap: $space-6;
       justify-content: space-between;
-      border-top: 1px solid rgba(249, 246, 242, 0.3);
+      border-top: 1px solid rgba(251, 247, 237, 0.3); // ivory fade
       padding-top: $space-5;
 
       div {
@@ -76,13 +76,13 @@
           font-size: $body-base-size;
           font-weight: 600;
           margin-bottom: $space-2;
-          color: $neutral-100;
+          color: $koyekola-sand-ivory;
         }
 
         p {
           font-size: $body-small-size;
           line-height: $body-line;
-          color: $neutral-100;
+          color: $koyekola-sand-ivory;
         }
       }
     }
@@ -97,8 +97,8 @@
       width: 100%;
       max-width: 1100px;
       border-radius: 14px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-      background: $neutral-200;
+      box-shadow: 0 20px 60px $koyekola-shadow-hard;
+      background: $koyekola-sand-ivory;
       object-fit: contain;
     }
   }
@@ -111,29 +111,29 @@
   }
 
   .goal-card {
-    background: $neutral-50;
-    border: 1px solid $neutral-200;
+    background: $koyekola-sand-ivory;
+    border: 1px solid $koyekola-clay-dust;
     border-radius: 12px;
     padding: $space-5;
-    box-shadow: 0 4px 12px $shadow-soft;
+    box-shadow: 0 4px 12px $koyekola-shadow-soft;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     h4 {
       font-size: $h4-size;
       font-weight: 600;
-      color: $brand-primary-700;
+      color: $koyekola-forest-green;
       margin-bottom: $space-2;
     }
 
     p {
       font-size: $body-small-size;
       line-height: $body-line;
-      color: $neutral-800;
+      color: $koyekola-ebony-bark;
     }
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 28px $shadow-soft;
+      box-shadow: 0 12px 28px $koyekola-shadow-soft;
     }
   }
 
@@ -144,7 +144,7 @@
       font-size: $h3-size;
       font-weight: 600;
       margin-bottom: $space-3;
-      color: $brand-secondary-700;
+      color: $koyekola-river-clay-blue;
     }
 
     ul {
@@ -153,40 +153,40 @@
       li {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $neutral-800;
+        color: $koyekola-ebony-bark;
         margin-bottom: $space-2;
       }
     }
   }
 
   .reflection-box {
-    background: $brand-primary-300;
-    border-left: 4px solid $brand-primary-500;
+    background: $koyekola-papaya-glow; // 🍑 warm highlight
+    border-left: 4px solid $koyekola-sunset-clay;
     padding: $space-6;
     border-radius: 12px;
     margin-top: $space-6;
-    box-shadow: 0 8px 28px $shadow-soft;
+    box-shadow: 0 8px 28px $koyekola-shadow-soft;
 
     p {
       font-size: $body-base-size;
       line-height: $body-line;
       font-style: italic;
-      color: $neutral-900;
+      color: $koyekola-ebony-bark;
     }
   }
 
   .outcome-snapshot {
-    background: $brand-primary-300;
+    background: $koyekola-golden-baobab; // 🌞 bright yellow for energy
     padding: $space-6 $space-7;
     border-radius: 12px;
     margin-top: $space-8;
-    box-shadow: 0 8px 28px $shadow-soft;
+    box-shadow: 0 8px 28px $koyekola-shadow-soft;
 
     h4 {
       font-size: $h4-size;
       font-weight: 700;
       margin-bottom: $space-3;
-      color: $brand-primary-700;
+      color: $koyekola-forest-green;
     }
 
     ul {
@@ -195,9 +195,66 @@
       li {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $neutral-900;
+        color: $koyekola-ebony-bark;
         margin-bottom: $space-2;
       }
+    }
+  }
+
+  .design-cycle-tabs {
+    display: flex;
+    justify-content: center;
+    gap: $space-6;
+    margin: $space-10 0 $space-8;
+    flex-wrap: wrap;
+
+    button {
+      background: none;
+      border: none;
+      font-size: $body-base-size;
+      font-weight: 600;
+      cursor: pointer;
+      color: $koyekola-ebony-bark; // 🌑 default dark text
+      padding: $space-2 $space-3;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+
+      &.active {
+        color: $koyekola-forest-green; // 🌿 active = green
+        border-bottom: 2px solid $koyekola-forest-green;
+      }
+
+      &:hover:not(.active) {
+        color: $koyekola-river-clay-blue; // 🌊 hover = clay blue
+      }
+    }
+  }
+
+  /* ---------- TAB CONTENT ---------- */
+  .tab-content {
+    max-width: 960px;
+    margin: 0 auto $space-16;
+    padding: $space-6 $space-7;
+
+    h2 {
+      font-size: $h3-size;
+      font-weight: 700;
+      color: $koyekola-forest-green; // 🌿 consistent with header
+      margin-bottom: $space-4;
+    }
+
+    p,
+    li {
+      font-size: $body-base-size;
+      line-height: $body-line;
+      color: $koyekola-ebony-bark;
+      margin-bottom: $space-3;
+    }
+
+    ul {
+      padding-left: $space-5;
+      list-style: disc;
+      color: $koyekola-ebony-bark;
     }
   }
 }

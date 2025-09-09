@@ -2,12 +2,12 @@ import { useState } from "react";
 import "./Koyekola.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
-import koyekolaImg from "@/assets/images/koyekola.png";
+import KoyekolaAbout from "./KoyekolaAbout"; // 👈 About tab component
 
 export default function Koyekola() {
-  const [activeTab, setActiveTab] = useState("Goals");
+  const [activeTab, setActiveTab] = useState("About");
 
-  const tabs = ["Goals", "Process", "After Thoughts", "Future"];
+  const tabs = ["About", "Process", "After Thoughts", "Future"];
 
   return (
     <>
@@ -73,27 +73,6 @@ export default function Koyekola() {
             </div>
           </header>
 
-          {/* MISSION STATEMENT */}
-          <section className="mission-statement">
-            <p>
-              <strong>Koyekola is close to my heart.</strong> The goal is to
-              make Lingala accessible for children abroad, helping them learn
-              their <em>mother tongue</em> through play. This project is still
-              ongoing, but it represents my vision: building technology that
-              preserves culture, connects families, and makes education joyful.
-            </p>
-          </section>
-
-          {/* HERO */}
-          <div className="project-hero">
-            <img
-              className="project-hero__media project-hero__media--laptop"
-              src={koyekolaImg}
-              alt="Koyekola landing page mockup"
-              loading="lazy"
-            />
-          </div>
-
           {/* TABS */}
           <nav className="design-cycle-tabs">
             {tabs.map((tab) => (
@@ -109,38 +88,7 @@ export default function Koyekola() {
 
           {/* TAB CONTENT */}
           <div className="tab-content">
-            {activeTab === "Goals" && (
-              <div className="goals-grid">
-                <div className="goal-card">
-                  <h4>Playful Brand</h4>
-                  <p>
-                    Build a strong, joyful identity that connects with children
-                    and parents.
-                  </p>
-                </div>
-                <div className="goal-card">
-                  <h4>Landing Page</h4>
-                  <p>
-                    Design and develop a clear landing page that explains the
-                    app’s purpose and invites users to explore.
-                  </p>
-                </div>
-                <div className="goal-card">
-                  <h4>Foundation</h4>
-                  <p>
-                    Set the base for interactive mini-games and learning
-                    modules.
-                  </p>
-                </div>
-                <div className="goal-card">
-                  <h4>Practice</h4>
-                  <p>
-                    Apply a full design-to-code pipeline on a personal project.
-                  </p>
-                </div>
-              </div>
-            )}
-
+            {activeTab === "About" && <KoyekolaAbout />} {/* 👈 now external */}
             {activeTab === "Process" && (
               <>
                 <div className="process-block">
@@ -188,7 +136,6 @@ export default function Koyekola() {
                 </div>
               </>
             )}
-
             {activeTab === "After Thoughts" && (
               <div className="reflection-box">
                 <p>
@@ -200,7 +147,6 @@ export default function Koyekola() {
                 </p>
               </div>
             )}
-
             {activeTab === "Future" && (
               <div className="outcome-snapshot">
                 <h4>Next Steps</h4>

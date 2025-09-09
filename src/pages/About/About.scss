@@ -183,3 +183,40 @@
     max-width: 340px;
   }
 }
+/* --- More Me Button --- */
+.moreme-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 999px; // pill shape for a friendly look
+  border: 2px solid $brand-secondary-700;
+  background: $brand-secondary-700;
+  color: $neutral-50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  /* Add a subtle icon vibe */
+  &::after {
+    content: "✨";
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: transparent;
+    color: $brand-secondary-700;
+    transform: translateY(-2px);
+  }
+
+  &:hover::after {
+    transform: rotate(20deg) scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}

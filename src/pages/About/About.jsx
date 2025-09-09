@@ -1,9 +1,13 @@
+import { useState } from "react";
 import "./About.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import portrait from "@/assets/images/about.png";
+import MoreMeModal from "@/pages/About/MoreMeModal";
 
 export default function About() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <Header />
@@ -49,6 +53,14 @@ export default function About() {
                   </li>
                 </ul>
               </div>
+
+              {/* More Me Button */}
+              <button
+                className="moreme-btn"
+                onClick={() => setIsModalOpen(true)}
+              >
+                More Me
+              </button>
             </div>
           </div>
 
@@ -203,6 +215,9 @@ export default function About() {
         </section>
       </main>
       <Footer linkedin="https://www.linkedin.com/in/katarina-bajnokova/" />
+
+      {/* Modal Mount */}
+      {isModalOpen && <MoreMeModal onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }

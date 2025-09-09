@@ -1,0 +1,61 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/tokens/typography" as *;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: $neutral-50;
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 12px 36px $koyekola-shadow-hard;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+
+  h2 {
+    margin-top: 0;
+    color: $koyekola-forest-green;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: $koyekola-ebony-bark;
+    line-height: 1.6;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: $neutral-800;
+
+  &:hover {
+    color: $koyekola-forest-green;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
