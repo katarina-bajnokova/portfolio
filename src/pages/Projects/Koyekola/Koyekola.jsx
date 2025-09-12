@@ -7,7 +7,7 @@ import KoyekolaAbout from "./KoyekolaAbout"; // 👈 About tab component
 export default function Koyekola() {
   const [activeTab, setActiveTab] = useState("About");
 
-  const tabs = ["About", "Process", "After Thoughts", "Future"];
+  const tabs = ["About"];
 
   return (
     <>
@@ -89,83 +89,6 @@ export default function Koyekola() {
           {/* TAB CONTENT */}
           <div className="tab-content">
             {activeTab === "About" && <KoyekolaAbout />} {/* 👈 now external */}
-            {activeTab === "Process" && (
-              <>
-                <div className="process-block">
-                  <h3>Branding</h3>
-                  <ul>
-                    <li>
-                      Created logo, mascot, and color palette representing joy,
-                      inclusivity, and cultural authenticity.
-                    </li>
-                    <li>
-                      Defined typography and a friendly yet professional style.
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="process-block">
-                  <h3>Landing Page</h3>
-                  <ul>
-                    <li>
-                      Designed a responsive landing page in Figma to test brand
-                      application.
-                    </li>
-                    <li>
-                      Developed the page in React + Sass with interactivity.
-                    </li>
-                    <li>
-                      Sections: hero (mascot + call to action), features,
-                      progress tracking, and navigation.
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="process-block">
-                  <h3>Ongoing Development</h3>
-                  <ul>
-                    <li>
-                      Currently designing mini-games (Memory, Word Search,
-                      etc.).
-                    </li>
-                    <li>
-                      Planning step-by-step full app build after finalizing
-                      designs.
-                    </li>
-                  </ul>
-                </div>
-              </>
-            )}
-            {activeTab === "After Thoughts" && (
-              <div className="reflection-box">
-                <p>
-                  With Koyekola, I took ownership from{" "}
-                  <strong>concept and branding to a coded landing page</strong>.
-                  It demonstrates both design and front-end skills, while
-                  showing my ability to structure and manage a{" "}
-                  <strong>long-term personal product</strong>.
-                </p>
-              </div>
-            )}
-            {activeTab === "Future" && (
-              <div className="outcome-snapshot">
-                <h4>Next Steps</h4>
-                <ul>
-                  <li>Finalize and polish the interactive mini-games.</li>
-                  <li>
-                    Expand into a learning hub with categories (fruits, animals,
-                    numbers, etc.).
-                  </li>
-                  <li>
-                    Add progress tracking for learners and parent/teacher
-                    dashboards.
-                  </li>
-                  <li>
-                    Explore publishing educational materials alongside the app.
-                  </li>
-                </ul>
-              </div>
-            )}
           </div>
         </section>
       </main>

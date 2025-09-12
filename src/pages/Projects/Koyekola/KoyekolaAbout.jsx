@@ -59,22 +59,6 @@ export default function KoyekolaAbout() {
         <strong>genuinely meaningful and impactful</strong>, rather than only
         chasing speed or trends.
       </p>
-
-      <div className="outcome-snapshot">
-        <h4>Why It Matters</h4>
-        <p>
-          Koyekola represents my ability to{" "}
-          <strong>
-            design, brand, and code a digital product from scratch
-          </strong>
-          , but more importantly, it reflects my passion for{" "}
-          <em>
-            building meaningful tools that preserve culture and empower the next
-            generation
-          </em>
-          .
-        </p>
-      </div>
     </section>
   );
 }

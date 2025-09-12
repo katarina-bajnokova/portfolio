@@ -82,76 +82,206 @@
   }
 }
 
-/* --- Details section (dark block) --- */
-.about__details {
-  background: $brand-secondary-700;
-  color: $neutral-50;
-  border-radius: 20px;
-  padding: 64px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+/* --- Education --- */
+.education {
+  margin-bottom: 64px;
 
   h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
     font-family: $font-heading;
+    font-size: 22px;
+    font-weight: 700;
+    color: $brand-secondary-700;
+    margin-bottom: 32px;
+  }
+
+  .education__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .education__card {
+    background: $neutral-50;
+    border: 2px solid $neutral-200;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: $neutral-900;
+    }
+
+    p {
+      font-size: 15px;
+      color: $neutral-600;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 14px;
+      font-style: italic;
+      color: $neutral-400;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+/* --- Timeline (Work Experience) --- */
+.timeline {
+  position: relative;
+  margin-bottom: 64px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 2px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  h2 {
+    margin-bottom: 32px;
+    font-family: $font-heading;
+    font-size: 22px;
+    font-weight: 700;
+    color: $brand-secondary-700;
+  }
+
+  .timeline__items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .timeline__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    position: relative;
+
+    .timeline__date {
+      flex: 0 0 20%;
+      font-size: 14px;
+      font-weight: 600;
+      color: $brand-secondary-700;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    .timeline__content {
+      flex: 1;
+      background: $neutral-50;
+      padding: 16px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      h3 {
+        margin: 0 0 6px 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: $neutral-900;
+      }
+
+      .role {
+        font-style: italic;
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: $neutral-600;
+      }
+
+      p {
+        font-size: 15px;
+        color: $neutral-600;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+        color: $neutral-600;
+
+        li {
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: $brand-secondary-700;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &::before {
+      left: 10%;
+    }
+
+    .timeline__item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .timeline__date {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 8px;
+      }
+
+      &::before {
+        left: 10%;
+      }
+    }
+  }
+}
+
+/* --- Certifications, Awards, Skills --- */
+.certifications,
+.awards,
+.skills {
+  margin-bottom: 48px;
+
+  h2 {
     font-size: 20px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: $neutral-50;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 6px;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: $font-heading;
+    color: $brand-secondary-700;
   }
 
   ul {
-    list-style: none;
-    margin: 0 0 32px 0;
-    padding: 0;
-    display: grid;
-    gap: 12px;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  strong {
-    display: block;
-    font-weight: 700;
-    color: $neutral-50;
-    margin-bottom: 2px;
-  }
-
-  span {
-    display: block;
+    list-style: disc;
+    padding-left: 20px;
+    color: $neutral-800;
     font-size: 15px;
-    color: $neutral-100;
-    margin-bottom: 2px;
-  }
 
-  em {
-    display: block;
-    font-style: normal;
-    font-size: 14px;
-    color: $neutral-200;
+    li {
+      margin-bottom: 8px;
+    }
   }
 }
 
-/* --- Nested bullet points --- */
-.about__bullets {
-  list-style: disc;
-  margin: 8px 0 20px 20px;
-  padding: 0;
-  color: $neutral-100;
-  font-size: 15px;
-  line-height: 1.5;
-
-  li {
-    margin-bottom: 4px;
-  }
-}
-
-/* --- Skills as badges --- */
+/* --- Skills & Certifications as badges --- */
 .badges {
   display: flex;
   flex-wrap: wrap;
@@ -159,7 +289,7 @@
   margin: 12px 0 28px 0;
 
   span {
-    background: rgba(255, 255, 255, 0.15);
+    background: $brand-secondary-700;
     color: $neutral-50;
     padding: 6px 14px;
     border-radius: 999px;
@@ -167,29 +297,21 @@
     font-weight: 500;
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: darken($brand-secondary-700, 5%);
+      transform: translateY(-2px);
+    }
   }
 }
 
-/* --- Responsive tweaks --- */
-@media (max-width: $breakpoint-tablet) {
-  .about__details {
-    grid-template-columns: 1fr;
-    padding: 32px;
-    gap: 32px;
-  }
-
-  .about__photo .about__media {
-    width: 100%;
-    max-width: 340px;
-  }
-}
 /* --- More Me Button --- */
 .moreme-btn {
   margin-top: 20px;
   padding: 12px 28px;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 999px; // pill shape for a friendly look
+  border-radius: 999px;
   border: 2px solid $brand-secondary-700;
   background: $brand-secondary-700;
   color: $neutral-50;
@@ -199,7 +321,6 @@
   align-items: center;
   gap: 8px;
 
-  /* Add a subtle icon vibe */
   &::after {
     content: "✨";
     font-size: 18px;
