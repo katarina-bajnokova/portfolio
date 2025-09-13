@@ -2,12 +2,14 @@ import { useState } from "react";
 import "./Koyekola.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
-import KoyekolaAbout from "./KoyekolaAbout"; // 👈 About tab component
+import KoyekolaAbout from "./KoyekolaAbout";
+import KoyekolaEmpathize from "./KoyekolaEmpathize"; // 👈 new import
 
 export default function Koyekola() {
   const [activeTab, setActiveTab] = useState("About");
 
-  const tabs = ["About"];
+  // 👇 added Empathize tab
+  const tabs = ["About", "Empathize"];
 
   return (
     <>
@@ -88,7 +90,8 @@ export default function Koyekola() {
 
           {/* TAB CONTENT */}
           <div className="tab-content">
-            {activeTab === "About" && <KoyekolaAbout />} {/* 👈 now external */}
+            {activeTab === "About" && <KoyekolaAbout />}
+            {activeTab === "Empathize" && <KoyekolaEmpathize />} {/* 👈 new */}
           </div>
         </section>
       </main>
