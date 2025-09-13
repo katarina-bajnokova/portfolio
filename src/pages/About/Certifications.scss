@@ -1,0 +1,63 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/tokens/typography" as *;
+
+.certifications {
+  margin-bottom: 80px;
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 24px;
+    font-weight: 700;
+    color: $brand-secondary-700;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .certifications__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .cert-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-900;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: floatIn 0.6s forwards;
+    animation-delay: calc(var(--i) * 0.12s);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+
+    &:hover {
+      transform: translateY(-6px) rotate3d(1, 1, 0, 6deg);
+      box-shadow: 0 12px 30px rgba($brand-primary-500, 0.3);
+    }
+
+    .cert-title {
+      margin: 0 0 6px;
+    }
+
+    .cert-date {
+      font-size: 12px;
+      font-weight: 500;
+      color: $neutral-600;
+    }
+  }
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
