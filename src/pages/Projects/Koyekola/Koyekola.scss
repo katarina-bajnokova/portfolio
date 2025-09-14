@@ -4,7 +4,7 @@
 @use "@/styles/mixins" as *;
 
 .koyekola-page {
-  background: $koyekola-sand-ivory; // 🏜 cultural neutral backdrop
+  background: $koyekola-sand-ivory;
 
   .project__container {
     @include container(1100px);

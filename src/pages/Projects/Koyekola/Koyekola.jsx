@@ -3,21 +3,19 @@ import "./Koyekola.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import KoyekolaAbout from "./KoyekolaAbout";
-import KoyekolaEmpathize from "./KoyekolaEmpathize";
 import KoyekolaDefine from "./KoyekolaDefine";
-import KoyekolaBranding from "./KoyekolaBranding"; // ✅ renamed import
+import KoyekolaBranding from "./KoyekolaBranding";
 
 export default function Koyekola() {
   const [activeTab, setActiveTab] = useState("About");
 
-  const tabs = ["About", "Empathize", "Define", "Branding"]; // ✅ renamed tab
+  const tabs = ["About", "Foundations", "Branding"];
 
   return (
     <>
       <Header />
       <main className="project-page koyekola-page">
         <section className="project__container">
-          {/* HEADER */}
           <header className="project__header">
             <h1>Koyekola – Educational Language App</h1>
 
@@ -138,10 +136,8 @@ export default function Koyekola() {
           {/* TAB CONTENT */}
           <div className="tab-content">
             {activeTab === "About" && <KoyekolaAbout />}
-            {activeTab === "Empathize" && <KoyekolaEmpathize />}
-            {activeTab === "Define" && <KoyekolaDefine />}
-            {activeTab === "Branding" && <KoyekolaBranding />}{" "}
-            {/* ✅ renamed */}
+            {activeTab === "Foundations" && <KoyekolaDefine />}
+            {activeTab === "Branding" && <KoyekolaBranding />}
           </div>
         </section>
       </main>

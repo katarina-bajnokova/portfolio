@@ -38,12 +38,14 @@ export default function KoyekolaDefine() {
 
   return (
     <section className="project-section koyekola-define">
-      <h2>Define</h2>
       <div className="define__grid">
         {blocks.map((block, i) => (
           <div className="define__card" key={i}>
-            <div className="define__icon">{block.icon}</div>
-            <h3>{block.title}</h3>
+            {/* ✅ Wrap icon + title in header */}
+            <div className="define__header">
+              <div className="define__icon">{block.icon}</div>
+              <h3>{block.title}</h3>
+            </div>
             <p>{block.text}</p>
           </div>
         ))}

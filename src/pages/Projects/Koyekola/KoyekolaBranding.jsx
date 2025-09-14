@@ -137,51 +137,9 @@ export default function KoyekolaBranding() {
           learning.
         </p>
 
-        <div className="mascot-cards">
-          <div className="mascot-card">
-            <h3>Personality</h3>
-            <ul>
-              <li>Curious & playful — guides children with joy</li>
-              <li>Wise but gentle — teaches without pressure</li>
-              <li>Encouraging cheerleader — celebrates progress</li>
-              <li>Cultural guide — shares heritage facts</li>
-            </ul>
-          </div>
-
-          <div className="mascot-card">
-            <h3>Visual Style</h3>
-            <ul>
-              <li>Simplified, rounded shapes for approachability</li>
-              <li>Expressive eyes & ears for empathy</li>
-              <li>Flag-inspired scarf/bandana for identity</li>
-              <li>Stylized stripes — iconic but playful</li>
-            </ul>
-          </div>
-
-          <div className="mascot-card">
-            <h3>Role in App</h3>
-            <ul>
-              <li>Onboarding guide — welcomes new learners</li>
-              <li>Progress cheerleader — reacts to achievements</li>
-              <li>Cultural storyteller — links words to heritage</li>
-              <li>Emotional companion — makes learning feel human</li>
-            </ul>
-          </div>
-        </div>
-
         <div className="mascot-visual">
           <div className="mascot-illustration">
             <img src={mascotImg} alt="Koyekola Okapi Mascot" />
-          </div>
-          <div className="mascot-notes">
-            <h3>Visual Concept</h3>
-            <p>
-              The Okapi is designed as a <strong>friendly guide</strong> with a
-              simplified silhouette and soft curves. Flag-inspired accents add
-              national identity, while playful expressions keep it engaging for
-              children. This balance makes it both <em>culturally iconic</em>{" "}
-              and <em>fun to learn with</em>.
-            </p>
           </div>
         </div>
       </div>
