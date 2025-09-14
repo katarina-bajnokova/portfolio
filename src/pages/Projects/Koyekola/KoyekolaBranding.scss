@@ -1,0 +1,214 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/tokens/typography" as *;
+@use "@/styles/mixins" as *;
+
+.koyekola-branding {
+  padding: 2rem 0;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: $brand-secondary-700;
+  }
+
+  p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: $neutral-800;
+    font-size: 1.1rem;
+  }
+
+  .palette-group {
+    margin-bottom: 3rem;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: $brand-primary-700;
+      text-align: left;
+    }
+
+    .color-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .color-card {
+      background: $neutral-50;
+      border: 1px solid $neutral-200;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px $koyekola-shadow-soft;
+      }
+
+      .color-swatch {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        border: 2px solid $neutral-200;
+      }
+
+      h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: $brand-secondary-700;
+      }
+
+      .hex {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: $neutral-600;
+      }
+
+      .meaning {
+        font-size: 0.8rem;
+        color: $neutral-800;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  .typography-system {
+    margin-top: 4rem;
+
+    h2 {
+      font-size: 1.75rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: $brand-secondary-700;
+    }
+
+    .type-samples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .type-card {
+      background: $neutral-50;
+      border: 1px solid $neutral-200;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: $brand-primary-700;
+      }
+
+      .type-heading {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $brand-secondary-700;
+      }
+
+      .type-body {
+        font-family: "Nunito", sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $neutral-800;
+      }
+
+      .type-accent {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.25rem;
+        font-style: italic;
+        color: $brand-primary-700;
+      }
+    }
+  }
+
+  .mascot-system {
+    margin-top: 4rem;
+
+    h2 {
+      font-size: 1.75rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: $brand-secondary-700;
+    }
+
+    .mascot-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .mascot-card {
+      background: $neutral-50;
+      border: 1px solid $neutral-200;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px $koyekola-shadow-soft;
+      transition: all 0.25s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px $koyekola-shadow-hard;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: $brand-primary-700;
+      }
+
+      ul {
+        list-style: disc inside;
+        font-size: 0.95rem;
+        color: $neutral-800;
+        line-height: 1.6;
+      }
+    }
+
+    .mascot-visual {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: center;
+
+      .mascot-illustration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+        min-height: 120px;
+        text-align: center;
+      }
+
+      .mascot-notes {
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 0.75rem;
+          color: $brand-primary-700;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.6;
+          color: $neutral-800;
+        }
+      }
+    }
+  }
+}

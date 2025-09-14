@@ -4,6 +4,8 @@
 @use "@/styles/mixins" as *;
 
 .koyekola-page {
+  background: $koyekola-sand-ivory; // 🏜 cultural neutral backdrop
+
   .project__container {
     @include container(1100px);
     padding-block: $space-16 140px;
@@ -18,13 +20,25 @@
       font-weight: 700;
       font-size: $h2-size;
       line-height: $heading-line;
-      color: $koyekola-forest-green; // 🌿 main header in forest green
+      color: $koyekola-congo-blue; // 💙 headline
       margin-bottom: $space-4;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        margin: 1rem auto 0;
+        background: $koyekola-golden-baobab; // 🌞 underline
+        border-radius: 2px;
+      }
     }
   }
 
+  /* Project Summary Box */
   .project__summarybox {
-    background: $koyekola-river-clay-blue; // 🌊 softer dark background
+    background: $koyekola-sand-ivory; // ✨ light neutral for readability
+    border: 3px solid $koyekola-congo-blue; // 💙 cultural anchor
     border-radius: 14px;
     padding: $space-8;
     margin: $space-8 auto;
@@ -32,13 +46,24 @@
     display: flex;
     flex-direction: column;
     gap: $space-6;
-    color: $koyekola-sand-ivory;
+    box-shadow: 0 8px 28px $koyekola-shadow-soft;
 
     .summary-title {
       font-size: $h4-size;
       font-weight: 700;
       text-align: center;
-      color: $koyekola-sand-ivory;
+      color: $koyekola-deep-river-blue; // 🌊 heritage blue
+      margin-bottom: $space-2;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        margin: 0.5rem auto 0;
+        background: $koyekola-golden-baobab; // 🌞 yellow accent
+        border-radius: 2px;
+      }
     }
 
     .summary-grid {
@@ -50,13 +75,13 @@
         font-size: $body-base-size;
         font-weight: 600;
         margin-bottom: $space-2;
-        color: $koyekola-sand-ivory;
+        color: $koyekola-forest-green; // 🌿 grounded accent
       }
 
       p {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $koyekola-sand-ivory;
+        color: $koyekola-ebony-bark;
       }
     }
 
@@ -65,7 +90,7 @@
       flex-wrap: wrap;
       gap: $space-6;
       justify-content: space-between;
-      border-top: 1px solid rgba(251, 247, 237, 0.3); // ivory fade
+      border-top: 2px solid $koyekola-clay-dust;
       padding-top: $space-5;
 
       div {
@@ -76,18 +101,31 @@
           font-size: $body-base-size;
           font-weight: 600;
           margin-bottom: $space-2;
-          color: $koyekola-sand-ivory;
+          color: $koyekola-sunset-orange; // 🔶 vibrant highlight
         }
 
         p {
           font-size: $body-small-size;
           line-height: $body-line;
-          color: $koyekola-sand-ivory;
+          color: $koyekola-ebony-bark;
         }
+      }
+    }
+
+    /* Sub-panels for readability */
+    .summary-panel {
+      background: $koyekola-river-mist; // 💧 fresh playful block
+      border-left: 4px solid $koyekola-courage-red; // ❤️ strong identity
+      padding: 1rem;
+      border-radius: 10px;
+
+      h3 {
+        color: $koyekola-deep-river-blue;
       }
     }
   }
 
+  /* Hero */
   .project-hero {
     display: grid;
     place-items: center;
@@ -98,20 +136,14 @@
       max-width: 1100px;
       border-radius: 14px;
       box-shadow: 0 20px 60px $koyekola-shadow-hard;
-      background: $koyekola-sand-ivory;
+      background: $koyekola-river-mist;
       object-fit: contain;
     }
   }
 
-  .goals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: $space-6;
-    margin: $space-6 0 $space-8;
-  }
-
+  /* Goals */
   .goal-card {
-    background: $koyekola-sand-ivory;
+    background: $neutral-50;
     border: 1px solid $koyekola-clay-dust;
     border-radius: 12px;
     padding: $space-5;
@@ -134,9 +166,11 @@
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 28px $koyekola-shadow-soft;
+      border-color: $koyekola-congo-blue;
     }
   }
 
+  /* Process Blocks */
   .process-block {
     margin-bottom: $space-8;
 
@@ -144,7 +178,7 @@
       font-size: $h3-size;
       font-weight: 600;
       margin-bottom: $space-3;
-      color: $koyekola-river-clay-blue;
+      color: $koyekola-courage-red;
     }
 
     ul {
@@ -159,9 +193,10 @@
     }
   }
 
+  /* Reflection box */
   .reflection-box {
-    background: $koyekola-papaya-glow; // 🍑 warm highlight
-    border-left: 4px solid $koyekola-sunset-clay;
+    background: $koyekola-papaya-peach;
+    border-left: 4px solid $koyekola-sunset-orange;
     padding: $space-6;
     border-radius: 12px;
     margin-top: $space-6;
@@ -175,8 +210,9 @@
     }
   }
 
+  /* Outcome snapshot */
   .outcome-snapshot {
-    background: $koyekola-golden-baobab; // 🌞 bright yellow for energy
+    background: $koyekola-golden-baobab;
     padding: $space-6 $space-7;
     border-radius: 12px;
     margin-top: $space-8;
@@ -186,21 +222,18 @@
       font-size: $h4-size;
       font-weight: 700;
       margin-bottom: $space-3;
-      color: $koyekola-forest-green;
+      color: $koyekola-deep-river-blue;
     }
 
-    ul {
-      padding-left: $space-6;
-
-      li {
-        font-size: $body-small-size;
-        line-height: $body-line;
-        color: $koyekola-ebony-bark;
-        margin-bottom: $space-2;
-      }
+    li {
+      font-size: $body-small-size;
+      line-height: $body-line;
+      color: $koyekola-ebony-bark;
+      margin-bottom: $space-2;
     }
   }
 
+  /* Tabs */
   .design-cycle-tabs {
     display: flex;
     justify-content: center;
@@ -214,23 +247,23 @@
       font-size: $body-base-size;
       font-weight: 600;
       cursor: pointer;
-      color: $koyekola-ebony-bark; // 🌑 default dark text
+      color: $koyekola-ebony-bark;
       padding: $space-2 $space-3;
       border-bottom: 2px solid transparent;
       transition: color 0.2s ease, border-color 0.2s ease;
 
       &.active {
-        color: $koyekola-forest-green; // 🌿 active = green
-        border-bottom: 2px solid $koyekola-forest-green;
+        color: $koyekola-congo-blue;
+        border-bottom: 2px solid $koyekola-golden-baobab;
       }
 
       &:hover:not(.active) {
-        color: $koyekola-river-clay-blue; // 🌊 hover = clay blue
+        color: $koyekola-courage-red;
       }
     }
   }
 
-  /* ---------- TAB CONTENT ---------- */
+  /* Tab content */
   .tab-content {
     max-width: 960px;
     margin: 0 auto $space-16;
@@ -239,7 +272,7 @@
     h2 {
       font-size: $h3-size;
       font-weight: 700;
-      color: $koyekola-forest-green; // 🌿 consistent with header
+      color: $koyekola-forest-green;
       margin-bottom: $space-4;
     }
 

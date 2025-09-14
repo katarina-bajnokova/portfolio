@@ -4,11 +4,13 @@ import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import KoyekolaAbout from "./KoyekolaAbout";
 import KoyekolaEmpathize from "./KoyekolaEmpathize";
+import KoyekolaDefine from "./KoyekolaDefine";
+import KoyekolaBranding from "./KoyekolaBranding"; // ✅ renamed import
 
 export default function Koyekola() {
   const [activeTab, setActiveTab] = useState("About");
 
-  const tabs = ["About", "Empathize"];
+  const tabs = ["About", "Empathize", "Define", "Branding"]; // ✅ renamed tab
 
   return (
     <>
@@ -137,6 +139,9 @@ export default function Koyekola() {
           <div className="tab-content">
             {activeTab === "About" && <KoyekolaAbout />}
             {activeTab === "Empathize" && <KoyekolaEmpathize />}
+            {activeTab === "Define" && <KoyekolaDefine />}
+            {activeTab === "Branding" && <KoyekolaBranding />}{" "}
+            {/* ✅ renamed */}
           </div>
         </section>
       </main>

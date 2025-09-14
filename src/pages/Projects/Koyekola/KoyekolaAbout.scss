@@ -4,7 +4,7 @@
 @use "@/styles/tokens/typography" as *;
 
 .project-page.koyekola-page {
-  background: $koyekola-sand-ivory; // soft neutral backdrop
+  background: $koyekola-sand-ivory; // 🏜 neutral cultural canvas
 }
 
 .koyekola-about {
@@ -17,15 +17,25 @@
     h2 {
       font-size: 28px;
       font-weight: 700;
-      color: $koyekola-forest-green; // deep green headline
+      color: $koyekola-congo-blue; // 💙 national anchor
       margin-bottom: 20px;
       line-height: 1.3;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        margin-top: 8px;
+        background: $koyekola-golden-baobab; // 🌞 subtle underline
+        border-radius: 2px;
+      }
     }
 
     h3 {
       font-size: 20px;
       font-weight: 600;
-      color: $koyekola-savanna; // earthy brown subheadline
+      color: $koyekola-forest-green; // 🌿 softer heritage accent
       margin: 32px 0 14px;
       line-height: 1.4;
     }
@@ -33,7 +43,7 @@
     .step-label {
       font-size: 14px;
       font-weight: 600;
-      color: $koyekola-river-clay-blue; // blue-gray label
+      color: $koyekola-courage-red; // ❤️ cultural emphasis
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -70,24 +80,25 @@
 
     em {
       font-style: italic;
-      color: $koyekola-river-clay-blue;
+      color: $koyekola-deep-river-blue; // 🌊 calm support
     }
   }
 }
 
 /* Highlighted insight box */
 .koyekola-about .highlight-box {
-  background: $neutral-50;
-  border-left: 4px solid $koyekola-sunset-clay; // warm accent
+  background: $koyekola-river-mist; // 💧 light playful backdrop
+  border-left: 4px solid $koyekola-sunset-orange; // 🔶 energetic Congolese accent
   padding: 18px 20px;
   border-radius: 8px;
   margin: 20px 0;
+  box-shadow: 0 3px 10px $koyekola-shadow-soft;
 
   h4 {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: $koyekola-forest-green;
+    color: $koyekola-deep-river-blue; // 🌊 stable headline
   }
 
   ul {
@@ -108,14 +119,54 @@
   font-style: italic;
   font-weight: 500;
   color: $koyekola-ebony-bark;
-  border-left: 4px solid $koyekola-sunset-clay; // branded accent
-  margin: 24px 0;
+  border-left: 3px solid $koyekola-courage-red; // ❤️ slimmer accent
+  margin: 20px 0;
   padding: 10px 16px;
-  background: $neutral-50;
-  border-radius: 6px;
+  background: rgba($koyekola-sand-ivory, 0.6); // 🏜 translucent ivory
+  border-radius: 4px;
+  box-shadow: 0 1px 4px $koyekola-shadow-soft;
 }
 
-/* Gallery grid for visuals */
+/* Highlighted insight box */
+.koyekola-about .highlight-box {
+  background: $koyekola-sand-ivory; // 🏜 softer base
+  border: 1px solid $koyekola-clay-dust; // 🪵 neutral edge
+  border-left: 5px solid $koyekola-sunset-orange; // 🔶 warm accent
+  padding: 18px 20px;
+  border-radius: 10px;
+  margin: 24px 0;
+  box-shadow: 0 4px 12px $koyekola-shadow-soft;
+  position: relative;
+
+  /* top ribbon */
+  &::before {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 100%;
+    background: $koyekola-congo-blue; // 💙 flag stripe
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: $koyekola-deep-river-blue; // 🌊 stable title
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 15px;
+    color: $koyekola-ebony-bark;
+    line-height: 1.6;
+  }
+}
+
+/* Gallery grid */
 .koyekola-about .gallery__grid {
   display: grid;
   gap: 20px;
@@ -156,7 +207,7 @@
     margin-top: 8px;
     font-size: 14px;
     line-height: 1.4;
-    color: $koyekola-river-clay-blue;
+    color: $koyekola-terracotta-clay; // 🪨 earthy caption
     font-style: italic;
   }
 }
@@ -168,13 +219,15 @@
   border-radius: 12px;
   margin-top: 40px;
   text-align: center;
-  background: $neutral-50;
+  background: $koyekola-sand-ivory; // 🏜 soft base
+  border: 2px solid $koyekola-golden-baobab; // 🌞 cultural accent
+  box-shadow: 0 4px 14px $koyekola-shadow-soft;
 
   h4 {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: $koyekola-forest-green;
+    color: $koyekola-congo-blue; // 💙 strong flag blue
   }
 
   p {

@@ -1,34 +1,50 @@
+@use "@/styles/tokens/colors" as *;
+@use "@/styles/tokens/layout" as *;
+@use "@/styles/tokens/typography" as *;
+@use "@/styles/mixins" as *;
+
 .empathize-tab {
   padding: 2rem 0;
 
   h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: $koyekola-forest-green;
+    font-weight: 700;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      margin-top: 6px;
+      background: $koyekola-golden-baobab;
+      border-radius: 2px;
+    }
   }
 
   h3 {
     font-size: 1.3rem;
     margin-top: 1.5rem;
-    color: #444;
+    font-weight: 600;
+    color: $koyekola-sunset-orange;
   }
 
   p {
-    line-height: 1.6;
-    color: #555;
-  }
+    line-height: 1.7;
+    color: $koyekola-ebony-bark;
+    margin-bottom: 1rem;
 
-  ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
+    strong {
+      color: $koyekola-courage-red;
+    }
 
-    li {
-      margin-bottom: 0.5rem;
-      line-height: 1.5;
+    em {
+      color: $koyekola-terracotta-clay;
     }
   }
 
-  /* Empathy Maps Side by Side */
+  /* === Empathy Maps === */
   .empathy-maps {
     display: flex;
     flex-direction: column;
@@ -39,25 +55,92 @@
       flex: 1;
       max-width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px $koyekola-shadow-soft;
+      background: $neutral-50;
+      border: 2px solid $koyekola-river-mist;
     }
   }
 
-  .empathy-findings,
-  .persona-findings {
-    background: #fafafa;
+  /* === Findings === */
+  .empathy-findings {
+    background: $neutral-50;
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.8rem 2rem;
     margin: 2rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px $koyekola-shadow-soft;
+    border-left: 6px solid $koyekola-congo-blue;
 
-    .design-implication {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: #222;
+    h2 {
+      color: $koyekola-forest-green;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: $koyekola-sunset-orange;
+      margin-top: 1.2rem;
+    }
+
+    /* Clean narrative insights (no side bars) */
+    .insight-line {
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+      color: $koyekola-ebony-bark;
+      font-size: 0.95rem;
+
+      strong {
+        color: $koyekola-congo-blue;
+        font-weight: 600;
+      }
     }
   }
 
+  /* Standalone design implication */
+  .design-implication {
+    margin: 1.5rem 0;
+    background: $neutral-50;
+    border-left: 6px solid $koyekola-courage-red;
+    padding: 1.2rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: $koyekola-ebony-bark;
+    box-shadow: 0 3px 10px $koyekola-shadow-soft;
+  }
+
+  /* === Personas === */
+  .persona-findings {
+    background: $neutral-50;
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 3px 10px $koyekola-shadow-soft;
+    border-top: 5px solid $koyekola-golden-baobab;
+
+    h2 {
+      color: $koyekola-forest-green;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: $koyekola-terracotta-clay;
+      margin-top: 1.2rem;
+    }
+
+    .pain-point {
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+      color: $koyekola-ebony-bark;
+      font-size: 0.95rem;
+
+      strong {
+        color: $koyekola-sunset-orange;
+      }
+    }
+  }
+
+  /* Persona Image */
   .persona-image {
     margin-top: 2rem;
     text-align: center;
@@ -66,7 +149,8 @@
       max-width: 950px;
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px $koyekola-shadow-soft;
+      background: $neutral-50;
     }
   }
 }

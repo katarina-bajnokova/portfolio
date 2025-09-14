@@ -25,9 +25,9 @@
     }
   }
 
-  /* Project Summary Box (consistent with Koyekola) */
+  /* Project Summary Box */
   .project__summarybox {
-    background: $koyekola-river-clay-blue; // 🌊 soft dark panel
+    background: $koyekola-deep-river-blue; // 🌊 updated dark panel
     border-radius: 14px;
     padding: $space-8;
     margin: $space-8 auto;
@@ -70,7 +70,7 @@
       flex-wrap: wrap;
       gap: $space-6;
       justify-content: space-between;
-      border-top: 1px solid rgba(251, 247, 237, 0.3); // ivory fade
+      border-top: 1px solid rgba(250, 244, 230, 0.3); // ivory fade
       padding-top: $space-5;
 
       div {
@@ -133,8 +133,8 @@
       }
 
       &:hover:not(.active) {
-        color: $koyekola-river-clay-blue;
-        border-bottom: 2px solid $koyekola-palm-mist;
+        color: $koyekola-congo-blue; // 💙 brighter hover
+        border-bottom: 2px solid $koyekola-sunset-orange; // 🔶 energetic accent
       }
     }
   }
@@ -157,7 +157,7 @@
     h3 {
       font-size: $h4-size;
       font-weight: 600;
-      color: $koyekola-savanna;
+      color: $koyekola-terracotta-clay; // 🪨 warm earthy subhead
       margin: $space-6 0 $space-3;
     }
 
@@ -193,11 +193,11 @@
 
     em {
       font-style: italic;
-      color: $koyekola-river-clay-blue;
+      color: $koyekola-deep-river-blue; // 🌊 updated accent
     }
   }
 
-  /* Next Steps (modern card style) */
+  /* Next Steps */
   .outcome-snapshot {
     background: $neutral-50;
     padding: $space-8 $space-7;
@@ -240,7 +240,7 @@
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        background: $koyekola-palm-mist;
+        background: $koyekola-river-mist; // 🌊 softer accent
         display: flex;
         align-items: center;
         justify-content: center;
