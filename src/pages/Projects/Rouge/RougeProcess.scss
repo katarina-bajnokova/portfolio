@@ -5,15 +5,14 @@
 
 .rouge-process {
   .project-section {
-    margin-bottom: $space-16;
     max-width: 960px;
-    margin-inline: auto;
+    margin: 0 auto $space-16;
 
     h2 {
       font-family: $font-heading;
       font-size: $h2-size;
       font-weight: 700;
-      color: $rouge-accent-red; // 🔹 main section title in Rouge red
+      color: $rouge-accent-red;
       margin-bottom: $space-6;
     }
 
@@ -21,7 +20,7 @@
       font-family: $font-heading;
       font-size: $h3-size;
       font-weight: 600;
-      color: $rouge-primary-900; // 🔹 deep wine red for subheaders
+      color: $rouge-primary-900;
       margin: $space-8 0 $space-4;
     }
 
@@ -29,16 +28,18 @@
       font-family: $font-body;
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $rouge-primary-700; // 🔹 charcoal grey for body text
+      color: $rouge-primary-700;
       margin-bottom: $space-4;
     }
 
     strong {
-      color: $rouge-accent-magenta; // 🔹 magenta highlight
+      color: $rouge-accent-magenta;
+      font-weight: 600;
     }
 
     em {
       color: $neutral-600;
+      font-style: italic;
     }
   }
 
@@ -49,8 +50,8 @@
     h3 {
       font-size: $h3-size;
       font-weight: 700;
+      color: $rouge-accent-red;
       margin-bottom: $space-6;
-      color: $rouge-accent-red; // 🔹 accent headline
     }
 
     .tech-grid {
@@ -68,14 +69,19 @@
         font-family: $font-heading;
         font-size: $h4-size;
         font-weight: 700;
+        color: $rouge-accent-magenta;
         margin-bottom: $space-2;
-        color: $rouge-accent-magenta; // 🔹 tool headers in magenta
       }
 
       p {
         font-size: $body-small-size;
-        color: $rouge-primary-700; // 🔹 charcoal grey for descriptions
+        color: $rouge-primary-700;
         margin: 0;
+      }
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px $shadow-soft;
       }
     }
   }
@@ -83,31 +89,28 @@
   .feature-demo {
     display: grid;
     place-items: center;
-    margin: $space-6 0 $space-8;
 
     &__media {
-      width: clamp(320px, 60vw, 520px);
-      border-radius: 16px;
-      box-shadow: 0 16px 48px $shadow-soft;
+      width: clamp(200px, 35vw, 320px);
       display: block;
+      margin: $space-10 0 $space-12;
     }
   }
 
   .highlight-box {
-    background: $rouge-secondary-100; // 🔹 subtle light grey background
-    border-left: 4px solid $rouge-accent-red; // 🔹 red border accent
-    padding: $space-5 $space-6;
+    background: $rouge-secondary-100;
+    border-left: 4px solid $rouge-accent-red;
     border-radius: 10px;
+    padding: $space-5 $space-6;
     margin: $space-8 0;
 
     p {
       font-size: $body-base-size;
+      color: $rouge-primary-900;
       margin-bottom: $space-3;
-      color: $rouge-primary-900; // 🔹 deep grey for clarity
     }
 
     ul {
-      margin: 0;
       padding-left: $space-5;
 
       li {

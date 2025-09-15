@@ -9,8 +9,6 @@ import Ideate from "./Ideate";
 import Prototype from "./Prototype";
 import Test from "./Test";
 
-import { AfterThoughts, FutureImprovements } from "./SectionsText";
-
 export default function GuessJeans() {
   const [activeTab, setActiveTab] = useState("Empathize");
 
@@ -21,7 +19,6 @@ export default function GuessJeans() {
       <Header />
       <main className="project-page guessjeans-content">
         <section className="project__container">
-          {/* HEADER */}
           <header className="project__header">
             <h1>Guess Jeans – Digital Shopping Experience Redesign</h1>
 
@@ -79,7 +76,6 @@ export default function GuessJeans() {
             </div>
           </header>
 
-          {/* TABS */}
           <nav className="design-cycle-tabs">
             {tabs.map((tab) => (
               <button
@@ -92,19 +88,12 @@ export default function GuessJeans() {
             ))}
           </nav>
 
-          {/* TAB CONTENT */}
           <div className="tab-content">
             {activeTab === "Empathize" && <Empathize />}
             {activeTab === "Define" && <Define />}
             {activeTab === "Ideate" && <Ideate />}
             {activeTab === "Prototype" && <Prototype />}
-            {activeTab === "Test" && (
-              <>
-                <Test />
-                <AfterThoughts />
-                <FutureImprovements />
-              </>
-            )}
+            {activeTab === "Test" && <Test />}
           </div>
         </section>
       </main>

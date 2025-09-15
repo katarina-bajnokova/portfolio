@@ -3,7 +3,7 @@
 @use "@/styles/tokens/typography" as *;
 @use "@/styles/mixins" as *;
 
-.koyekola-branding {
+.mayele-branding {
   padding: 2rem 0;
 
   h2 {
@@ -22,6 +22,7 @@
     font-size: 1.1rem;
   }
 
+  /* ---------- Colour Palette ---------- */
   .palette-group {
     margin-bottom: 3rem;
 
@@ -49,7 +50,7 @@
 
       &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 6px 12px $koyekola-shadow-soft;
+        box-shadow: 0 6px 12px $mayele-shadow-soft;
       }
 
       .color-swatch {
@@ -81,6 +82,7 @@
     }
   }
 
+  /* ---------- Typography ---------- */
   .typography-system {
     margin-top: 4rem;
 
@@ -134,6 +136,7 @@
     }
   }
 
+  /* ---------- Mascot ---------- */
   .mascot-system {
     margin-top: 4rem;
 
@@ -156,12 +159,12 @@
       border: 1px solid $neutral-200;
       border-radius: 1rem;
       padding: 1.5rem;
-      box-shadow: 0 4px 8px $koyekola-shadow-soft;
+      box-shadow: 0 4px 8px $mayele-shadow-soft;
       transition: all 0.25s ease;
 
       &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 6px 12px $koyekola-shadow-hard;
+        box-shadow: 0 6px 12px $mayele-shadow-hard;
       }
 
       h3 {
@@ -180,44 +183,40 @@
     }
 
     .mascot-visual {
-      .mascot-visual {
-        margin-top: 3rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: center;
+
+      .mascot-illustration {
+        display: flex;
         align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: center;
 
-        .mascot-illustration {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 1.5rem; // smaller padding
-
-          max-width: 100px; // limits width
-          margin: 0 auto; // center it
-          text-align: center;
-
-          img {
-            max-width: 80%;
-
-            height: auto;
-          }
+        img {
+          max-width: 80%;
+          height: auto;
         }
       }
+    }
 
-      .mascot-notes {
-        h3 {
-          font-size: 1.25rem;
-          font-weight: 600;
-          margin-bottom: 0.75rem;
-          color: $brand-primary-700;
-        }
+    .mascot-notes {
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: $brand-primary-700;
+      }
 
-        p {
-          font-size: 1rem;
-          line-height: 1.6;
-          color: $neutral-800;
-        }
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $neutral-800;
       }
     }
   }

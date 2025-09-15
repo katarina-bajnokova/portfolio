@@ -6,44 +6,18 @@ import branding from "@/assets/images/Guess/branding.svg";
 export default function Ideate() {
   return (
     <div className="ideate">
-      {/* OVERVIEW */}
       <section className="project-section">
         <h2>Ideate – Expanding Possibilities</h2>
         <p>
-          After defining{" "}
-          <strong>
-            clear problem statements, hypotheses, and value propositions
-          </strong>
-          , the next step was to <em>open up the solution space</em>. In the{" "}
-          <strong>Ideate phase</strong>, I deliberately shifted from narrowing
-          down problems to generating as many creative directions as possible.
-        </p>
-        <p>
-          I wrote <strong>goal statements</strong> for each persona to ensure
-          that every design idea tied back to real user needs. From these, I
-          consolidated into a <strong>final goal statement</strong> that aligned
-          the redesign with Guess’s broader vision.
+          In the <strong>Ideate phase</strong>, I shifted from defining
+          challenges to <strong>generating creative directions</strong>. Each
+          step helped expand solutions while staying tied to user needs.
         </p>
       </section>
 
-      {/* GOAL STATEMENT */}
-      <section className="project-section">
-        <h3>Step 1 – Goal Statement for Ema</h3>
-        <p>
-          Our Guess Jeans redesign will let users like Ema (curvy, bold,
-          style-driven) discover jeans that truly fit their waist-to-hip ratio
-          and match their expressive fashion sense, helping them shop with
-          confidence and save time.
-        </p>
-        <div className="highlight-box">
-          <p>
-            <strong>Effectiveness will be measured by:</strong> higher
-            satisfaction with fit guides, reduced returns, and positive feedback
-            on inclusivity and representation.
-          </p>
-        </div>
-
-        <h3>Step 2 – Final Goal Statement</h3>
+      <section className="project-section step">
+        <div className="step-label">Step 1</div>
+        <h3>Goal Statements</h3>
         <blockquote>
           The Guess Jeans redesign will make denim shopping simple, inclusive,
           and confidence-driven by providing tools like the{" "}
@@ -51,73 +25,39 @@ export default function Ideate() {
           <strong>Lookbook</strong>, and <strong>Body Scan</strong> that adapt
           to different body types and style needs.
         </blockquote>
-        <p>
-          <strong>Effectiveness will be measured by:</strong> improved fit
-          satisfaction, lower return rates, and stronger engagement with
-          personalized shopping features.
-        </p>
       </section>
 
-      {/* HMW QUESTIONS */}
-      <section className="project-section">
-        <h3>Step 3 – HMW (How Might We) Questions</h3>
-        <p>
-          From the problem statements and goals, I reframed challenges into{" "}
-          <strong>HMW questions</strong>. This invites{" "}
-          <em>open-ended exploration</em> while staying anchored to real user
-          frustrations.
-        </p>
+      <section className="project-section step">
+        <div className="step-label">Step 2</div>
+        <h3>How Might We Questions</h3>
         <ul>
-          <li>HMW help Ema find jeans that fit her waist-to-hip ratio?</li>
+          <li>HMW help shoppers find jeans that fit their body type?</li>
           <li>HMW make shopping feel empowering instead of frustrating?</li>
-          <li>HMW showcase inclusive models so Ema feels represented?</li>
-          <li>
-            HMW let her visualize how jeans will look on her body before
-            purchase?
-          </li>
-          <li>HMW reduce returns by guiding her to the right fit?</li>
-          <li>
-            HMW highlight bold, stylish looks that match her expressive
-            personality?
-          </li>
-          <li>
-            HMW build trust by showing that Guess celebrates diverse body types?
-          </li>
-          <li>
-            HMW save her time while still giving confidence she’s picking the
-            right style?
-          </li>
+          <li>HMW showcase inclusive models so customers feel represented?</li>
+          <li>HMW reduce returns by guiding users to the right fit?</li>
         </ul>
       </section>
 
-      {/* BRANDING */}
-      <section className="project-section">
-        <h3>Step 4 – Branding Foundation</h3>
+      <section className="project-section step">
+        <div className="step-label">Step 3</div>
+        <h3>Branding Foundation</h3>
         <p>
-          Before generating solutions, I created a{" "}
-          <strong>branding system for the Guess redesign</strong>. This ensured
-          that every idea was not only functional but also{" "}
-          <em>aligned with a consistent visual identity</em>. The branding
-          highlights inclusivity, boldness, and confidence — values that guided
-          all creative exploration.
+          A <strong>branding system</strong> was developed to ensure solutions
+          aligned with Guess’s identity of inclusivity, boldness, and
+          confidence.
         </p>
         <figure className="gallery__item">
           <img src={branding} alt="Guess Branding" loading="lazy" />
-          <figcaption>
-            Branding system created for Guess Jeans redesign
-          </figcaption>
+          <figcaption>Branding system for Guess Jeans redesign</figcaption>
         </figure>
       </section>
 
-      {/* IDEA DUMP */}
-      <section className="project-section">
-        <h3>Step 5 – Idea Dump</h3>
+      <section className="project-section step">
+        <div className="step-label">Step 4</div>
+        <h3>Idea Dump</h3>
         <p>
-          To push creativity further, I ran an <strong>idea dump</strong> — a
-          process of writing down as many potential solutions as possible
-          without self-censoring. The goal was <em>quantity over quality</em>:
-          to capture everything from practical tweaks to wild, experimental
-          concepts.
+          I ran an <strong>idea dump</strong> to capture as many potential
+          solutions as possible, from practical tweaks to experimental concepts.
         </p>
         <figure className="gallery__item">
           <img
@@ -127,29 +67,18 @@ export default function Ideate() {
             className="img-rotate-90"
           />
           <figcaption>
-            Idea dump session – capturing every idea possible
+            Idea dump session – broad solution exploration
           </figcaption>
         </figure>
-        <p>
-          This ensured no potential direction was lost and gave a rich
-          foundation to refine later.
-        </p>
       </section>
 
-      {/* CRAZY 8 */}
-      <section className="project-section">
-        <h3>Step 6 – Crazy 8</h3>
+      <section className="project-section step">
+        <div className="step-label">Step 5</div>
+        <h3>Crazy 8</h3>
         <p>
-          From the idea dump, I moved into a <strong>Crazy 8</strong> session, a
-          design sprint activity. I sketched{" "}
-          <strong>8 variations in 8 minutes</strong> to rapidly explore
-          different solutions without overthinking.
-        </p>
-        <p>
-          The fast pace forced me to <em>prioritize bold concepts</em> over
-          polish. The outcome was a set of <strong>visual directions</strong>{" "}
-          that revealed new possibilities for layouts, fit tools, and
-          representation.
+          Using the <strong>Crazy 8</strong> method, I sketched{" "}
+          <strong>8 variations in 8 minutes</strong> to quickly explore multiple
+          directions without overthinking.
         </p>
         <figure className="gallery__item">
           <img
@@ -159,25 +88,9 @@ export default function Ideate() {
             className="img-rotate-90"
           />
           <figcaption>
-            Crazy 8 sketches – fast exploration of possibilities
+            Crazy 8 sketches – rapid exploration of concepts
           </figcaption>
         </figure>
-      </section>
-
-      {/* WHY THIS MATTERS */}
-      <section className="outcome-snapshot">
-        <h4>Why This Phase Was Important</h4>
-        <p>
-          Ideation is where <strong>divergent thinking</strong> happens. By
-          reframing challenges into HMW questions, dumping every idea, and
-          running Crazy 8, I ensured the project had{" "}
-          <strong>a wide creative pool</strong> before narrowing down.
-        </p>
-        <p>
-          This protected the project from tunnel vision and guaranteed that when
-          we moved to prototyping, we weren’t just building the first solution —
-          but the <em>best solution</em> grounded in empathy and creativity.
-        </p>
       </section>
     </div>
   );

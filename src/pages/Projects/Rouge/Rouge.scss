@@ -17,13 +17,13 @@
       font-family: $font-heading;
       font-weight: 700;
       font-size: $h1-size;
-      color: $rouge-primary-900; // 🔹 deep black/grey from Rouge
+      color: $rouge-primary-900;
       margin: 0 0 $space-4;
     }
   }
 
   .project__summarybox {
-    background: $rouge-primary-900; // 🔹 dark Rouge base
+    border: 2px solid $rouge-primary-900;
     border-radius: 18px;
     padding: $space-8;
     margin: $space-10 auto;
@@ -31,14 +31,15 @@
     display: flex;
     flex-direction: column;
     gap: $space-8;
-    color: $rouge-secondary-50; // 🔹 white text
+    background: transparent;
+    color: $rouge-primary-900;
 
     .summary-title {
       font-size: $h3-size;
       font-weight: 600;
-      color: $rouge-secondary-50;
       text-align: center;
       margin-bottom: $space-4;
+      color: $rouge-primary-900;
     }
 
     .summary-grid {
@@ -50,13 +51,13 @@
         font-size: $body-base-size;
         font-weight: 600;
         margin-bottom: $space-2;
-        color: $rouge-secondary-50;
+        color: $rouge-primary-900;
       }
 
       p {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $rouge-secondary-50;
+        color: $rouge-primary-700;
       }
     }
 
@@ -65,7 +66,7 @@
       flex-wrap: wrap;
       gap: $space-8;
       justify-content: space-between;
-      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-top: 1px solid $rouge-primary-900;
       padding-top: $space-6;
 
       div {
@@ -76,28 +77,15 @@
           font-size: $body-base-size;
           font-weight: 600;
           margin-bottom: $space-2;
-          color: $rouge-secondary-50;
+          color: $rouge-primary-900;
         }
 
         p {
           font-size: $body-small-size;
           line-height: $body-line;
-          color: $rouge-secondary-50;
+          color: $rouge-primary-700;
         }
       }
-    }
-  }
-
-  .project-hero {
-    display: grid;
-    place-items: center;
-    margin: $space-8 0 $space-12;
-
-    &__media {
-      width: clamp(320px, 60vw, 480px);
-      border-radius: 20px;
-      box-shadow: 0 24px 64px $shadow-hard;
-      display: block;
     }
   }
 
@@ -114,18 +102,18 @@
       font-size: $body-base-size;
       font-weight: 600;
       cursor: pointer;
-      color: $rouge-primary-700; // 🔹 dark grey
+      color: $rouge-primary-700;
       padding: $space-2 $space-3;
       border-bottom: 2px solid transparent;
       transition: color 0.2s ease, border-color 0.2s ease;
 
       &.active {
-        color: $rouge-accent-red; // 🔹 red highlight
+        color: $rouge-accent-red;
         border-bottom: 2px solid $rouge-accent-red;
       }
 
       &:hover:not(.active) {
-        color: $rouge-accent-magenta; // 🔹 purple/magenta hover
+        color: $rouge-accent-magenta;
       }
     }
   }

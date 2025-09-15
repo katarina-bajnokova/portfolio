@@ -1,14 +1,12 @@
 @use "@/styles/tokens/colors" as *;
 @use "@/styles/tokens/layout" as *;
-@use "@/styles/tokens/typography" as *;
 @use "@/styles/mixins" as *;
+@use "@/styles/tokens/typography" as *;
 
 .project-page.bambuma-page {
-  background: $koyekola-sand-ivory; // 🍃 same backdrop as Koyekola
-
   .project__container {
     @include container(1100px);
-    padding-block: $space-16 140px;
+    padding-block: $space-16 120px;
   }
 
   .project__header {
@@ -20,14 +18,14 @@
       font-weight: 700;
       font-size: $h2-size;
       line-height: $heading-line;
-      color: $koyekola-forest-green;
+      color: $mayele-forest-green;
       margin-bottom: $space-4;
     }
   }
 
-  /* Project Summary Box */
+  /* Summary */
   .project__summarybox {
-    background: $koyekola-deep-river-blue; // 🌊 updated dark panel
+    border: 2px solid $mayele-deep-river-blue;
     border-radius: 14px;
     padding: $space-8;
     margin: $space-8 auto;
@@ -35,15 +33,13 @@
     display: flex;
     flex-direction: column;
     gap: $space-6;
-    color: $koyekola-sand-ivory;
-    box-shadow: 0 8px 28px $koyekola-shadow-soft;
 
     .summary-title {
       font-size: $h4-size;
       font-weight: 700;
       text-align: center;
       margin-bottom: $space-4;
-      color: $koyekola-sand-ivory;
+      color: $mayele-deep-river-blue;
     }
 
     .summary-grid {
@@ -55,45 +51,18 @@
         font-size: $body-base-size;
         font-weight: 600;
         margin-bottom: $space-2;
-        color: $koyekola-sand-ivory;
+        color: $mayele-forest-green;
       }
 
       p {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $koyekola-sand-ivory;
-      }
-    }
-
-    .summary-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: $space-6;
-      justify-content: space-between;
-      border-top: 1px solid rgba(250, 244, 230, 0.3); // ivory fade
-      padding-top: $space-5;
-
-      div {
-        flex: 1;
-        min-width: 220px;
-
-        h3 {
-          font-size: $body-base-size;
-          font-weight: 600;
-          margin-bottom: $space-2;
-          color: $koyekola-sand-ivory;
-        }
-
-        p {
-          font-size: $body-small-size;
-          line-height: $body-line;
-          color: $koyekola-sand-ivory;
-        }
+        color: $mayele-ebony-bark;
       }
     }
   }
 
-  /* Hero video */
+  /* Hero */
   .project-hero {
     display: grid;
     place-items: center;
@@ -102,13 +71,12 @@
     &__media {
       width: clamp(320px, 52vw, 720px);
       border-radius: 14px;
-      box-shadow: 0 12px 36px $koyekola-shadow-soft;
-      background: $neutral-50;
+      box-shadow: 0 12px 28px $mayele-shadow-soft;
       object-fit: contain;
+      background: $neutral-50;
     }
   }
 
-  /* Tabs */
   .design-cycle-tabs {
     display: flex;
     justify-content: center;
@@ -122,49 +90,39 @@
       font-size: $body-base-size;
       font-weight: 600;
       cursor: pointer;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
       padding: $space-2 $space-3;
       border-bottom: 2px solid transparent;
       transition: color 0.2s ease, border-color 0.2s ease;
 
       &.active {
-        color: $koyekola-forest-green;
-        border-bottom: 2px solid $koyekola-forest-green;
+        color: $mayele-forest-green;
+        border-bottom: 2px solid $mayele-forest-green;
       }
 
       &:hover:not(.active) {
-        color: $koyekola-congo-blue; // 💙 brighter hover
-        border-bottom: 2px solid $koyekola-sunset-orange; // 🔶 energetic accent
+        color: $mayele-congo-blue;
+        border-bottom: 2px solid $mayele-sunset-orange;
       }
     }
   }
 
-  /* Content Sections */
   .project-section {
     margin-bottom: $space-16;
-    max-width: 880px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 860px;
+    margin-inline: auto;
 
     h2 {
       font-size: $h3-size;
       font-weight: 700;
-      color: $koyekola-forest-green;
+      color: $mayele-forest-green;
       margin-bottom: $space-4;
-      line-height: 1.3;
-    }
-
-    h3 {
-      font-size: $h4-size;
-      font-weight: 600;
-      color: $koyekola-terracotta-clay; // 🪨 warm earthy subhead
-      margin: $space-6 0 $space-3;
     }
 
     p {
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
       margin-bottom: $space-3;
     }
 
@@ -176,91 +134,51 @@
       li {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $koyekola-ebony-bark;
+        color: $mayele-ebony-bark;
         margin-bottom: $space-2;
 
         strong {
-          color: $koyekola-forest-green;
+          color: $mayele-forest-green;
           font-weight: 600;
         }
       }
     }
 
     strong {
-      color: $koyekola-forest-green;
+      color: $mayele-forest-green;
       font-weight: 600;
     }
 
     em {
       font-style: italic;
-      color: $koyekola-deep-river-blue; // 🌊 updated accent
+      color: $mayele-deep-river-blue;
     }
   }
 
-  /* Next Steps */
   .outcome-snapshot {
     background: $neutral-50;
-    padding: $space-8 $space-7;
-    border-radius: 16px;
+    padding: $space-7;
+    border-radius: 14px;
     margin-top: $space-10;
-    box-shadow: 0 6px 20px $koyekola-shadow-soft;
+    box-shadow: 0 6px 20px $mayele-shadow-soft;
 
     h2 {
       font-size: $h3-size;
       font-weight: 700;
       margin-bottom: $space-6;
-      color: $koyekola-forest-green;
+      color: $mayele-forest-green;
       text-align: center;
     }
 
-    /* cards grid */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: $space-6;
+    ul {
       margin: 0;
-      padding: 0;
-    }
+      padding-left: $space-6;
 
-    .step-card {
-      background: $neutral-50;
-      border: 1px solid $koyekola-clay-dust;
-      border-radius: 12px;
-      padding: $space-5;
-      text-align: left;
-      box-shadow: 0 4px 12px $koyekola-shadow-soft;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 28px $koyekola-shadow-soft;
-      }
-
-      .step-icon {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: $koyekola-river-mist; // 🌊 softer accent
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        color: $koyekola-forest-green;
-        margin-bottom: $space-3;
-      }
-
-      h3 {
-        font-size: $body-base-size;
-        font-weight: 600;
-        color: $koyekola-forest-green;
-        margin-bottom: $space-2;
-      }
-
-      p {
+      li {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $koyekola-ebony-bark;
-        margin: 0;
+        color: $mayele-ebony-bark;
+        margin-bottom: $space-2;
       }
     }
   }

@@ -3,28 +3,28 @@
 @use "@/styles/mixins" as *;
 @use "@/styles/tokens/typography" as *;
 
-/* ---------- IDEATE SECTION ---------- */
 .ideate {
   .project-section {
-    margin-bottom: 64px;
+    margin-bottom: 72px;
     max-width: 880px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
+
+    h2,
+    h3 {
+      color: $guess-primary-900;
+      line-height: 1.3;
+    }
 
     h2 {
       font-size: 28px;
       font-weight: 700;
-      color: $guess-primary-900; // 🔹 navy heading
-      margin-bottom: 20px;
-      line-height: 1.3;
+      margin-bottom: 24px;
     }
 
     h3 {
       font-size: 20px;
       font-weight: 600;
-      color: $guess-primary-900; // 🔹 navy subheading
-      margin: 32px 0 14px;
-      line-height: 1.4;
+      margin-bottom: 16px;
     }
 
     p {
@@ -46,7 +46,7 @@
         margin-bottom: 10px;
 
         strong {
-          color: $guess-primary-900; // 🔹 navy emphasis
+          color: $guess-primary-900;
           font-weight: 600;
         }
       }
@@ -62,73 +62,60 @@
       color: $neutral-600;
     }
   }
-}
 
-/* ---------- HIGHLIGHT BOXES ---------- */
-.ideate .highlight-box {
-  background: $neutral-50;
-  border-left: 4px solid $guess-tertiary-red-700; // 🔹 red accent
-  padding: 18px 20px;
-  border-radius: 8px;
-  margin: 20px 0;
+  .step {
+    background: $neutral-50;
+    border: 1px solid $neutral-200;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 48px;
 
-  h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: $guess-primary-900; // 🔹 navy heading
+    .step-label {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $guess-tertiary-red-700;
+      margin-bottom: 12px;
+    }
   }
-}
 
-/* ---------- CALLOUT QUOTES ---------- */
-.ideate blockquote {
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 500;
-  color: $neutral-800;
-  border-left: 4px solid $guess-tertiary-red-700; // 🔹 red border
-  margin: 24px 0;
-  padding: 10px 16px;
-  background: $neutral-50;
-  border-radius: 6px;
-}
+  .gallery__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 18px 0;
+    text-align: center;
 
-/* ---------- GALLERY ---------- */
-.ideate .gallery__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 18px 0;
-  text-align: center;
+    img,
+    video.gallery__video {
+      max-width: 900px;
+      max-height: 650px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+    }
 
-  img,
-  video.gallery__video {
-    max-width: 900px;
-    max-height: 650px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    figcaption {
+      margin-top: 6px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: $neutral-600;
+      font-style: italic;
+    }
+  }
+
+  .img-rotate-90 {
+    transform: rotate(90deg);
+    transform-origin: center;
+    display: block;
     margin: 0 auto;
-    border-radius: 0;
-    box-shadow: none;
-    background: none;
+    max-height: 800px;
+    width: auto;
+    object-fit: contain;
   }
-
-  figcaption {
-    margin-top: 6px;
-    font-size: 13px;
-    line-height: 1.4;
-    color: $neutral-600;
-    font-style: italic;
-  }
-}
-
-.img-rotate-90 {
-  transform: rotate(90deg);
-  transform-origin: center;
-  display: block;
-  margin: 0 auto;
-  max-height: 800px;
-  width: auto;
-  object-fit: contain;
 }

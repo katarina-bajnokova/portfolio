@@ -5,58 +5,55 @@
 
 .rouge-afterthoughts {
   margin-top: $space-12;
-  max-width: 860px;
+  max-width: 880px;
   margin-inline: auto;
 
   h2 {
     font-family: $font-heading;
     font-size: $h2-size;
     font-weight: 700;
+    color: $rouge-accent-red;
     margin-bottom: $space-6;
-    color: $rouge-primary-900; // 🔹 title in deep black/grey
   }
 
   p {
     font-family: $font-body;
     font-size: $body-base-size;
     line-height: $body-line;
-    color: $rouge-primary-700; // 🔹 dark grey body text
+    color: $rouge-primary-700;
     margin-bottom: $space-5;
 
     strong {
-      color: $rouge-accent-red; // 🔹 red highlight
+      color: $rouge-accent-magenta;
       font-weight: 600;
+    }
+
+    em {
+      color: $neutral-600;
     }
   }
 
   .reflection-box {
-    background: $rouge-secondary-100; // 🔹 light grey background
-    border-left: 4px solid $rouge-accent-red; // 🔹 accent border
-    padding: $space-6 $space-7;
+    background: $rouge-secondary-100;
+    border-left: 4px solid $rouge-accent-red;
     border-radius: 12px;
+    padding: $space-6 $space-7;
     margin-top: $space-10;
-    box-shadow: 0 8px 28px $shadow-soft;
-
-    h3 {
-      font-family: $font-heading;
-      font-size: $h3-size;
-      font-weight: 700;
-      margin-bottom: $space-4;
-      color: $rouge-primary-900;
-    }
+    box-shadow: 0 8px 24px $shadow-soft;
 
     p {
       font-size: $body-base-size;
-      font-style: italic;
-      color: $rouge-primary-900; // 🔹 keep strong contrast
+      line-height: $body-line;
+      color: $rouge-primary-900;
       margin: 0;
+      font-style: italic;
 
       strong {
-        color: $rouge-accent-magenta; // 🔹 magenta pop for strong
+        color: $rouge-accent-magenta;
       }
 
       em {
-        color: $neutral-600; // keep neutral for subtle emphasis
+        color: $neutral-600;
       }
     }
   }

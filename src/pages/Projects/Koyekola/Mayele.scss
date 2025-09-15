@@ -3,8 +3,8 @@
 @use "@/styles/tokens/typography" as *;
 @use "@/styles/mixins" as *;
 
-.koyekola-page {
-  background: $koyekola-sand-ivory;
+.mayele-page {
+  background: $mayele-sand-ivory;
 
   .project__container {
     @include container(1100px);
@@ -20,7 +20,7 @@
       font-weight: 700;
       font-size: $h2-size;
       line-height: $heading-line;
-      color: $koyekola-congo-blue; // 💙 headline
+      color: $mayele-congo-blue;
       margin-bottom: $space-4;
 
       &::after {
@@ -29,16 +29,15 @@
         width: 80px;
         height: 4px;
         margin: 1rem auto 0;
-        background: $koyekola-golden-baobab; // 🌞 underline
+        background: $mayele-golden-baobab;
         border-radius: 2px;
       }
     }
   }
 
-  /* Project Summary Box */
   .project__summarybox {
-    background: $koyekola-sand-ivory; // ✨ light neutral for readability
-    border: 3px solid $koyekola-congo-blue; // 💙 cultural anchor
+    background: $mayele-sand-ivory;
+    border: 3px solid $mayele-congo-blue;
     border-radius: 14px;
     padding: $space-8;
     margin: $space-8 auto;
@@ -46,13 +45,13 @@
     display: flex;
     flex-direction: column;
     gap: $space-6;
-    box-shadow: 0 8px 28px $koyekola-shadow-soft;
+    box-shadow: 0 8px 28px $mayele-shadow-soft;
 
     .summary-title {
       font-size: $h4-size;
       font-weight: 700;
       text-align: center;
-      color: $koyekola-deep-river-blue; // 🌊 heritage blue
+      color: $mayele-deep-river-blue;
       margin-bottom: $space-2;
 
       &::after {
@@ -61,7 +60,7 @@
         width: 60px;
         height: 3px;
         margin: 0.5rem auto 0;
-        background: $koyekola-golden-baobab; // 🌞 yellow accent
+        background: $mayele-golden-baobab;
         border-radius: 2px;
       }
     }
@@ -75,13 +74,13 @@
         font-size: $body-base-size;
         font-weight: 600;
         margin-bottom: $space-2;
-        color: $koyekola-forest-green; // 🌿 grounded accent
+        color: $mayele-forest-green;
       }
 
       p {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $koyekola-ebony-bark;
+        color: $mayele-ebony-bark;
       }
     }
 
@@ -90,7 +89,7 @@
       flex-wrap: wrap;
       gap: $space-6;
       justify-content: space-between;
-      border-top: 2px solid $koyekola-clay-dust;
+      border-top: 2px solid $mayele-clay-dust;
       padding-top: $space-5;
 
       div {
@@ -101,31 +100,29 @@
           font-size: $body-base-size;
           font-weight: 600;
           margin-bottom: $space-2;
-          color: $koyekola-sunset-orange; // 🔶 vibrant highlight
+          color: $mayele-sunset-orange;
         }
 
         p {
           font-size: $body-small-size;
           line-height: $body-line;
-          color: $koyekola-ebony-bark;
+          color: $mayele-ebony-bark;
         }
       }
     }
 
-    /* Sub-panels for readability */
     .summary-panel {
-      background: $koyekola-river-mist; // 💧 fresh playful block
-      border-left: 4px solid $koyekola-courage-red; // ❤️ strong identity
+      background: $mayele-river-mist;
+      border-left: 4px solid $mayele-courage-red;
       padding: 1rem;
       border-radius: 10px;
 
       h3 {
-        color: $koyekola-deep-river-blue;
+        color: $mayele-deep-river-blue;
       }
     }
   }
 
-  /* Hero */
   .project-hero {
     display: grid;
     place-items: center;
@@ -135,42 +132,40 @@
       width: 100%;
       max-width: 1100px;
       border-radius: 14px;
-      box-shadow: 0 20px 60px $koyekola-shadow-hard;
-      background: $koyekola-river-mist;
+      box-shadow: 0 20px 60px $mayele-shadow-hard;
+      background: $mayele-river-mist;
       object-fit: contain;
     }
   }
 
-  /* Goals */
   .goal-card {
     background: $neutral-50;
-    border: 1px solid $koyekola-clay-dust;
+    border: 1px solid $mayele-clay-dust;
     border-radius: 12px;
     padding: $space-5;
-    box-shadow: 0 4px 12px $koyekola-shadow-soft;
+    box-shadow: 0 4px 12px $mayele-shadow-soft;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     h4 {
       font-size: $h4-size;
       font-weight: 600;
-      color: $koyekola-forest-green;
+      color: $mayele-forest-green;
       margin-bottom: $space-2;
     }
 
     p {
       font-size: $body-small-size;
       line-height: $body-line;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
     }
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 28px $koyekola-shadow-soft;
-      border-color: $koyekola-congo-blue;
+      box-shadow: 0 12px 28px $mayele-shadow-soft;
+      border-color: $mayele-congo-blue;
     }
   }
 
-  /* Process Blocks */
   .process-block {
     margin-bottom: $space-8;
 
@@ -178,7 +173,7 @@
       font-size: $h3-size;
       font-weight: 600;
       margin-bottom: $space-3;
-      color: $koyekola-courage-red;
+      color: $mayele-courage-red;
     }
 
     ul {
@@ -187,53 +182,50 @@
       li {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $koyekola-ebony-bark;
+        color: $mayele-ebony-bark;
         margin-bottom: $space-2;
       }
     }
   }
 
-  /* Reflection box */
   .reflection-box {
-    background: $koyekola-papaya-peach;
-    border-left: 4px solid $koyekola-sunset-orange;
+    background: $mayele-papaya-peach;
+    border-left: 4px solid $mayele-sunset-orange;
     padding: $space-6;
     border-radius: 12px;
     margin-top: $space-6;
-    box-shadow: 0 8px 28px $koyekola-shadow-soft;
+    box-shadow: 0 8px 28px $mayele-shadow-soft;
 
     p {
       font-size: $body-base-size;
       line-height: $body-line;
       font-style: italic;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
     }
   }
 
-  /* Outcome snapshot */
   .outcome-snapshot {
-    background: $koyekola-golden-baobab;
+    background: $mayele-golden-baobab;
     padding: $space-6 $space-7;
     border-radius: 12px;
     margin-top: $space-8;
-    box-shadow: 0 8px 28px $koyekola-shadow-soft;
+    box-shadow: 0 8px 28px $mayele-shadow-soft;
 
     h4 {
       font-size: $h4-size;
       font-weight: 700;
       margin-bottom: $space-3;
-      color: $koyekola-deep-river-blue;
+      color: $mayele-deep-river-blue;
     }
 
     li {
       font-size: $body-small-size;
       line-height: $body-line;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
       margin-bottom: $space-2;
     }
   }
 
-  /* Tabs */
   .design-cycle-tabs {
     display: flex;
     justify-content: center;
@@ -247,23 +239,22 @@
       font-size: $body-base-size;
       font-weight: 600;
       cursor: pointer;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
       padding: $space-2 $space-3;
       border-bottom: 2px solid transparent;
       transition: color 0.2s ease, border-color 0.2s ease;
 
       &.active {
-        color: $koyekola-congo-blue;
-        border-bottom: 2px solid $koyekola-golden-baobab;
+        color: $mayele-congo-blue;
+        border-bottom: 2px solid $mayele-golden-baobab;
       }
 
       &:hover:not(.active) {
-        color: $koyekola-courage-red;
+        color: $mayele-courage-red;
       }
     }
   }
 
-  /* Tab content */
   .tab-content {
     max-width: 960px;
     margin: 0 auto $space-16;
@@ -272,7 +263,7 @@
     h2 {
       font-size: $h3-size;
       font-weight: 700;
-      color: $koyekola-forest-green;
+      color: $mayele-forest-green;
       margin-bottom: $space-4;
     }
 
@@ -280,14 +271,14 @@
     li {
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
       margin-bottom: $space-3;
     }
 
     ul {
       padding-left: $space-5;
       list-style: disc;
-      color: $koyekola-ebony-bark;
+      color: $mayele-ebony-bark;
     }
   }
 }

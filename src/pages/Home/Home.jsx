@@ -3,28 +3,24 @@ import { Link } from "react-router-dom";
 import "./Home.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
+
 import guessjeansVideo from "@/assets/videos/guessjeans.mp4";
 import rougeVideo from "@/assets/videos/rouge.mp4";
 import bookVideo from "@/assets/videos/book.mp4";
-import koyekolaImg from "@/assets/images/koyekola.png";
+import mayeleImg from "@/assets/images/mayele.png";
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
-        {/* HERO */}
         <section className="home-hero" id="work">
-          <section className="home-hero" id="work">
-            <h1>UX Design & Development Student</h1>
-            <p>(Your next intern starting in February 2026)</p>
-          </section>
+          <h1>UX Design & Development Student</h1>
+          <p>(Your next intern starting in February 2026)</p>
         </section>
 
-        {/* PROJECT GRID – Guess Jeans + Rouge */}
         <section className="home-work-grid">
           <div className="grid">
-            {/* Guess Jeans */}
             <Link
               to="/project/guess-jeans"
               className="project"
@@ -53,7 +49,6 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Rouge */}
             <Link
               to="/project/rouge"
               className="project"
@@ -85,7 +80,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FEATURE BANNER – Koyekola */}
         <section className="home-feature">
           <div className="feature__wrap">
             <Link
@@ -94,13 +88,9 @@ export default function Home() {
               aria-label="Open Koyekola project"
               title="Open project"
             >
-              <img
-                src={koyekolaImg}
-                alt="Koyekola landing page"
-                loading="lazy"
-              />
+              <img src={mayeleImg} alt="Mayele landing page" loading="lazy" />
             </Link>
-            <h2>Koyekola (UX Designer & Developer)</h2>
+            <h2>Mayele (UX Designer & Developer)</h2>
             <p>
               <strong>Focus:</strong> Playful Lingala learning for kids
             </p>
@@ -115,7 +105,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BOOK PROJECT – Ba Mbuma */}
         <section className="home-book">
           <div className="book__wrap">
             <Link
@@ -151,7 +140,6 @@ export default function Home() {
         </section>
       </main>
 
-      {/* FOOTER (always visible, fixed at bottom) */}
       <Footer linkedin="https://www.linkedin.com/in/katarina-bajnokova/" />
     </>
   );

@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./Rouge.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
-import rougeVideo from "@/assets/videos/rouge.mp4";
 
 import RougeProjectManagement from "./RougeProjectManagement";
 import RougeGoals from "./RougeGoals";
@@ -13,12 +12,12 @@ import RougeAfterThoughts from "./RougeAfterThoughts";
 export default function Rouge() {
   const [activeTab, setActiveTab] = useState("Goals");
 
-  const tabs = [
-    "Goals",
-    "Project Management",
-    "Process",
-    "Challenges & Learnings",
-    "After Thoughts",
+  const sections = [
+    { label: "Goals", component: <RougeGoals /> },
+    { label: "Project Management", component: <RougeProjectManagement /> },
+    { label: "Process", component: <RougeProcess /> },
+    { label: "Challenges & Learnings", component: <RougeChallenges /> },
+    { label: "After Thoughts", component: <RougeAfterThoughts /> },
   ];
 
   return (
@@ -37,7 +36,7 @@ export default function Rouge() {
                     Rouge began as a UX/UI concept by Andrea. In our second
                     semester, I transformed it into a{" "}
                     <strong>real, full-stack application</strong> — bridging
-                    design and development to create a functional e-commerce
+                    design and development into a functional e-commerce
                     experience.
                   </p>
                 </div>
@@ -45,38 +44,38 @@ export default function Rouge() {
                   <h3>Problem</h3>
                   <p>
                     The design was static and lacked functionality:{" "}
-                    <strong>no product data, basket, or accounts</strong>. I
-                    needed to create a complete system with a seamless user
-                    journey and working backend.
+                    <strong>no product data, basket, or accounts</strong>. I had
+                    to create a complete system with a seamless user journey and
+                    working backend.
                   </p>
                 </div>
                 <div>
                   <h3>Solution</h3>
                   <p>
-                    I built a <strong>React + Sass frontend</strong> connected
-                    to a <strong>PHP + MySQL backend</strong> with{" "}
-                    <strong>REST APIs</strong>, implementing{" "}
+                    Built a <strong>React + Sass frontend</strong> connected to
+                    a <strong>PHP + MySQL backend</strong> via{" "}
+                    <strong>REST APIs</strong>, with{" "}
                     <strong>basket management, checkout flow</strong>, and{" "}
-                    <strong>user accounts</strong>. The result was a{" "}
+                    <strong>user accounts</strong>. The result: a{" "}
                     <em>production-like application</em>.
                   </p>
                 </div>
               </div>
               <div className="summary-meta">
-                <div>
+                <div className="meta-item">
                   <h3>Tools</h3>
                   <p>React, Sass, Mantine, PHP, MySQL, Firebase</p>
                 </div>
-                <div>
+                <div className="meta-item">
                   <h3>Impact</h3>
                   <p>
-                    Showcased <strong>end-to-end development</strong>, teamwork,
-                    and the ability to deliver a{" "}
-                    <strong>fully functional product</strong> from static
-                    designs.
+                    Demonstrated{" "}
+                    <strong>end-to-end development and teamwork</strong>, and
+                    delivered a <strong>fully functional product</strong> from
+                    static designs.
                   </p>
                 </div>
-                <div>
+                <div className="meta-item">
                   <h3>Role</h3>
                   <p>
                     Full-Stack Developer —{" "}
@@ -91,22 +90,19 @@ export default function Rouge() {
           </header>
 
           <nav className="design-cycle-tabs">
-            {tabs.map((tab) => (
+            {sections.map(({ label }) => (
               <button
-                key={tab}
-                className={activeTab === tab ? "active" : ""}
-                onClick={() => setActiveTab(tab)}
+                key={label}
+                className={activeTab === label ? "active" : ""}
+                onClick={() => setActiveTab(label)}
               >
-                {tab}
+                {label}
               </button>
             ))}
           </nav>
-          <div className="tab-content rouge-content">
-            {activeTab === "Goals" && <RougeGoals />}
-            {activeTab === "Project Management" && <RougeProjectManagement />}
-            {activeTab === "Process" && <RougeProcess />}
-            {activeTab === "Challenges & Learnings" && <RougeChallenges />}
-            {activeTab === "After Thoughts" && <RougeAfterThoughts />}
+
+          <div className="tab-content">
+            {sections.find((s) => s.label === activeTab)?.component}
           </div>
         </section>
       </main>

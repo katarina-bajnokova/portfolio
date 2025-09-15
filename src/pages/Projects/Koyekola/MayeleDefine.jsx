@@ -1,4 +1,4 @@
-import "./KoyekolaDefine.scss";
+import "./MayeleDefine.scss";
 import {
   FaBolt,
   FaQuestion,
@@ -7,7 +7,7 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
-export default function KoyekolaDefine() {
+export default function MayeleDefine() {
   const blocks = [
     {
       icon: <FaBolt />,
@@ -32,16 +32,15 @@ export default function KoyekolaDefine() {
     {
       icon: <FaGlobe />,
       title: "Value Proposition",
-      text: "Koyekola makes Lingala fun and relevant through mini-games, storytelling, and community features—bridging generations and ensuring the language thrives.",
+      text: "Mayele makes Lingala fun and relevant through mini-games, storytelling, and community features—bridging generations and ensuring the language thrives.",
     },
   ];
 
   return (
-    <section className="project-section koyekola-define">
+    <section className="project-section mayele-define">
       <div className="define__grid">
         {blocks.map((block, i) => (
           <div className="define__card" key={i}>
-            {/* ✅ Wrap icon + title in header */}
             <div className="define__header">
               <div className="define__icon">{block.icon}</div>
               <h3>{block.title}</h3>

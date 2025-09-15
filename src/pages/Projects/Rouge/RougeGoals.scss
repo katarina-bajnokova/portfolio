@@ -3,7 +3,6 @@
 @use "@/styles/mixins" as *;
 @use "@/styles/tokens/typography" as *;
 
-/* ---------- GOALS SECTION ---------- */
 .rouge-goals {
   .project-section {
     margin-bottom: $space-16;
@@ -13,20 +12,21 @@
     h2 {
       font-size: $h2-size;
       font-weight: 700;
-      color: $rouge-accent-red; // 🔹 headline in Rouge red
+      color: $rouge-accent-red;
       margin-bottom: $space-5;
       line-height: $heading-line;
+      text-align: center;
     }
 
     p {
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $rouge-primary-700; // 🔹 body text in mid grey
+      color: $rouge-primary-700;
       margin-bottom: $space-4;
     }
 
     strong {
-      color: $rouge-accent-magenta; // 🔹 emphasis in magenta
+      color: $rouge-accent-magenta;
       font-weight: 600;
     }
 
@@ -36,7 +36,6 @@
     }
   }
 
-  /* ---------- INTRO TEXT + VIDEO LAYOUT ---------- */
   .goals-intro {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -47,13 +46,6 @@
 
     &__text {
       max-width: 520px;
-
-      p {
-        font-size: $body-base-size;
-        line-height: $body-line;
-        color: $rouge-primary-700;
-        margin-bottom: $space-4;
-      }
     }
 
     &__video {
@@ -86,7 +78,6 @@
     }
   }
 
-  /* ---------- GOALS GRID ---------- */
   .goals-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -95,7 +86,7 @@
   }
 
   .goal-card {
-    background: $rouge-secondary-100; // 🔹 soft light grey
+    background: $rouge-secondary-100;
     border: 1px solid $neutral-200;
     border-radius: 12px;
     padding: $space-5;
@@ -105,7 +96,7 @@
     h4 {
       font-size: $h4-size;
       font-weight: 600;
-      color: $rouge-accent-red; // 🔹 headers in Rouge red
+      color: $rouge-accent-red;
       margin-bottom: $space-3;
     }
 

@@ -5,15 +5,14 @@
 
 .project-management {
   .project-section {
-    margin-bottom: $space-16;
     max-width: 960px;
-    margin-inline: auto;
+    margin: 0 auto $space-16;
 
     h2 {
       font-family: $font-heading;
       font-size: $h2-size;
       font-weight: 700;
-      color: $rouge-accent-red; // 🔹 section title in Rouge red
+      color: $rouge-accent-red;
       margin-bottom: $space-6;
     }
 
@@ -21,7 +20,7 @@
       font-family: $font-heading;
       font-size: $h3-size;
       font-weight: 600;
-      color: $rouge-primary-900; // 🔹 deep wine red
+      color: $rouge-primary-900;
       margin: $space-8 0 $space-4;
     }
 
@@ -29,7 +28,7 @@
       font-family: $font-body;
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $rouge-primary-700; // 🔹 charcoal grey for body text
+      color: $rouge-primary-700;
       margin-bottom: $space-4;
     }
 
@@ -45,7 +44,7 @@
         margin-bottom: $space-2;
 
         strong {
-          color: $rouge-accent-magenta; // 🔹 magenta emphasis
+          color: $rouge-accent-magenta;
         }
 
         em {
@@ -57,12 +56,12 @@
 
   .cta-link {
     font-weight: 600;
-    color: $rouge-accent-red; // 🔹 red link
+    color: $rouge-accent-red;
     text-decoration: none;
     transition: color 0.2s ease;
 
     &:hover {
-      color: $rouge-accent-magenta; // 🔹 hover to magenta
+      color: $rouge-accent-magenta;
     }
   }
 
@@ -74,7 +73,7 @@
       font-size: $h3-size;
       font-weight: 700;
       margin-bottom: $space-6;
-      color: $rouge-accent-red; // 🔹 headline in red
+      color: $rouge-accent-red;
     }
 
     .repo-grid {
@@ -92,21 +91,19 @@
       text-decoration: none;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
 
       h4 {
         font-family: $font-heading;
         font-size: $h4-size;
         font-weight: 700;
-        color: $rouge-accent-magenta; // 🔹 accent color
+        color: $rouge-accent-magenta;
         margin-bottom: $space-2;
       }
 
       p {
         font-size: $body-small-size;
-        color: $rouge-primary-700; // 🔹 charcoal grey
-        margin: 0;
+        color: $rouge-primary-700;
       }
 
       &:hover {
@@ -138,6 +135,7 @@
 
   .role-card {
     @include soft-card($space-5);
+    border-left: 4px solid transparent;
 
     h4 {
       font-family: $font-heading;
@@ -145,7 +143,7 @@
       font-weight: 700;
       margin-bottom: $space-3;
       text-transform: uppercase;
-      color: $rouge-primary-900; // 🔹 deep wine red
+      color: $rouge-primary-900;
     }
 
     ul {
@@ -161,19 +159,19 @@
     }
 
     &.andrea {
-      border-left: 4px solid $rouge-accent-magenta; // 🔹 Andrea card
+      border-left-color: $rouge-accent-magenta;
     }
 
     &.katarina {
-      border-left: 4px solid $rouge-accent-red; // 🔹 Katarina card
+      border-left-color: $rouge-accent-red;
     }
   }
 }
 
 .role-sharing-shared {
   margin-top: $space-6;
-  background: $rouge-secondary-100; // 🔹 subtle grey background
-  border-left: 4px solid $rouge-accent-red; // 🔹 accent border
+  background: $rouge-secondary-100;
+  border-left: 4px solid $rouge-accent-red;
   padding: $space-5;
   border-radius: 10px;
 
@@ -181,7 +179,7 @@
     font-size: $h4-size;
     font-weight: 700;
     margin-bottom: $space-3;
-    color: $rouge-accent-magenta; // 🔹 headline accent
+    color: $rouge-accent-magenta;
   }
 
   ul {

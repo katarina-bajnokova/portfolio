@@ -12,21 +12,23 @@
     h2 {
       font-size: $h2-size;
       font-weight: 700;
-      color: $rouge-accent-red; // 🔹 big section title in red
-      margin-bottom: $space-6;
+      color: $rouge-accent-red;
+      margin-bottom: $space-8;
+      line-height: $heading-line;
     }
 
     h3 {
       font-size: $h3-size;
       font-weight: 600;
-      color: $rouge-primary-900; // 🔹 strong dark grey
+      color: $rouge-primary-900;
       margin: $space-8 0 $space-4;
+      line-height: $heading-line;
     }
 
     p {
       font-size: $body-base-size;
       line-height: $body-line;
-      color: $rouge-primary-700; // 🔹 mid grey body text
+      color: $rouge-primary-700;
       margin-bottom: $space-4;
     }
 
@@ -40,15 +42,12 @@
         line-height: $body-line;
         color: $rouge-primary-700;
         margin-bottom: $space-2;
-
-        strong {
-          color: $rouge-accent-magenta; // 🔹 emphasize with magenta
-        }
       }
     }
 
     strong {
-      color: $rouge-accent-red;
+      color: $rouge-accent-magenta; // emphasize lessons + key takeaways
+      font-weight: 600;
     }
 
     em {
@@ -57,23 +56,28 @@
   }
 
   .challenge-block {
-    margin-bottom: $space-10;
-    padding-bottom: $space-6;
+    margin-bottom: $space-12;
+    padding-bottom: $space-8;
     border-bottom: 1px solid $neutral-200;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
   }
 
   .highlight-box {
-    background: $rouge-secondary-100; // 🔹 soft light grey
-    border-left: 4px solid $rouge-accent-red; // 🔹 red border
+    background: $rouge-secondary-100;
+    border-left: 4px solid $rouge-accent-red;
     padding: $space-5 $space-6;
     border-radius: 10px;
     margin: $space-6 0;
 
     p {
-      font-size: $body-base-size;
+      font-size: $body-small-size;
       line-height: $body-line;
-      margin-bottom: 0;
-      color: $rouge-primary-900; // 🔹 deep grey text
+      margin: 0;
+      color: $rouge-primary-900;
     }
   }
 }

@@ -65,13 +65,7 @@ export function BrandingGallery({ images }) {
 /* Lo-fi wireframes: larger */
 export function WireframesGallery({ images }) {
   return (
-    <Gallery
-      className="gallery--lofi"
-      title="Wireframes (Lo-Fi)"
-      images={images}
-      note=""
-      min={500}
-    />
+    <Gallery className="gallery--lofi" images={images} note="" min={500} />
   );
 }
 
@@ -79,8 +73,6 @@ export function WireframesGallery({ images }) {
 export function HiFiPrototype({ videos }) {
   return (
     <section className="project-section hifi-prototype">
-      <h2>High-Fidelity Prototype</h2>
-
       <h3 className="h4">Bodytype Scanning</h3>
       <p>
         A lightweight body scan/input creates a Fit Profile. From there,

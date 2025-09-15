@@ -1,7 +1,7 @@
-import "./KoyekolaBranding.scss";
-import mascotImg from "@/assets/images/Koyekola/mascot.webp";
+import "./MayeleBranding.scss";
+import mascotImg from "@/assets/images/Mayele/mascot.webp";
 
-export default function KoyekolaBranding() {
+export default function MayeleBranding() {
   const palettes = [
     {
       title: "Identity & Pride",
@@ -71,10 +71,10 @@ export default function KoyekolaBranding() {
   ];
 
   return (
-    <section className="project-section koyekola-branding">
+    <section className="project-section mayele-branding">
       <h2>Colour Palette</h2>
       <p>
-        The Koyekola brand identity blends <strong>colors</strong>,{" "}
+        The Mayele identity blends <strong>color</strong>,{" "}
         <strong>typography</strong>, and a <strong>mascot</strong> to create a
         playful yet culturally rooted experience.
       </p>
@@ -88,7 +88,7 @@ export default function KoyekolaBranding() {
                 <div
                   className="color-swatch"
                   style={{ backgroundColor: c.hex }}
-                ></div>
+                />
                 <h4>{c.name}</h4>
                 <p className="hex">{c.hex}</p>
                 <p className="meaning">{c.meaning}</p>
@@ -101,7 +101,7 @@ export default function KoyekolaBranding() {
       <div className="typography-system">
         <h2>Typography</h2>
         <p>
-          Koyekola’s typography combines <strong>Poppins</strong> (headings),{" "}
+          Mayele’s typography combines <strong>Poppins</strong> (headings),
           <strong>Nunito</strong> (body), and <strong>DM Serif Display</strong>{" "}
           (cultural accent). This balance ensures modern readability, playful
           warmth, and heritage depth.
@@ -116,7 +116,7 @@ export default function KoyekolaBranding() {
             <h3>Nunito – Body</h3>
             <p className="type-body">
               Easy to read, approachable, and balanced for instructions and
-              longer practice tasks inside the app.
+              longer practice tasks.
             </p>
           </div>
           <div className="type-card">
@@ -132,14 +132,14 @@ export default function KoyekolaBranding() {
         <h2>Mascot — The Okapi</h2>
         <p>
           The <strong>Okapi</strong>, Congo’s national animal, was chosen as
-          Koyekola’s mascot. It is unique, gentle, and deeply tied to Congolese
+          Mayele’s mascot. It is unique, gentle, and deeply tied to Congolese
           identity, making it the perfect cultural ambassador for language
           learning.
         </p>
 
         <div className="mascot-visual">
           <div className="mascot-illustration">
-            <img src={mascotImg} alt="Koyekola Okapi Mascot" />
+            <img src={mascotImg} alt="Mayele Okapi Mascot" />
           </div>
         </div>
       </div>

@@ -1,18 +1,13 @@
-import { useState } from "react";
 import "./About.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import portrait from "@/assets/images/about.png";
-import jciAward from "@/assets/images/About/jci.JPG"; // ✅ import award image
-import MoreMeModal from "@/pages/About/MoreMeModal";
+import jciAward from "@/assets/images/About/jci.JPG";
 
-// ✅ Import the new components
 import Timeline from "@/pages/About/Timeline";
 import Certifications from "@/pages/About/Certifications";
 
 export default function About() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <>
       <Header />
@@ -159,9 +154,6 @@ export default function About() {
         </section>
       </main>
       <Footer linkedin="https://www.linkedin.com/in/katarina-bajnokova/" />
-
-      {/* Modal Mount */}
-      {isModalOpen && <MoreMeModal onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }

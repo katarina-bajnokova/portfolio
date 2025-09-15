@@ -3,39 +3,28 @@
 @use "@/styles/mixins" as *;
 @use "@/styles/tokens/typography" as *;
 
-.project-page {
-  background: $neutral-100;
-}
-
 .empathize {
   .project-section {
-    margin-bottom: 64px;
+    margin-bottom: 72px;
     max-width: 880px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
+
+    h2,
+    h3 {
+      color: $guess-primary-900;
+      line-height: 1.3;
+    }
 
     h2 {
       font-size: 28px;
       font-weight: 700;
-      color: $guess-primary-900; // deep navy headline
-      margin-bottom: 20px;
-      line-height: 1.3;
+      margin-bottom: 24px;
     }
 
     h3 {
       font-size: 20px;
       font-weight: 600;
-      color: $guess-primary-900; // navy subheadline
-      margin: 32px 0 14px;
-      line-height: 1.4;
-    }
-
-    .step-label {
-      font-size: 14px;
-      font-weight: 600;
-      color: $neutral-600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 16px;
     }
 
     p {
@@ -44,138 +33,72 @@
       color: $neutral-800;
       margin-bottom: 16px;
     }
+  }
 
-    ul {
-      margin: 14px 0 24px;
-      padding-left: 22px;
-      list-style: disc;
+  .step {
+    background: $neutral-50;
+    border: 1px solid $neutral-200;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 48px;
 
-      li {
-        font-size: 15px;
-        line-height: 1.6;
-        color: $neutral-800;
-        margin-bottom: 10px;
+    .step-label {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $guess-tertiary-red-700;
+      margin-bottom: 12px;
+    }
+  }
 
-        strong {
-          color: $guess-primary-900; // highlight navy
-          font-weight: 600;
-        }
+  .highlight-box {
+    background: $neutral-50;
+    border-left: 4px solid $guess-tertiary-red-700;
+    padding: 18px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: $guess-primary-900;
+    }
+  }
+
+  .gallery__grid {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+
+    &[data-cols="2"] {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      &[data-cols="2"] {
+        grid-template-columns: 1fr;
       }
     }
+  }
 
-    strong {
-      color: $guess-primary-900;
-      font-weight: 600;
+  .gallery__item {
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto;
+      object-fit: contain;
     }
 
-    em {
-      font-style: italic;
+    figcaption {
+      margin-top: 8px;
+      font-size: 14px;
       color: $neutral-600;
+      font-style: italic;
     }
-  }
-}
-
-.empathize .highlight-box {
-  background: $neutral-50;
-  border-left: 4px solid $guess-tertiary-red-700; // Guess red accent
-  padding: 18px 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-
-  h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: $guess-primary-900;
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 20px;
-
-    li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      color: $neutral-800;
-    }
-  }
-}
-
-.empathize blockquote {
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 500;
-  color: $neutral-800;
-  border-left: 4px solid $guess-tertiary-red-700; // branded red
-  margin: 24px 0;
-  padding: 10px 16px;
-  background: $neutral-50;
-  border-radius: 6px;
-}
-
-.empathize .gallery__grid {
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-
-  &[data-cols="2"] {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  &[data-cols="3"] {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    &[data-cols="2"],
-    &[data-cols="3"] {
-      grid-template-columns: 1fr;
-    }
-  }
-}
-
-.empathize .gallery__item {
-  text-align: center;
-
-  img {
-    width: 100%;
-    max-width: 1120px;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-    border-radius: 0;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  figcaption {
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: $neutral-600;
-    font-style: italic;
-  }
-}
-
-.empathize .outcome-snapshot {
-  color: $neutral-800;
-  padding: 24px;
-  border-radius: 12px;
-  margin-top: 40px;
-  text-align: center;
-  background: $neutral-50;
-
-  h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: $guess-primary-900;
-  }
-
-  p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
   }
 }

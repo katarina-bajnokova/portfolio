@@ -18,12 +18,13 @@
       font-weight: 700;
       font-size: $h1-size;
       color: $guess-primary-900;
-      margin: 0 0 $space-4;
+      margin-bottom: $space-4;
     }
   }
 
   .project__summarybox {
-    background: $guess-primary-800;
+    background: none;
+    border: 2px solid $guess-primary-800;
     border-radius: 18px;
     padding: $space-8;
     margin: $space-10 auto;
@@ -31,14 +32,14 @@
     display: flex;
     flex-direction: column;
     gap: $space-8;
-    color: $neutral-50;
+    color: $neutral-800; // switch to dark text for readability
 
     .summary-title {
       font-size: $h3-size;
       font-weight: 600;
-      color: $neutral-50;
       text-align: center;
       margin-bottom: $space-4;
+      color: $guess-primary-900;
     }
 
     .summary-grid {
@@ -50,13 +51,12 @@
         font-size: $body-base-size;
         font-weight: 600;
         margin-bottom: $space-2;
-        color: $neutral-50;
+        color: $guess-primary-900;
       }
 
       p {
         font-size: $body-small-size;
         line-height: $body-line;
-        color: $neutral-50;
       }
     }
 
@@ -65,7 +65,7 @@
       flex-wrap: wrap;
       gap: $space-8;
       justify-content: space-between;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
       padding-top: $space-6;
 
       div {
@@ -76,13 +76,12 @@
           font-size: $body-base-size;
           font-weight: 600;
           margin-bottom: $space-2;
-          color: $neutral-50;
+          color: $guess-primary-900;
         }
 
         p {
           font-size: $body-small-size;
           line-height: $body-line;
-          color: $neutral-50;
         }
       }
     }
@@ -91,9 +90,9 @@
   .design-cycle-tabs {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: $space-6;
     margin: $space-10 0 $space-8;
-    flex-wrap: wrap;
 
     button {
       background: none;
@@ -107,12 +106,12 @@
       transition: color 0.2s ease, border-color 0.2s ease;
 
       &.active {
-        color: $guess-tertiary-red-700; // 🔴 Guess red underline
+        color: $guess-tertiary-red-700;
         border-bottom: 2px solid $guess-tertiary-red-700;
       }
 
       &:hover:not(.active) {
-        color: $guess-primary-800; // 🔵 lighter navy hover
+        color: $guess-primary-800;
       }
     }
   }
@@ -140,34 +139,31 @@
     ul {
       padding-left: $space-5;
       list-style: disc;
-      color: $neutral-800;
     }
   }
 
-  .gallery {
-    .gallery__grid {
-      --min: 260px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(var(--min, 260px), 1fr));
-      gap: $space-3;
+  .gallery__grid {
+    --min: 260px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min, 260px), 1fr));
+    gap: $space-3;
 
-      &[data-cols="1"] {
-        grid-template-columns: 1fr;
-      }
-      &[data-cols="2"] {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    &[data-cols="1"] {
+      grid-template-columns: 1fr;
+    }
+    &[data-cols="2"] {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &[data-cols="3"] {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      gap: $space-2;
+
+      &[data-cols="2"],
       &[data-cols="3"] {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @media (max-width: $breakpoint-tablet) {
-        gap: $space-2;
-
-        &[data-cols="2"],
-        &[data-cols="3"] {
-          grid-template-columns: 1fr;
-        }
+        grid-template-columns: 1fr;
       }
     }
   }
