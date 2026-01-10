@@ -15,8 +15,16 @@ export default function Home() {
       <Header />
       <main>
         <section className="home-hero" id="work">
-          <h1>UX Design & Development Student</h1>
-          <p>(Your next intern starting in February 2026)</p>
+          <h1>UX/UI Designer & Frontend Developer</h1>
+
+          <p>
+            Component-driven design with production-aware frontend execution.
+          </p>
+
+          <p>
+            Open to part-time and freelance opportunities. Available for
+            full-time roles from July 2026.
+          </p>
         </section>
 
         <section className="home-work-grid">
@@ -35,12 +43,15 @@ export default function Home() {
                 playsInline
                 preload="metadata"
               />
-              <h2>Guess Jeans (UX Designer)</h2>
+              <h2>Guess Jeans (UX/UI Designer)</h2>
+
               <p>
-                <strong>Focus:</strong> Jeans shopping made simple
+                <strong>Focus:</strong> Increasing fit confidence in denim
+                shopping
               </p>
               <p>
-                <strong>Tools:</strong> Figma, AI, Design Thinking & Research
+                <strong>Tools:</strong> Figma, UX research, design thinking,
+                prototyping
               </p>
               <div className="badges">
                 <span>Fit Confidence</span>
@@ -63,7 +74,8 @@ export default function Home() {
                 playsInline
                 preload="metadata"
               />
-              <h2>Rouge (Full-Stack Developer)</h2>
+              <h2>Rouge (Frontend Developer & UX/UI)</h2>
+
               <p>
                 <strong>Focus:</strong> Ready-to-wear makeup looks
               </p>
@@ -90,7 +102,8 @@ export default function Home() {
             >
               <img src={mayeleImg} alt="Mayele landing page" loading="lazy" />
             </Link>
-            <h2>Mayele (UX Designer & Developer)</h2>
+            <h2>Mayele (UX/UI Designer & Frontend Developer)</h2>
+
             <p>
               <strong>Focus:</strong> Playful Lingala learning for kids
             </p>
