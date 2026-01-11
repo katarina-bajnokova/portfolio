@@ -15,16 +15,27 @@ export default function Home() {
       <Header />
       <main>
         <section className="home-hero" id="work">
-          <h1>UX/UI Designer & Frontend Developer</h1>
+          <h1>
+            <span className="hero-title-line">Digital Product Designer</span>
+            <span className="hero-ampersand">&</span>
+            <span className="hero-title-line">Frontend Developer</span>
+          </h1>
 
-          <p>
+          <p className="hero-tagline">
             Component-driven design with production-aware frontend execution.
           </p>
 
-          <p>
-            Open to part-time and freelance opportunities. Available for
-            full-time roles from July 2026.
-          </p>
+          <div className="hero-availability">
+            <div className="availability-item">
+              <span className="availability-label">Now</span>
+              <span className="availability-text">Part-time & Freelance</span>
+            </div>
+            <div className="availability-divider"></div>
+            <div className="availability-item">
+              <span className="availability-label">July 2026</span>
+              <span className="availability-text">Full-time Ready</span>
+            </div>
+          </div>
         </section>
 
         <section className="home-work-grid">

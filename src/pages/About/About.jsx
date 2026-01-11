@@ -24,8 +24,10 @@ export default function About() {
   };
 
   const handleTagClick = (tagId) => {
-    setFlippedTags(prev => 
-      prev.includes(tagId) ? prev.filter(id => id !== tagId) : [...prev, tagId]
+    setFlippedTags((prev) =>
+      prev.includes(tagId)
+        ? prev.filter((id) => id !== tagId)
+        : [...prev, tagId]
     );
   };
 
@@ -66,7 +68,12 @@ export default function About() {
     };
 
     const handleLeave = () => {
-      gsap.to(el, { rotateY: 0, rotateX: 0, duration: 0.4, ease: "power2.out" });
+      gsap.to(el, {
+        rotateY: 0,
+        rotateX: 0,
+        duration: 0.4,
+        ease: "power2.out",
+      });
       gsap.to(img, { x: 0, y: 0, scale: 1, duration: 0.4, ease: "power2.out" });
     };
 
@@ -81,13 +88,13 @@ export default function About() {
   useEffect(() => {
     // Subtle intro animation for stickers
     if (leftPageRef.current) {
-      const stickers = leftPageRef.current.querySelectorAll('.sticker');
+      const stickers = leftPageRef.current.querySelectorAll(".sticker");
       if (stickers.length) {
         gsap.from(stickers, {
           opacity: 0,
           y: 8,
           duration: 0.4,
-          ease: 'power2.out',
+          ease: "power2.out",
           stagger: 0.08,
         });
       }
@@ -101,63 +108,142 @@ export default function About() {
         <section className="about__container">
           {/* Background floating tags */}
           <div className="bg-tags" aria-hidden="false">
-            <span className={`bg-tag tag--1 ${flippedTags.includes(1) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(1)}>
+            <span
+              className={`bg-tag tag--1 ${
+                flippedTags.includes(1) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(1)}
+            >
               <span className="bg-tag__front">LOL</span>
               <span className="bg-tag__back">🎮</span>
             </span>
-            <span className={`bg-tag tag--2 ${flippedTags.includes(2) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(2)}>
+            <span
+              className={`bg-tag tag--2 ${
+                flippedTags.includes(2) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(2)}
+            >
               <span className="bg-tag__front">COD</span>
               <span className="bg-tag__back">🎯</span>
             </span>
-            <span className={`bg-tag tag--3 ${flippedTags.includes(3) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(3)}>
+            <span
+              className={`bg-tag tag--3 ${
+                flippedTags.includes(3) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(3)}
+            >
               <span className="bg-tag__front">Split Fiction</span>
               <span className="bg-tag__back">🎭</span>
             </span>
-            <span className={`bg-tag tag--4 ${flippedTags.includes(4) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(4)}>
+            <span
+              className={`bg-tag tag--4 ${
+                flippedTags.includes(4) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(4)}
+            >
               <span className="bg-tag__front">It Takes Two</span>
               <span className="bg-tag__back">🤝</span>
             </span>
-            <span className={`bg-tag tag--5 ${flippedTags.includes(5) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(5)}>
+            <span
+              className={`bg-tag tag--5 ${
+                flippedTags.includes(5) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(5)}
+            >
               <span className="bg-tag__front">Hooked</span>
               <span className="bg-tag__back">📖</span>
             </span>
-            <span className={`bg-tag tag--6 ${flippedTags.includes(6) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(6)}>
+            <span
+              className={`bg-tag tag--6 ${
+                flippedTags.includes(6) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(6)}
+            >
               <span className="bg-tag__front">Creative Confidence</span>
               <span className="bg-tag__back">💡</span>
             </span>
-            <span className={`bg-tag tag--7 ${flippedTags.includes(7) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(7)}>
+            <span
+              className={`bg-tag tag--7 ${
+                flippedTags.includes(7) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(7)}
+            >
               <span className="bg-tag__front">Disorientation</span>
               <span className="bg-tag__back">🌀</span>
             </span>
-            <span className={`bg-tag tag--8 ${flippedTags.includes(8) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(8)}>
+            <span
+              className={`bg-tag tag--8 ${
+                flippedTags.includes(8) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(8)}
+            >
               <span className="bg-tag__front">Coloring</span>
               <span className="bg-tag__back">🎨</span>
             </span>
-            <span className={`bg-tag tag--9 ${flippedTags.includes(9) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(9)}>
+            <span
+              className={`bg-tag tag--9 ${
+                flippedTags.includes(9) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(9)}
+            >
               <span className="bg-tag__front">Yellowface</span>
               <span className="bg-tag__back">📚</span>
             </span>
-            <span className={`bg-tag tag--10 ${flippedTags.includes(10) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(10)}>
+            <span
+              className={`bg-tag tag--10 ${
+                flippedTags.includes(10) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(10)}
+            >
               <span className="bg-tag__front">VR</span>
               <span className="bg-tag__back">🥽</span>
             </span>
-            <span className={`bg-tag tag--11 ${flippedTags.includes(11) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(11)}>
+            <span
+              className={`bg-tag tag--11 ${
+                flippedTags.includes(11) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(11)}
+            >
               <span className="bg-tag__front">Walking</span>
               <span className="bg-tag__back">🚶‍♀️</span>
             </span>
-            <span className={`bg-tag tag--12 ${flippedTags.includes(12) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(12)}>
+            <span
+              className={`bg-tag tag--12 ${
+                flippedTags.includes(12) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(12)}
+            >
               <span className="bg-tag__front">Reading</span>
               <span className="bg-tag__back">📕</span>
             </span>
-            <span className={`bg-tag tag--13 ${flippedTags.includes(13) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(13)}>
+            <span
+              className={`bg-tag tag--13 ${
+                flippedTags.includes(13) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(13)}
+            >
               <span className="bg-tag__front">Gaming</span>
               <span className="bg-tag__back">🕹️</span>
             </span>
-            <span className={`bg-tag tag--14 ${flippedTags.includes(14) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(14)}>
-              <span className="bg-tag__front">Design of<br/>Everyday Things</span>
+            <span
+              className={`bg-tag tag--14 ${
+                flippedTags.includes(14) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(14)}
+            >
+              <span className="bg-tag__front">
+                Design of
+                <br />
+                Everyday Things
+              </span>
               <span className="bg-tag__back">🚪</span>
             </span>
-            <span className={`bg-tag tag--15 ${flippedTags.includes(15) ? 'is-flipped' : ''}`} onClick={() => handleTagClick(15)}>
+            <span
+              className={`bg-tag tag--15 ${
+                flippedTags.includes(15) ? "is-flipped" : ""
+              }`}
+              onClick={() => handleTagClick(15)}
+            >
               <span className="bg-tag__front">Learning</span>
               <span className="bg-tag__back">🧠</span>
             </span>
@@ -181,12 +267,15 @@ export default function About() {
                 <h1 className="book__name book__name--large">
                   Katarína Bajnokova
                 </h1>
-                <p className="book__subtitle book__subtitle--large" ref={subtitleRef}>
+                <p
+                  className="book__subtitle book__subtitle--large"
+                  ref={subtitleRef}
+                >
                   UX/UI Designer • Frontend Developer
                 </p>
                 <button
                   type="button"
-                  className={`contact-quick ${copied ? 'is-copied' : ''}`}
+                  className={`contact-quick ${copied ? "is-copied" : ""}`}
                   onClick={handleCopyEmail}
                   aria-label="Copy my email"
                 >
