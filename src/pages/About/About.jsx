@@ -1,4 +1,6 @@
 import "./About.scss";
+import { useRef, useEffect, useState } from "react";
+import gsap from "gsap";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import portrait from "@/assets/images/about.png";
@@ -8,72 +10,211 @@ import Timeline from "@/pages/About/Timeline";
 import Certifications from "@/pages/About/Certifications";
 
 export default function About() {
+  const bookRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("katarinabajnokovaofficial@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  useEffect(() => {
+    // Subtle hover effect on the book
+    if (bookRef.current) {
+      gsap.to(bookRef.current, {
+        scrollTrigger: {
+          trigger: bookRef.current,
+          start: "center center",
+        },
+        duration: 0.5,
+      });
+    }
+  }, []);
+
   return (
     <>
       <Header />
       <main className="about-page">
         <section className="about__container">
-          {/* Top row: Photo + Intro */}
-          <div className="about__top">
-            <figure className="about__photo">
-              <img
-                src={portrait}
-                alt="Katarína Bajnokova portrait"
-                loading="lazy"
-                className="about__media"
-              />
-            </figure>
+          {/* Open Book Effect */}
+          <div className="book" ref={bookRef}>
+            <div className="book__spine"></div>
 
-            <div className="about__intro">
-              <h1 className="about__name">Katarína</h1>
-              <p className="about__tagline">
-                UX/UI Designer & Frontend Developer focused on component-driven,
-                production-aware interfaces and scalable design systems.
-              </p>
-              <p className="about__tagline">
-                Open to part-time and freelance opportunities. Available for
-                full-time roles from July 2026.
-              </p>
+            {/* Left Page - Image & Name Only */}
+            <div className="book__page book__page--left">
+              <div className="book__page-content book__page-content--centered">
+                <figure className="book__portrait book__portrait--large">
+                  <img
+                    src={portrait}
+                    alt="Katarína Bajnokova portrait"
+                    loading="lazy"
+                    className="book__portrait-img"
+                  />
+                </figure>
+                <h1 className="book__name book__name--large">
+                  Katarína Bajnokova
+                </h1>
+                <p className="book__subtitle book__subtitle--large">
+                  Designer & Developer
+                </p>
+              </div>
+            </div>
 
-              {/* Summary Info Card */}
-              <div className="about__info">
-                <ul>
-                  <li>📍 Brussels, Belgium</li>
-                  <li>
-                    🗣️ English (C1), French (B2), Czech (B2), Hungarian
-                    (Native), Slovak (Native)
-                  </li>
-                  <li>
-                    🧩 Components, design tokens, and design systems to ensure
-                    consistency, scalability, and faster delivery across design
-                    and development
-                  </li>
-                  <li>
-                    ✉️{" "}
-                    <a href="mailto:katarinabajnokovaofficial@gmail.com">
-                      katarinabajnokovaofficial@gmail.com
+            {/* Right Page - Chapter I About Me */}
+            <div className="book__page book__page--right">
+              <div className="book__page-content">
+                {/* Chapter I - About Me */}
+                <div className="book__chapter">
+                  <div className="book__chapter-marker">Chapter I</div>
+                  <h2 className="book__chapter-title">About Me</h2>
+
+                  <p className="book__text-first">
+                    This is the part that does not fit into a job title.
+                    Everything about my design process, projects, and
+                    professional experience lives on my portfolio and LinkedIn.
+                    What follows is who I am beyond the work.
+                  </p>
+
+                  <p className="book__text">
+                    I thrive in{" "}
+                    <span className="highlight highlight--yellow">
+                      collaborative environments
+                    </span>{" "}
+                    and genuinely enjoy moments that bring people together. I
+                    need{" "}
+                    <span className="highlight highlight--pink">
+                      challenge and constant stimulation
+                    </span>
+                    to feel engaged. When things stay static for too long, I
+                    know it is time for something new.
+                  </p>
+
+                  <p className="book__text">
+                    Outside of work, I have many interests. I am a{" "}
+                    <span className="highlight highlight--yellow">
+                      passionate gamer
+                    </span>{" "}
+                    and have been playing League of Legends since I was 12.{" "}
+                    <span className="highlight highlight--strikethrough">
+                      I am still in Bronze and have accepted it as a permanent
+                      state. Once you get into Bronze, you do not get out.
+                    </span>{" "}
+                    I am, however, a big fan of{" "}
+                    <span className="highlight highlight--blue">
+                      cooperative games
+                    </span>{" "}
+                    like It Takes Two and Split Fiction, where teamwork actually
+                    matters and friendships remain intact.
+                  </p>
+
+                  <p className="book__text">
+                    I love{" "}
+                    <span className="highlight highlight--box">
+                      immersive digital experiences
+                    </span>{" "}
+                    and spend time in VR exploring carefully crafted worlds. On
+                    the calmer side, I recently discovered
+                    <span className="highlight highlight--pink">
+                      coloring books as a meditative escape
+                    </span>{" "}
+                    and quickly became obsessed. I am also an{" "}
+                    <span className="highlight highlight--blue">
+                      avid reader
+                    </span>
+                    , switching between educational books and fantasy depending
+                    on my mood.
+                  </p>
+
+                  <p className="book__text">
+                    My newest habit is{" "}
+                    <span className="highlight highlight--yellow">walking</span>
+                    . I bought a walking pad and turned it into my{" "}
+                    <span className="highlight highlight--circle">
+                      thinking space
+                    </span>
+                    , where most of my creative problem solving now happens. I
+                    am deeply{" "}
+                    <span className="highlight highlight--blue">
+                      curious by nature
+                    </span>{" "}
+                    and constantly learning through technology, online courses,
+                    and experimentation.
+                  </p>
+
+                  <p className="book__text">
+                    I think a lot, sometimes too much. I need{" "}
+                    <span className="highlight highlight--box">
+                      novelty, challenge, and growth
+                    </span>{" "}
+                    to feel fulfilled. If you are looking for someone driven by
+                    <span className="highlight highlight--pink">
+                      curiosity and restless energy
+                    </span>
+                    , that is me.
+                  </p>
+
+                  <p className="book__text">
+                    If you would like to talk about design, products, games, or
+                    books,
+                    <a
+                      href="mailto:katarinabajnokovaofficial@gmail.com"
+                      className="book__text-link"
+                    >
+                      {" "}
+                      feel free to get in touch
                     </a>
-                  </li>
-                  <li>
-                    📞 <a href="tel:+32472215014">+32 472 21 50 14</a>
-                  </li>
-                </ul>
+                    .
+                  </p>
+                </div>
+
+                {/* Next Button */}
+                <button
+                  className="book__next-btn"
+                  onClick={() => setShowModal(true)}
+                  aria-label="Next chapter"
+                >
+                  &gt;
+                </button>
               </div>
             </div>
           </div>
 
-          {/* Profile Summary */}
-          <section className="about-summary">
-            <h2>Profile</h2>
-            <p>
-              I design digital products that are meant to be built, not just
-              admired. I work across the full design cycle from ideation and
-              problem definition to interface design, testing, and frontend
-              implementation. My approach prioritizes clarity, usability, and
-              system thinking, with a strong focus on reusable components and
-              tokenized foundations that hold up under real product constraints.
-            </p>
-          </section>
+          {/* Modal */}
+          {showModal && (
+            <div className="modal-overlay" onClick={() => setShowModal(false)}>
+              <div className="modal" onClick={(e) => e.stopPropagation()}>
+                <button
+                  className="modal__close"
+                  onClick={() => setShowModal(false)}
+                  aria-label="Close modal"
+                >
+                  ✕
+                </button>
+                <div className="modal__content">
+                  <h2 className="modal__title">Chapter II</h2>
+                  <p className="modal__text">
+                    If you wish to discover my second chapter, I'd love for you
+                    to invite me for an interview. There, I can tell you more
+                    about my approach, my process, and the work I'm most proud
+                    of.
+                  </p>
+                  <p className="modal__text">
+                    Let's talk about how we can create something great together.
+                  </p>
+                  <button
+                    className={`modal__cta ${
+                      copied ? "modal__cta--copied" : ""
+                    }`}
+                    onClick={handleCopyEmail}
+                  >
+                    {copied ? "✓ Email copied!" : "Copy my email"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Education Section 
           <section className="education">
@@ -124,44 +265,6 @@ export default function About() {
               </div>
             </div>
           </section>*/}
-
-          {/* Skills Section */}
-          <section className="skills">
-            <h2>Skills</h2>
-            <div className="badges">
-              {/* Core positioning */}
-              <span>UX/UI Design</span>
-              <span>Frontend Development</span>
-              <span>Design Systems</span>
-              <span>Component-Based Design</span>
-              <span>Design Tokens</span>
-              <span>Accessibility (WCAG)</span>
-
-              {/* UX process */}
-              <span>User Flows</span>
-              <span>Information Architecture</span>
-              <span>Wireframing</span>
-              <span>Prototyping</span>
-              <span>Usability Testing</span>
-              <span>UX Research</span>
-
-              {/* Tools */}
-              <span>Figma</span>
-              <span>Adobe Illustrator</span>
-
-              {/* Frontend */}
-              <span>React</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Sass</span>
-              <span>UI Component Libraries</span>
-              <span>Storybook</span>
-              <span>GitHub</span>
-
-              {/* Collaboration */}
-              <span>Notion</span>
-            </div>
-          </section>
 
           {/* Work Experience Timeline 
          {/* <Timeline />*/}
