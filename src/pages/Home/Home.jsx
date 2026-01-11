@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 import "./Home.scss";
 import Header from "@/components/layout/Header/Header";
@@ -10,22 +12,41 @@ import bookVideo from "@/assets/videos/book.mp4";
 import mayeleImg from "@/assets/images/mayele.png";
 
 export default function Home() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    if (heroRef.current) {
+      const elements = heroRef.current.querySelectorAll('.hero-animate');
+      gsap.fromTo(
+        elements,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out',
+        }
+      );
+    }
+  }, []);
+
   return (
     <>
       <Header />
       <main>
-        <section className="home-hero" id="work">
-          <h1>
+        <section className="home-hero" id="work" ref={heroRef}>
+          <h1 className="hero-animate">
             <span className="hero-title-line">Digital Product Designer</span>
             <span className="hero-ampersand">&</span>
             <span className="hero-title-line">Frontend Developer</span>
           </h1>
 
-          <p className="hero-tagline">
+          <p className="hero-tagline hero-animate">
             Component-driven design with production-aware frontend execution.
           </p>
 
-          <div className="hero-availability">
+          <div className="hero-availability hero-animate">
             <div className="availability-item">
               <span className="availability-label">Now</span>
               <span className="availability-text">Part-time & Freelance</span>
